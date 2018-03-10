@@ -61,7 +61,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Jentil\\Theme\\Tests\\Unit\\": "tests/unit/libraries/"
+            "Jentil\\Theme\\": "tests/unit/libraries/"
         }
     }
 }

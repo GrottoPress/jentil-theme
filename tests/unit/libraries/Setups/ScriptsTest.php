@@ -1,11 +1,10 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Tests\Unit\Setups;
+namespace Jentil\Theme\Setups;
 
 use Codeception\Util\Stub;
-use Jentil\Theme\Tests\Unit\AbstractTestCase;
-use Jentil\Theme\Setups\Scripts;
+use Jentil\Theme\AbstractTestCase;
 use GrottoPress\Jentil\AbstractChildTheme;
 use tad\FunctionMocker\FunctionMocker;
 
