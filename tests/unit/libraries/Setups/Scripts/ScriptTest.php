@@ -1,20 +1,20 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups;
+namespace Jentil\Theme\Setups\Scripts;
 
 use Codeception\Util\Stub;
 use Jentil\Theme\AbstractTestCase;
 use GrottoPress\Jentil\AbstractChildTheme;
 use tad\FunctionMocker\FunctionMocker;
 
-class ScriptsTest extends AbstractTestCase
+class ScriptTest extends AbstractTestCase
 {
     public function testRun()
     {
         $add_action = FunctionMocker::replace('add_action');
 
-        $scripts = new Scripts(Stub::makeEmpty(AbstractChildTheme::class));
+        $scripts = new Script(Stub::makeEmpty(AbstractChildTheme::class));
 
         $scripts->run();
 
@@ -34,7 +34,7 @@ class ScriptsTest extends AbstractTestCase
             'http://my.site/themes/my-theme'
         );
 
-        $scripts = new Scripts(Stub::makeEmpty(AbstractChildTheme::class));
+        $scripts = new Script(Stub::makeEmpty(AbstractChildTheme::class));
 
         $scripts->enqueue();
 

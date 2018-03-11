@@ -1,20 +1,20 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups;
+namespace Jentil\Theme\Setups\Styles;
 
 use Codeception\Util\Stub;
 use Jentil\Theme\AbstractTestCase;
 use GrottoPress\Jentil\AbstractChildTheme;
 use tad\FunctionMocker\FunctionMocker;
 
-class StylesTest extends AbstractTestCase
+class StyleTest extends AbstractTestCase
 {
     public function testRun()
     {
         $add_action = FunctionMocker::replace('add_action');
 
-        $styles = new Styles(Stub::makeEmpty(AbstractChildTheme::class));
+        $styles = new Style(Stub::makeEmpty(AbstractChildTheme::class));
 
         $styles->run();
 
@@ -39,7 +39,7 @@ class StylesTest extends AbstractTestCase
             'http://my.site/themes/my-theme'
         );
 
-        $styles = new Styles(Stub::makeEmpty(AbstractChildTheme::class));
+        $styles = new Style(Stub::makeEmpty(AbstractChildTheme::class));
 
         $styles->enqueue();
 

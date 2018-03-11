@@ -1,35 +1,27 @@
 <?php
-
-/**
- * Custom Logo
- *
- * @package Jentil\Theme\Setups
- *
- * @see GrottoPress\Jentil\Setups\Logo
- */
-
 declare (strict_types = 1);
 
 namespace Jentil\Theme\Setups;
 
 use GrottoPress\Jentil\Setups\AbstractSetup;
 
-/**
- * Custom Logo
- */
+/*
+|--------------------------------------------------------------------
+| Logo Setup
+|--------------------------------------------------------------------
+|
+| 
+|
+*/
+
 final class Logo extends AbstractSetup
 {
-    /**
-     * Run setup
-     */
     public function run()
     {
         \add_action('after_setup_theme', [$this, 'addSupport']);
     }
 
     /**
-     * Add theme support.
-     *
      * @action after_setup_theme
      */
     public function addSupport()

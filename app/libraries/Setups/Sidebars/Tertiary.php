@@ -1,42 +1,42 @@
 <?php
-
-/**
- * Tertiary sidebar
- *
- * @package Jentil\Theme\Setups\Sidebars
- *
- * @see GrottoPress\Jentil\Setups\Sidebars\Primary
- */
-
 declare (strict_types = 1);
 
 namespace Jentil\Theme\Setups\Sidebars;
 
-use GrottoPress\Jentil\Setups\AbstractSetup;
+use GrottoPress\Jentil\Setups\Sidebars\AbstractSidebar;
+use GrottoPress\Jentil\AbstractChildTheme;
 
-/**
- * Tertiary sidebar
- */
-final class Tertiary extends AbstractSetup
+/*
+|-----------------------------------------------------------------
+| Just an example sidebar setup
+|-----------------------------------------------------------------
+|
+| @see GrottoPress\Jentil\Setups\Sidebars\
+|
+*/
+
+final class Tertiary extends AbstractSidebar
 {
-    /**
-     * Run setup
-     */
+    public function __construct(AbstractChildTheme $theme)
+    {
+        parent::__construct($theme);
+
+        $this->id = 'tertiary-widget-area';
+    }
+
     public function run()
     {
         \add_action('widgets_init', [$this, 'register']);
     }
 
     /**
-     * Register widget area
-     *
      * @action widgets_init
      */
     public function register()
     {
         \register_sidebar([
             'name'          => \esc_html__('Tertiary', 'jentil-theme'),
-            'id'            => 'tertiary-widget-area',
+            'id'            => $this->id,
             'description'   => \esc_html__(
                 'Tertiary widget area',
                 'jentil-theme'

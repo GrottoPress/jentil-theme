@@ -1,8 +1,36 @@
 /*!
-////
-/// Theme
-////
-*/
+ * Theme styles
+ */
 
 @import 'variables';
 @import 'mixins';
+
+/*
+|-----------------------------------------------------------------------
+| About SCSS
+|-----------------------------------------------------------------------
+|
+| SCSS is a superset of CSS. This means you can go ahead and paste
+| regular CSS code here, and they should work OK.
+|
+| SCSS adds features like functions, mixins and variables to CSS. It
+| compiles to plain CSS.
+|
+| Try it; you would love it!
+|
+| Read more: https://sass-lang.com
+|
+*/
+
+/*
+|----------------------------------------------------------------------
+| Build and watch
+|----------------------------------------------------------------------
+|
+| Build assets with:
+|   `npm run build`
+|
+| Watch assets to automatically build whenever you make changes with:
+|   `npm run watch`
+|
+*/

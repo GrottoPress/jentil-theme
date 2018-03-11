@@ -1,27 +1,26 @@
 <?php
-
-/**
- * Thumbnails (Featured Images)
- *
- * @package Jentil\Theme\Setups
- *
- * @see GrottoPress\Jentil\Setups\Thumbnails
- */
-
 declare (strict_types = 1);
 
 namespace Jentil\Theme\Setups;
 
 use GrottoPress\Jentil\Setups\AbstractSetup;
 
-/**
- * Thumbnails (Featured Images)
- */
-final class Thumbnails extends AbstractSetup
+/*
+|-----------------------------------------------------------------
+| Thumbnails Setup
+|-----------------------------------------------------------------
+|
+| Set post thumbnail (featured image) size here, and add new
+| thumbnail sizes for your theme.
+|
+| You may remove sizes added by Jentil that you do not need here.
+|
+| @see GrottoPress\Jentil\Setups\Thumbnails
+|
+*/
+
+final class Thumbnail extends AbstractSetup
 {
-    /**
-     * Run setup
-     */
     public function run()
     {
         // \add_action('init', [$this, 'removeSizes']);
@@ -30,21 +29,17 @@ final class Thumbnails extends AbstractSetup
     }
 
     /**
-     * Remove sizes
-     *
      * @action init
      */
     public function removeSizes()
     {
         \remove_action(
             'after_setup_theme',
-            [$this->app->parent->setups['Thumbnails'], 'setSize']
+            [$this->app->parent->setups['Thumbnail'], 'setSize']
         );
     }
 
     /**
-     * Set post thumbnail size
-     *
      * @action after_setup_theme
      */
     public function setSize()
@@ -53,8 +48,6 @@ final class Thumbnails extends AbstractSetup
     }
 
     /**
-     * Add/set thumbnail sizes.
-     *
      * @action after_setup_theme
      */
     public function addSizes()
