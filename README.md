@@ -1,6 +1,6 @@
 # Jentil Theme
 
-A starter for building WordPress themes with [Jentil](https://jentil.grottopress.com).
+A starter for building WordPress themes with [Jentil](https://www.grottopress.com/jentil/).
 
 ## Documentation
 
