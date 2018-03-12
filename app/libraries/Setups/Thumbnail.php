@@ -15,7 +15,7 @@ use GrottoPress\Jentil\Setups\AbstractSetup;
 |
 | You may remove sizes added by Jentil that you do not need here.
 |
-| @see GrottoPress\Jentil\Setups\Thumbnails
+| @see GrottoPress\Jentil\Setups\Thumbnail
 |
 */
 

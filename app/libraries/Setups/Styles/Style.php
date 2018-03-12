@@ -13,7 +13,7 @@ use GrottoPress\Jentil\AbstractChildTheme;
 |
 | Enqueue your theme's main style sheet here.
 |
-| @see GrottoPress\Jentil\Setups\Styles
+| @see GrottoPress\Jentil\Setups\Styles\Style
 |
 */
 
