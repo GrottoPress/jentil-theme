@@ -46,7 +46,7 @@ final class Style extends AbstractStyle
         \wp_enqueue_style(
             $this->id,
             \get_template_directory_uri()."/dist/styles/${style}",
-            ['jentil']
+            [$this->app->parent->setups['Styles\Style']->id]
         );
     }
 
