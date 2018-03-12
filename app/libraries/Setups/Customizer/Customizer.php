@@ -11,7 +11,15 @@ use WP_Customize_Manager as WPCustomizer;
 | Customizer Setup
 |---------------------------------------------------------------------
 |
-| @see GrottoPress\Jentil\Setups\Customizer\Customizer
+| This is where you add your own setting, sections, panels to the
+| theme customizer.
+|
+| Jentil provides a handy API for setting these up. It comes with
+| `AbstractCustomizer`, `AbstractPanel`, `AbstractSection`,
+| `AbstractSetting` which your own classes can inherit.
+|
+| @see GrottoPress\Jentil\Setups\Customizer\Customizer for how
+| Jentil's own customizer is set up.
 |
 */
 
