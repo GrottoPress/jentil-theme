@@ -489,12 +489,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrottoPress/jentil.git",
-                "reference": "9c8122c06bdec3767806f3f1391b0ce268fc2f79"
+                "reference": "5b4f870e719735094fa857ae3d18e2f6ec2edade"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/9c8122c06bdec3767806f3f1391b0ce268fc2f79",
-                "reference": "9c8122c06bdec3767806f3f1391b0ce268fc2f79",
+                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/5b4f870e719735094fa857ae3d18e2f6ec2edade",
+                "reference": "5b4f870e719735094fa857ae3d18e2f6ec2edade",
                 "shasum": ""
             },
             "require": {
@@ -540,7 +540,7 @@
                 "jentil",
                 "wordpress"
             ],
-            "time": "2018-03-10T22:24:08+00:00"
+            "time": "2018-03-13T20:12:40+00:00"
         },
         {
             "name": "grottopress/mobile-detector",
@@ -1297,16 +1297,16 @@
         },
         {
             "name": "codeception/phpunit-wrapper",
-            "version": "6.0.5",
+            "version": "6.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/phpunit-wrapper.git",
-                "reference": "44e2100c300413a6b40cf8874ad402695010f443"
+                "reference": "d020db336c52af4498aefe5905a17333b26486c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/phpunit-wrapper/zipball/44e2100c300413a6b40cf8874ad402695010f443",
-                "reference": "44e2100c300413a6b40cf8874ad402695010f443",
+                "url": "https://api.github.com/repos/Codeception/phpunit-wrapper/zipball/d020db336c52af4498aefe5905a17333b26486c8",
+                "reference": "d020db336c52af4498aefe5905a17333b26486c8",
                 "shasum": ""
             },
             "require": {
@@ -1314,6 +1314,13 @@
                 "phpunit/phpunit": ">=4.8.28 <5.0.0 || >=5.6.3 <7.0",
                 "sebastian/comparator": ">1.1 <3.0",
                 "sebastian/diff": ">=1.4 <4.0"
+            },
+            "replace": {
+                "codeception/phpunit-wrapper": "*"
+            },
+            "require-dev": {
+                "codeception/specify": "*",
+                "vlucas/phpdotenv": "^2.4"
             },
             "type": "library",
             "autoload": {
@@ -1332,7 +1339,7 @@
                 }
             ],
             "description": "PHPUnit classes used by Codeception",
-            "time": "2018-02-19T13:24:40+00:00"
+            "time": "2018-03-13T02:15:58+00:00"
         },
         {
             "name": "codeception/stub",
@@ -2755,16 +2762,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.24.1",
+            "version": "1.24.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "ef12cbd8ba5ce624f0a6a95e0850c4cc13e71e41"
+                "reference": "bba6c6e410c6b4317e37a9474aeaa753808c3875"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/ef12cbd8ba5ce624f0a6a95e0850c4cc13e71e41",
-                "reference": "ef12cbd8ba5ce624f0a6a95e0850c4cc13e71e41",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bba6c6e410c6b4317e37a9474aeaa753808c3875",
+                "reference": "bba6c6e410c6b4317e37a9474aeaa753808c3875",
                 "shasum": ""
             },
             "require": {
@@ -2804,7 +2811,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-03-09T15:49:34+00:00"
+            "time": "2018-03-10T10:10:14+00:00"
         },
         {
             "name": "phar-io/manifest",
