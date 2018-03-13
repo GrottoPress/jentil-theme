@@ -25,7 +25,7 @@ use GrottoPress\Getter\GetterTrait;
 |
 */
 
-final class Utilities
+class Utilities
 {
     use GetterTrait;
 
