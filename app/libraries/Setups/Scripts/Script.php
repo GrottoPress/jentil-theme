@@ -37,7 +37,10 @@ final class Script extends AbstractScript
     {
         \wp_enqueue_script(
             $this->id,
-            \get_template_directory_uri().'/dist/scripts/theme.min.js',
+            $this->app->utilities->fileSystem->themeDir(
+                'url',
+                '/dist/scripts/theme.min.js'
+            ),
             ['jquery'],
             '',
             true

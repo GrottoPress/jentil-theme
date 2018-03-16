@@ -45,7 +45,10 @@ final class Style extends AbstractStyle
 
         \wp_enqueue_style(
             $this->id,
-            \get_template_directory_uri()."/dist/styles/${style}",
+            $this->app->utilities->fileSystem->themeDir(
+                'url',
+                "/dist/styles/${style}"
+            ),
             [$this->app->parent->setups['Styles\Style']->id]
         );
     }

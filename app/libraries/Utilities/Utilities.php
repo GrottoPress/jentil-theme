@@ -35,9 +35,9 @@ class Utilities
     private $app;
 
     /**
-     * @var SampleUtility
+     * @var FileSystem
      */
-    // private $sampleUtility;
+    private $fileSystem;
 
     public function __construct(Theme $theme)
     {
@@ -49,14 +49,14 @@ class Utilities
         return $this->app;
     }
 
-    // private function getSampleUtility(): SampleUtility
-    // {
-    //     if (null === $this->sampleUtility) {
-    //         $this->sampleUtility = new SampleUtility($this);
-    //     }
+    private function getFileSystem()
+    {
+        if (null === $this->fileSystem) {
+            $this->fileSystem =  new FileSystem($this);
+        }
 
-    //     return $this->sampleUtility;
-    // }
+        return $this->fileSystem;
+    }
 
     // public function anotherSampleUtility(array $args): AnotherSampleUtility
     // {

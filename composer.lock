@@ -489,12 +489,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrottoPress/jentil.git",
-                "reference": "5b4f870e719735094fa857ae3d18e2f6ec2edade"
+                "reference": "4faa7f09bd71d0b41bd8da2ce3beee197b89e954"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/5b4f870e719735094fa857ae3d18e2f6ec2edade",
-                "reference": "5b4f870e719735094fa857ae3d18e2f6ec2edade",
+                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/4faa7f09bd71d0b41bd8da2ce3beee197b89e954",
+                "reference": "4faa7f09bd71d0b41bd8da2ce3beee197b89e954",
                 "shasum": ""
             },
             "require": {
@@ -540,7 +540,7 @@
                 "jentil",
                 "wordpress"
             ],
-            "time": "2018-03-13T20:12:40+00:00"
+            "time": "2018-03-16T16:34:26+00:00"
         },
         {
             "name": "grottopress/mobile-detector",
@@ -847,16 +847,16 @@
         },
         {
             "name": "grottopress/wordpress-suv",
-            "version": "0.4.0",
+            "version": "0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrottoPress/wordpress-suv.git",
-                "reference": "1bd235efc2916667fe51dab6e8457e830583ea44"
+                "reference": "9458b6f6ace8fcf61ea5d04fb4065df37f6fc182"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrottoPress/wordpress-suv/zipball/1bd235efc2916667fe51dab6e8457e830583ea44",
-                "reference": "1bd235efc2916667fe51dab6e8457e830583ea44",
+                "url": "https://api.github.com/repos/GrottoPress/wordpress-suv/zipball/9458b6f6ace8fcf61ea5d04fb4065df37f6fc182",
+                "reference": "9458b6f6ace8fcf61ea5d04fb4065df37f6fc182",
                 "shasum": ""
             },
             "require": {
@@ -891,7 +891,7 @@
                 "suv",
                 "wordpress"
             ],
-            "time": "2018-03-05T21:09:35+00:00"
+            "time": "2018-03-13T23:19:21+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -1297,16 +1297,16 @@
         },
         {
             "name": "codeception/phpunit-wrapper",
-            "version": "6.0.7",
+            "version": "6.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/phpunit-wrapper.git",
-                "reference": "d020db336c52af4498aefe5905a17333b26486c8"
+                "reference": "e18f3ea1f841bfd2cecaf6e183e584127b9d467b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/phpunit-wrapper/zipball/d020db336c52af4498aefe5905a17333b26486c8",
-                "reference": "d020db336c52af4498aefe5905a17333b26486c8",
+                "url": "https://api.github.com/repos/Codeception/phpunit-wrapper/zipball/e18f3ea1f841bfd2cecaf6e183e584127b9d467b",
+                "reference": "e18f3ea1f841bfd2cecaf6e183e584127b9d467b",
                 "shasum": ""
             },
             "require": {
@@ -1339,7 +1339,7 @@
                 }
             ],
             "description": "PHPUnit classes used by Codeception",
-            "time": "2018-03-13T02:15:58+00:00"
+            "time": "2018-03-16T10:17:47+00:00"
         },
         {
             "name": "codeception/stub",
@@ -2458,16 +2458,16 @@
         },
         {
             "name": "lucatume/wp-browser",
-            "version": "1.23.1",
+            "version": "1.23.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucatume/wp-browser.git",
-                "reference": "a83dbe7a3fc7504a7987fafb99eba4287e67efe6"
+                "reference": "db638690f88cd8ed2d5db4473d01a1f696bbfa9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucatume/wp-browser/zipball/a83dbe7a3fc7504a7987fafb99eba4287e67efe6",
-                "reference": "a83dbe7a3fc7504a7987fafb99eba4287e67efe6",
+                "url": "https://api.github.com/repos/lucatume/wp-browser/zipball/db638690f88cd8ed2d5db4473d01a1f696bbfa9e",
+                "reference": "db638690f88cd8ed2d5db4473d01a1f696bbfa9e",
                 "shasum": ""
             },
             "require": {
@@ -2517,7 +2517,7 @@
                 "codeception",
                 "wordpress"
             ],
-            "time": "2018-03-06T11:35:30+00:00"
+            "time": "2018-03-16T14:44:05+00:00"
         },
         {
             "name": "lucatume/wp-browser-commons",

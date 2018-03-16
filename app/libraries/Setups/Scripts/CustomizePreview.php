@@ -37,7 +37,10 @@ final class CustomizePreview extends AbstractScript
     {
         \wp_enqueue_script(
             $this->id,
-            \get_template_directory_uri().'/dist/scripts/customize-preview.min.js',
+            $this->app->utilities->fileSystem->themeDir(
+                'url',
+                '/dist/scripts/customize-preview.min.js'
+            ),
             ['jquery', 'customize-preview'],
             '',
             true

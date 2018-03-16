@@ -5,6 +5,8 @@ namespace Jentil\Theme\Setups\Styles;
 
 use Codeception\Util\Stub;
 use Jentil\Theme\AbstractTestCase;
+use Jentil\Theme\Utilities\Utilities;
+use Jentil\Theme\Utilities\FileSystem;
 use GrottoPress\Jentil\AbstractChildTheme;
 use tad\FunctionMocker\FunctionMocker;
 
@@ -34,18 +36,23 @@ class StyleTest extends AbstractTestCase
     {
         $is_rtl = FunctionMocker::replace('is_rtl', $isRTL);
         $wp_enqueue_style = FunctionMocker::replace('wp_enqueue_style');
-        $template_uri = FunctionMocker::replace(
-            'get_template_directory_uri',
-            'http://my.site/themes/my-theme'
-        );
 
-        $styles = new Style(Stub::makeEmpty(AbstractChildTheme::class));
+        $theme = Stub::makeEmpty(AbstractChildTheme::class, [
+            'utilities' => Stub::makeEmpty(Utilities::class),
+        ]);
+
+        $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [
+            'themeDir' => function (string $type, string $append) {
+                return "http://my.site/themes/my-theme{$append}";
+            }
+        ]);
+
+        $styles = new Style($theme);
 
         $styles->enqueue();
 
         $is_rtl->wasCalledOnce();
         $wp_enqueue_style->wasCalledOnce();
-
         $wp_enqueue_style->wasCalledWithOnce([
             'jentil-theme',
             ($isRTL ?
