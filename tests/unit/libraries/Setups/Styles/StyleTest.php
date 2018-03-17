@@ -8,6 +8,7 @@ use Jentil\Theme\AbstractTestCase;
 use Jentil\Theme\Utilities\Utilities;
 use Jentil\Theme\Utilities\FileSystem;
 use GrottoPress\Jentil\AbstractChildTheme;
+use GrottoPress\Jentil\AbstractTheme;
 use tad\FunctionMocker\FunctionMocker;
 
 class StyleTest extends AbstractTestCase
@@ -16,15 +17,15 @@ class StyleTest extends AbstractTestCase
     {
         $add_action = FunctionMocker::replace('add_action');
 
-        $styles = new Style(Stub::makeEmpty(AbstractChildTheme::class));
+        $style = new Style(Stub::makeEmpty(AbstractChildTheme::class));
 
-        $styles->run();
+        $style->run();
 
         $add_action->wasCalledOnce();
 
         $add_action->wasCalledWithOnce([
             'wp_enqueue_scripts',
-            [$styles, 'enqueue'],
+            [$style, 'enqueue'],
             20
         ]);
     }
@@ -39,6 +40,11 @@ class StyleTest extends AbstractTestCase
 
         $theme = Stub::makeEmpty(AbstractChildTheme::class, [
             'utilities' => Stub::makeEmpty(Utilities::class),
+            'parent' => Stub::makeEmpty(AbstractTheme::class, [
+                'setups' => ['Styles\Style' => new class {
+                    public $id;
+                }],
+            ]),
         ]);
 
         $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [
@@ -47,18 +53,18 @@ class StyleTest extends AbstractTestCase
             }
         ]);
 
-        $styles = new Style($theme);
+        $style = new Style($theme);
 
-        $styles->enqueue();
+        $style->enqueue();
 
         $is_rtl->wasCalledOnce();
         $wp_enqueue_style->wasCalledOnce();
         $wp_enqueue_style->wasCalledWithOnce([
-            'jentil-theme',
+            $style->id,
             ($isRTL ?
             'http://my.site/themes/my-theme/dist/styles/theme-rtl.min.css'
             : 'http://my.site/themes/my-theme/dist/styles/theme.min.css'),
-            ['jentil']
+            [$theme->parent->setups['Styles\Style']->id]
         ]);
     }
 
