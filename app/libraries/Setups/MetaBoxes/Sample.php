@@ -69,9 +69,9 @@ final class Sample extends AbstractMetaBox
         }
 
         return [
-            'id' => 'sample-meta-box',
+            'id' => $this->id,
             'title' => \esc_html__('Sample Meta Box', 'jentil-theme'),
-            'context' => 'side',
+            'context' => $this->context,
             'priority' => 'default',
             'callback' => '',
             'fields' => [
