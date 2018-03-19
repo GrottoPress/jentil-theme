@@ -23,13 +23,13 @@ final class Thumbnail extends AbstractSetup
 {
     public function run()
     {
-        // \add_action('init', [$this, 'removeSizes']);
+        // \add_action('after_setup_theme', [$this, 'removeSizes']);
         // \add_action('after_setup_theme', [$this, 'setSize']);
         \add_action('after_setup_theme', [$this, 'addSizes']);
     }
 
     /**
-     * @action init
+     * @action after_setup_theme
      */
     public function removeSizes()
     {
