@@ -28,7 +28,7 @@ final class Customizer extends AbstractCustomizer
     public function run()
     {
         // \add_action('customize_register', [$this, 'register']);
-        \add_action('customize_register', [$this, 'removeComponents'], 12);
+        \add_action('customize_register', [$this, 'removeComponents'], 20);
     }
 
     /**
