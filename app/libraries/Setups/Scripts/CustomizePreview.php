@@ -55,15 +55,25 @@ final class CustomizePreview extends AbstractScript
      */
     public function dequeue()
     {
-        \remove_action(
-            'customize_preview_init',
-            [$this->app->parent->setups['Scripts\CustomizePreview'], 'enqueue']
-        );
+        \remove_action('customize_preview_init', [
+            $this->app->parent->setups['Scripts\CustomizePreview'],
+            'enqueue'
+        ]);
 
         // OR
         // @action wp_enqueue_scripts Use priority > 10 (eg: 20)
         // \wp_dequeue_script(
         //    $this->app->parent->setups['Scripts\CustomizePreview']->id
         // );
+
+        \remove_action('customize_preview_init', [
+            $this->app->parent->setups['Scripts\CustomizePreview'],
+            'addInlineScript'
+        ]);
+
+        \remove_action('wp_enqueue_scripts', [
+            $this->app->parent->setups['Scripts\CustomizePreview'],
+            'addInlineScript2'
+        ]);
     }
 }
