@@ -27,7 +27,7 @@ class HeaderTest extends AbstractTestCase
         ]);
     }
 
-    public function testrenderLogo()
+    public function testRenderLogo()
     {
         $the_custom_logo = FunctionMocker::replace('the_custom_logo');
 
