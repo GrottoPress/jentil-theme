@@ -28,13 +28,13 @@ final class Customizer extends AbstractCustomizer
     public function run()
     {
         // \add_action('customize_register', [$this, 'register']);
-        \add_action('customize_register', [$this, 'removeComponents'], 20);
+        \add_action('customize_register', [$this, 'removeItems'], 20);
     }
 
     /**
      * @action customize_register
      */
-    public function removeComponents(WPCustomizer $WPCustomizer)
+    public function removeItems(WPCustomizer $WPCustomizer)
     {
         $this->app->parent->setups['Customizer\Customizer']
             ->panels['Posts\Posts']->sections['Sticky_post']
