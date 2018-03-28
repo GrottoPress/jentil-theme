@@ -34,25 +34,25 @@ final class Customizer extends AbstractCustomizer
     /**
      * @action customize_register
      */
-    public function removeItems(WPCustomizer $WPCustomizer)
+    public function removeItems(WPCustomizer $wp_customizer)
     {
         $this->app->parent->setups['Customizer\Customizer']
             ->panels['Posts\Posts']->sections['Sticky_post']
-            ->remove($WPCustomizer);
+            ->remove($wp_customizer);
 
         $this->app->parent->setups['Customizer\Customizer']
             ->sections['Title\Title']->settings['PostType_post']
-            ->remove($WPCustomizer);
+            ->remove($wp_customizer);
 
         $this->app->parent->setups['Customizer\Customizer']
             ->sections['Colophon\Colophon']/*->settings['colophon']*/
-            ->remove($WPCustomizer);
+            ->remove($wp_customizer);
     }
 
     /**
      * @action customize_register
      */
-    public function register(WPCustomizer $WPCustomizer)
+    public function register(WPCustomizer $wp_customizer)
     {
         // $this->panels['SamplePanel\SamplePanel'] =
         //     new SamplePanel\SamplePanel($this);
@@ -60,6 +60,6 @@ final class Customizer extends AbstractCustomizer
         // $this->sections['SampleSection\SampleSection'] =
         //     new SampleSection\SampleSection($this);
 
-        parent::register($WPCustomizer);
+        parent::register($wp_customizer);
     }
 }

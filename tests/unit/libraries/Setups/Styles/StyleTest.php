@@ -33,9 +33,9 @@ class StyleTest extends AbstractTestCase
     /**
      * @dataProvider enqueueProvider
      */
-    public function testEnqueue(bool $isRTL)
+    public function testEnqueue(bool $rtl)
     {
-        $is_rtl = FunctionMocker::replace('is_rtl', $isRTL);
+        $is_rtl = FunctionMocker::replace('is_rtl', $rtl);
         $wp_enqueue_style = FunctionMocker::replace('wp_enqueue_style');
 
         $theme = Stub::makeEmpty(AbstractChildTheme::class, [
@@ -61,7 +61,7 @@ class StyleTest extends AbstractTestCase
         $wp_enqueue_style->wasCalledOnce();
         $wp_enqueue_style->wasCalledWithOnce([
             $style->id,
-            ($isRTL ?
+            ($rtl ?
             'http://my.site/themes/my-theme/dist/styles/theme-rtl.min.css'
             : 'http://my.site/themes/my-theme/dist/styles/theme.min.css'),
             [$theme->parent->setups['Styles\Style']->id]
