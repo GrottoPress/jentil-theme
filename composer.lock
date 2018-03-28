@@ -489,18 +489,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrottoPress/jentil.git",
-                "reference": "4faa7f09bd71d0b41bd8da2ce3beee197b89e954"
+                "reference": "6580f079edb5d2e44f125ab03096b5bfadf6bde4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/4faa7f09bd71d0b41bd8da2ce3beee197b89e954",
-                "reference": "4faa7f09bd71d0b41bd8da2ce3beee197b89e954",
+                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/6580f079edb5d2e44f125ab03096b5bfadf6bde4",
+                "reference": "6580f079edb5d2e44f125ab03096b5bfadf6bde4",
                 "shasum": ""
             },
             "require": {
                 "grottopress/wordpress-breadcrumbs": "^0.4",
                 "grottopress/wordpress-meta-box": "^0.1",
-                "grottopress/wordpress-posts": "^0.7",
+                "grottopress/wordpress-posts": "^0.8",
                 "grottopress/wordpress-suv": "^0.4",
                 "php": ">=7.0",
                 "yahnis-elsts/plugin-update-checker": "^4.1"
@@ -540,7 +540,7 @@
                 "jentil",
                 "wordpress"
             ],
-            "time": "2018-03-16T16:34:26+00:00"
+            "time": "2018-03-28T02:43:59+00:00"
         },
         {
             "name": "grottopress/mobile-detector",
@@ -797,16 +797,16 @@
         },
         {
             "name": "grottopress/wordpress-posts",
-            "version": "0.7.2",
+            "version": "0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrottoPress/wordpress-posts.git",
-                "reference": "0e4e6bcdc5a8d03a684d492c425dca0ea40cbcac"
+                "reference": "99cf5fc8a8647684362a6be22a4fb1f81d48b46a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrottoPress/wordpress-posts/zipball/0e4e6bcdc5a8d03a684d492c425dca0ea40cbcac",
-                "reference": "0e4e6bcdc5a8d03a684d492c425dca0ea40cbcac",
+                "url": "https://api.github.com/repos/GrottoPress/wordpress-posts/zipball/99cf5fc8a8647684362a6be22a4fb1f81d48b46a",
+                "reference": "99cf5fc8a8647684362a6be22a4fb1f81d48b46a",
                 "shasum": ""
             },
             "require": {
@@ -815,7 +815,8 @@
                 "php": ">=7.0"
             },
             "require-dev": {
-                "lucatume/wp-browser": "^1.21"
+                "codeception/codeception": "^2.4",
+                "lucatume/function-mocker": "^1.3"
             },
             "type": "library",
             "autoload": {
@@ -843,7 +844,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-03-01T18:38:56+00:00"
+            "time": "2018-03-22T23:13:17+00:00"
         },
         {
             "name": "grottopress/wordpress-suv",
@@ -1939,16 +1940,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.3.0",
+            "version": "6.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699"
+                "reference": "68d0ea14d5a3f42a20e87632a5f84931e2709c90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f4db5a78a5ea468d4831de7f0bf9d9415e348699",
-                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/68d0ea14d5a3f42a20e87632a5f84931e2709c90",
+                "reference": "68d0ea14d5a3f42a20e87632a5f84931e2709c90",
                 "shasum": ""
             },
             "require": {
@@ -1958,7 +1959,7 @@
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.0 || ^5.0",
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4",
                 "psr/log": "^1.0"
             },
             "suggest": {
@@ -1967,7 +1968,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.2-dev"
+                    "dev-master": "6.3-dev"
                 }
             },
             "autoload": {
@@ -2000,7 +2001,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-06-22T18:50:49+00:00"
+            "time": "2018-03-26T16:33:04+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -2458,16 +2459,16 @@
         },
         {
             "name": "lucatume/wp-browser",
-            "version": "1.23.2",
+            "version": "1.23.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucatume/wp-browser.git",
-                "reference": "db638690f88cd8ed2d5db4473d01a1f696bbfa9e"
+                "reference": "8124e90de3ced02ae629cc5fb6d41187ea6bf8fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucatume/wp-browser/zipball/db638690f88cd8ed2d5db4473d01a1f696bbfa9e",
-                "reference": "db638690f88cd8ed2d5db4473d01a1f696bbfa9e",
+                "url": "https://api.github.com/repos/lucatume/wp-browser/zipball/8124e90de3ced02ae629cc5fb6d41187ea6bf8fd",
+                "reference": "8124e90de3ced02ae629cc5fb6d41187ea6bf8fd",
                 "shasum": ""
             },
             "require": {
@@ -2517,7 +2518,7 @@
                 "codeception",
                 "wordpress"
             ],
-            "time": "2018-03-16T14:44:05+00:00"
+            "time": "2018-03-20T11:15:18+00:00"
         },
         {
             "name": "lucatume/wp-browser-commons",
@@ -2762,16 +2763,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.24.2",
+            "version": "1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "bba6c6e410c6b4317e37a9474aeaa753808c3875"
+                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bba6c6e410c6b4317e37a9474aeaa753808c3875",
-                "reference": "bba6c6e410c6b4317e37a9474aeaa753808c3875",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/cbcf13da0b531767e39eb86e9687f5deba9857b4",
+                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4",
                 "shasum": ""
             },
             "require": {
@@ -2811,7 +2812,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-03-10T10:10:14+00:00"
+            "time": "2018-03-19T15:50:49+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -7089,16 +7090,16 @@
         },
         {
             "name": "wp-cli/wp-config-transformer",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-config-transformer.git",
-                "reference": "535007c241ea8425a8840cdb2fa0d395010a0f1c"
+                "reference": "6ce0a9fae09d53145c9c9c79486a69684598488d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-config-transformer/zipball/535007c241ea8425a8840cdb2fa0d395010a0f1c",
-                "reference": "535007c241ea8425a8840cdb2fa0d395010a0f1c",
+                "url": "https://api.github.com/repos/wp-cli/wp-config-transformer/zipball/6ce0a9fae09d53145c9c9c79486a69684598488d",
+                "reference": "6ce0a9fae09d53145c9c9c79486a69684598488d",
                 "shasum": ""
             },
             "require": {
@@ -7126,7 +7127,7 @@
                 }
             ],
             "description": "Programmatically edit a wp-config.php file.",
-            "time": "2018-01-27T11:50:22+00:00"
+            "time": "2018-03-20T16:19:27+00:00"
         },
         {
             "name": "xamin/handlebars.php",
