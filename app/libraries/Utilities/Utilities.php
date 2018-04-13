@@ -1,68 +1,65 @@
 <?php
-
-/**
- * Utilities
- *
- * @package Jentil\Theme\Utilities
- *
- * @see GrottoPress\Jentil\Utilities\Utilities
- */
-
 declare (strict_types = 1);
 
 namespace Jentil\Theme\Utilities;
 
 use Jentil\Theme\Theme;
-use GrottoPress\Getter\Getter;
+use GrottoPress\Getter\GetterTrait;
 
-/**
- * Utilities
- */
-final class Utilities
+/*
+|------------------------------------------------------------------------
+| Utilities
+|------------------------------------------------------------------------
+|
+| Create single instances of utilities you would need throughout your
+| theme here, or define public methods for creating instances for
+| utilities that may need more than one instance, or utilities that
+| accept args via their constructor.
+|
+| They should be accessible from other objects via:
+|   `$this->app->utilities->sampleUtiltity` or
+|   `$this->app->utilities->anotherSampleUtility($args...)`,
+|       for utilities that take args.
+|
+| @see GrottoPress\Jentil\Utilities\Utilities
+|
+*/
+
+class Utilities
 {
-    use Getter;
+    use GetterTrait;
 
     /**
-     * App
-     *
      * @var Theme
      */
     private $app;
 
     /**
-     * Sample utility
-     *
-     * @var SampleUtility
+     * @var FileSystem
      */
-    // private $sampleUtility;
+    private $fileSystem;
 
-    /**
-     * Constructor
-     *
-     * @var Theme $theme
-     */
     public function __construct(Theme $theme)
     {
         $this->app = $theme;
     }
 
-    /**
-     * Get app
-     */
     private function getApp(): Theme
     {
         return $this->app;
     }
 
-    /**
-     * Get sample utility
-     */
-    // private function getSampleUtility(): SampleUtility
-    // {
-    //     if (null === $this->sampleUtility) {
-    //         $this->sampleUtility = new SampleUtility($this);
-    //     }
+    private function getFileSystem()
+    {
+        if (null === $this->fileSystem) {
+            $this->fileSystem =  new FileSystem($this);
+        }
 
-    //     return $this->sampleUtility;
+        return $this->fileSystem;
+    }
+
+    // public function anotherSampleUtility(array $args): AnotherSampleUtility
+    // {
+    //     return new AnotherSampleUtility($this, $args);
     // }
 }

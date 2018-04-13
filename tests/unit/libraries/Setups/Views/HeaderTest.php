@@ -1,10 +1,10 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Tests\Unit\Setups\Views;
+namespace Jentil\Theme\Setups\Views;
 
 use Codeception\Util\Stub;
-use Jentil\Theme\Tests\Unit\AbstractTestCase;
+use Jentil\Theme\AbstractTestCase;
 use Jentil\Theme\Setups\Views\Header;
 use GrottoPress\Jentil\AbstractChildTheme;
 use tad\FunctionMocker\FunctionMocker;
@@ -27,7 +27,7 @@ class HeaderTest extends AbstractTestCase
         ]);
     }
 
-    public function testrenderLogo()
+    public function testRenderLogo()
     {
         $the_custom_logo = FunctionMocker::replace('the_custom_logo');
 

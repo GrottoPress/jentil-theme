@@ -1,11 +1,12 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Tests\Unit\Setups;
+namespace Jentil\Theme\Setups;
 
 use Codeception\Util\Stub;
-use Jentil\Theme\Tests\Unit\AbstractTestCase;
-use Jentil\Theme\Setups\Language;
+use Jentil\Theme\AbstractTestCase;
+use Jentil\Theme\Utilities\Utilities;
+use Jentil\Theme\Utilities\FileSystem;
 use GrottoPress\Jentil\AbstractChildTheme;
 use tad\FunctionMocker\FunctionMocker;
 
@@ -30,17 +31,22 @@ class LanguageTest extends AbstractTestCase
     public function testLoadTextDomain()
     {
         $load = FunctionMocker::replace('load_theme_textdomain');
-        $template_dir = FunctionMocker::replace(
-            'get_template_directory',
-            '/var/www/themes/my-theme'
-        );
 
-        $language = new Language(Stub::makeEmpty(AbstractChildTheme::class));
+        $theme = Stub::makeEmpty(AbstractChildTheme::class, [
+            'utilities' => Stub::makeEmpty(Utilities::class),
+        ]);
+
+        $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [
+            'themeDir' => function (string $type, string $append) {
+                return "/var/www/themes/my-theme{$append}";
+            }
+        ]);
+
+        $language = new Language($theme);
 
         $language->loadTextDomain();
 
         $load->wasCalledOnce();
-
         $load->wasCalledWithOnce([
             'jentil-theme',
             '/var/www/themes/my-theme/languages'

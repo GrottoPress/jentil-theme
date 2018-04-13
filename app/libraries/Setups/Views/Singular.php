@@ -1,30 +1,24 @@
 <?php
-
-/**
- * Singular
- *
- * @package Jentil\Theme\Setups\Views
- *
- * @see GrottoPress\Jentil\Setups\Views\Singular
- */
-
 declare (strict_types = 1);
 
 namespace Jentil\Theme\Setups\Views;
 
 use GrottoPress\Jentil\Setups\AbstractSetup;
 
-/**
- * Singular
- */
+/*
+|----------------------------------------------------------------------------
+| Example Singular Setup
+|----------------------------------------------------------------------------
+|
+| @see GrottoPress\Jentil\Setups\Views\Singular
+|
+*/
+
 final class Singular extends AbstractSetup
 {
-    /**
-     * Run setup
-     */
     public function run()
     {
-        \add_action('init', [$this, 'removeComponents']);
+        // \add_action('after_setup_theme', [$this, 'removeRelatedPosts']);
         \add_action(
             'jentil_after_after_content',
             [$this, 'renderTertiarySidebar']
@@ -32,11 +26,9 @@ final class Singular extends AbstractSetup
     }
 
     /**
-     * Remove components
-     *
-     * @action init
+     * @action after_setup_theme
      */
-    public function removeComponents()
+    public function removeRelatedPosts()
     {
         \remove_action(
             'jentil_after_content',
@@ -45,8 +37,6 @@ final class Singular extends AbstractSetup
     }
 
     /**
-     * Render tertiary widget area
-     *
      * @action jentil_after_after_content
      */
     public function renderTertiarySidebar()
@@ -55,12 +45,14 @@ final class Singular extends AbstractSetup
             return;
         }
 
-        if (!\is_active_sidebar('tertiary-widget-area')) {
+        if (!\is_active_sidebar(
+            $id = $this->app->setups['Sidebars\Tertiary']->id
+        )) {
             return;
         } ?>
 
         <aside id="tertiary-widget-area" class="widget-area">
-            <?php \dynamic_sidebar('tertiary-widget-area'); ?>
+            <?php \dynamic_sidebar($id); ?>
         </aside><!-- .widget-area -->
     <?php }
 }

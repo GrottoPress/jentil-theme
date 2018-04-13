@@ -1,27 +1,25 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Tests\Unit\Setups;
+namespace Jentil\Theme\Setups;
 
 use Codeception\Util\Stub;
-use Jentil\Theme\Tests\Unit\AbstractTestCase;
-use Jentil\Theme\Setups\Thumbnails;
+use Jentil\Theme\AbstractTestCase;
 use GrottoPress\Jentil\AbstractChildTheme;
 use GrottoPress\Jentil\AbstractTheme;
 use tad\FunctionMocker\FunctionMocker;
 
-class ThumbnailsTest extends AbstractTestCase
+class ThumbnailTest extends AbstractTestCase
 {
     public function testRun()
     {
         $add_action = FunctionMocker::replace('add_action');
 
-        $thumbnails = new Thumbnails(Stub::makeEmpty(AbstractChildTheme::class));
+        $thumbnails = new Thumbnail(Stub::makeEmpty(AbstractChildTheme::class));
 
         $thumbnails->run();
 
         $add_action->wasCalledOnce();
-
         $add_action->wasCalledWithOnce([
             'after_setup_theme',
             [$thumbnails, 'addSizes']
@@ -34,18 +32,18 @@ class ThumbnailsTest extends AbstractTestCase
 
         $theme = Stub::makeEmpty(AbstractChildTheme::class, [
             'parent' => Stub::makeEmpty(AbstractTheme::class, [
-                'setups' => ['Thumbnails' => true],
+                'setups' => ['Thumbnail' => true],
             ]),
         ]);
 
-        $thumbnails = new Thumbnails($theme);
+        $thumbnails = new Thumbnail($theme);
 
         $thumbnails->removeSizes();
 
         $remove_action->wasCalledOnce();
         $remove_action->wasCalledWithOnce([
             'after_setup_theme',
-            [$theme->parent->setups['Thumbnails'], 'setSize']
+            [$theme->parent->setups['Thumbnail'], 'setSize']
         ]);
     }
 
@@ -53,7 +51,7 @@ class ThumbnailsTest extends AbstractTestCase
     {
         $set_thumb_size = FunctionMocker::replace('set_post_thumbnail_size');
 
-        $thumbnails = new Thumbnails(Stub::makeEmpty(AbstractChildTheme::class));
+        $thumbnails = new Thumbnail(Stub::makeEmpty(AbstractChildTheme::class));
 
         $thumbnails->setSize();
 
@@ -65,7 +63,7 @@ class ThumbnailsTest extends AbstractTestCase
     {
         $add_size = FunctionMocker::replace('add_image_size');
 
-        $thumbnails = new Thumbnails(Stub::makeEmpty(AbstractChildTheme::class));
+        $thumbnails = new Thumbnail(Stub::makeEmpty(AbstractChildTheme::class));
 
         $thumbnails->addSizes();
 

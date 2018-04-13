@@ -1,39 +1,31 @@
 <?php
-
-/**
- * Header
- *
- * @package Jentil\Theme\Setups\Views
- *
- * @see GrottoPress\Jentil\Setups\Views\Header
- */
-
 declare (strict_types = 1);
 
 namespace Jentil\Theme\Setups\Views;
 
 use GrottoPress\Jentil\Setups\AbstractSetup;
 
-/**
- * Header
- */
+/*
+|----------------------------------------------------------------------
+| Header Setup
+|----------------------------------------------------------------------
+|
+| @see GrottoPress\Jentil\Setups\Views\Header
+|
+*/
+
 final class Header extends AbstractSetup
 {
-    /**
-     * Run setup
-     */
     public function run()
     {
-        // \add_action('init', [$this, 'removeComponents']);
+        // \add_action('after_setup_theme', [$this, 'removeMenu']);
         \add_action('jentil_inside_header', [$this, 'renderLogo'], 8);
     }
 
     /**
-     * Remove components
-     *
-     * @action init
+     * @action after_setup_theme
      */
-    public function removeComponents()
+    public function removeMenu()
     {
         \remove_action(
             'jentil_inside_header',
@@ -47,8 +39,6 @@ final class Header extends AbstractSetup
     }
 
     /**
-     * Render logo
-     *
      * @action jentil_inside_header
      */
     public function renderLogo()

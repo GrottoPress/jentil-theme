@@ -1,47 +1,47 @@
 {
-    "name": "@grottopress/jentil-theme",
-    "version": "0.1.0",
-    "description": "A starter for building WordPress themes with Jentil",
-    "license": "MIT",
-    "author": {
-        "name": "GrottoPress.com",
-        "email": "info@grottopress.com",
-        "url": "https://www.grottopress.com"
-    },
-    "contributors": [
-        {
-            "name": "N Atta Kusi Adusei",
-            "url": "https://twitter.com/akadusei"
-        }
-    ],
-    "dependencies": {},
-    "devDependencies": {
-        "@types/jquery": "^3.3.0",
-        "gulp": "^3.9.1",
-        "gulp-clean-css": "^3.9.2",
-        "gulp-rename": "^1.2.2",
-        "gulp-rtlcss": "^1.1.0",
-        "gulp-sass": "^3.1.0",
-        "gulp-sourcemaps": "^2.6.4",
-        "gulp-typescript": "^4.0.1",
-        "gulp-uglify": "^3.0.0",
-        "typescript": "^2.7.2"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "gulp styles scripts",
-        "watch": "gulp watch"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/GrottoPress/jentil-theme.git"
-    },
-    "keywords": [
-        "jentil",
-        "wordpress"
-    ],
-    "bugs": {
-        "url": "https://github.com/GrottoPress/jentil-theme/issues"
-    },
-    "homepage": "https://github.com/GrottoPress/jentil-theme#README"
+  "name": "@grottopress/jentil-theme",
+  "version": "0.1.0",
+  "description": "A starter for building WordPress themes with Jentil",
+  "license": "MIT",
+  "author": {
+    "name": "GrottoPress.com",
+    "email": "info@grottopress.com",
+    "url": "https://www.grottopress.com"
+  },
+  "contributors": [
+    {
+      "name": "N Atta Kusi Adusei",
+      "url": "https://twitter.com/akadusei"
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jquery": "^3.3.1",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-rtlcss": "^1.2.0",
+    "gulp-sass": "^3.2.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-typescript": "^4.0.2",
+    "gulp-uglify": "^3.0.0",
+    "typescript": "^2.8.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp styles scripts",
+    "watch": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrottoPress/jentil-theme.git"
+  },
+  "keywords": [
+    "jentil",
+    "wordpress"
+  ],
+  "bugs": {
+    "url": "https://github.com/GrottoPress/jentil-theme/issues"
+  },
+  "homepage": "https://github.com/GrottoPress/jentil-theme#README"
 }
