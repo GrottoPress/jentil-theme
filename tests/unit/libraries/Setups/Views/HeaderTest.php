@@ -23,7 +23,8 @@ class HeaderTest extends AbstractTestCase
 
         $add_action->wasCalledWithOnce([
             'jentil_inside_header',
-            [$header, 'renderLogo']
+            [$header, 'renderLogo'],
+            8
         ]);
     }
 
