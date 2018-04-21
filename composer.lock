@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "520c07059113f9616f9741c0ff64da9c",
+    "content-hash": "f720347610fced2334f1a1876054307c",
     "packages": [
         {
             "name": "aura/html",
@@ -485,16 +485,16 @@
         },
         {
             "name": "grottopress/jentil",
-            "version": "0.6.0",
+            "version": "dev-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrottoPress/jentil.git",
-                "reference": "4d4a6de071846df5b8aa567455cf17d290610623"
+                "reference": "c0ad1c5b1e54434e2bdd0942c46786d27c72c5bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/4d4a6de071846df5b8aa567455cf17d290610623",
-                "reference": "4d4a6de071846df5b8aa567455cf17d290610623",
+                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/c0ad1c5b1e54434e2bdd0942c46786d27c72c5bc",
+                "reference": "c0ad1c5b1e54434e2bdd0942c46786d27c72c5bc",
                 "shasum": ""
             },
             "require": {
@@ -540,7 +540,7 @@
                 "jentil",
                 "wordpress"
             ],
-            "time": "2018-04-13T14:58:48+00:00"
+            "time": "2018-04-21T18:21:06+00:00"
         },
         {
             "name": "grottopress/mobile-detector",
@@ -1790,46 +1790,6 @@
             "time": "2015-06-14T21:17:01+00:00"
         },
         {
-            "name": "electrolinux/phpquery",
-            "version": "0.9.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/electrolinux/phpquery.git",
-                "reference": "6cb8afcfe8cd4ce45f2f8c27d561383037c27a3a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/electrolinux/phpquery/zipball/6cb8afcfe8cd4ce45f2f8c27d561383037c27a3a",
-                "reference": "6cb8afcfe8cd4ce45f2f8c27d561383037c27a3a",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "phpQuery/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tobiasz Cudnik",
-                    "email": "tobiasz.cudnik@gmail.com",
-                    "homepage": "https://github.com/TobiaszCudnik",
-                    "role": "Developer"
-                },
-                {
-                    "name": "didier Belot",
-                    "role": "Packager"
-                }
-            ],
-            "description": "phpQuery is a server-side, chainable, CSS3 selector driven Document Object Model (DOM) API based on jQuery JavaScript Library",
-            "homepage": "http://code.google.com/p/phpquery/",
-            "time": "2013-03-21T12:39:33+00:00"
-        },
-        {
             "name": "facebook/webdriver",
             "version": "1.5.0",
             "source": {
@@ -2414,16 +2374,16 @@
         },
         {
             "name": "lucatume/function-mocker",
-            "version": "1.3.7",
+            "version": "1.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucatume/function-mocker.git",
-                "reference": "d7c388526a2621096c27347027e62ff9506ff35c"
+                "reference": "97dbec0d806dfa2745fd1f793a86bec9a852629e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucatume/function-mocker/zipball/d7c388526a2621096c27347027e62ff9506ff35c",
-                "reference": "d7c388526a2621096c27347027e62ff9506ff35c",
+                "url": "https://api.github.com/repos/lucatume/function-mocker/zipball/97dbec0d806dfa2745fd1f793a86bec9a852629e",
+                "reference": "97dbec0d806dfa2745fd1f793a86bec9a852629e",
                 "shasum": ""
             },
             "require": {
@@ -2441,6 +2401,7 @@
                     "tad\\FunctionMocker": "src"
                 },
                 "files": [
+                    "src/shims.php",
                     "src/functions.php"
                 ]
             },
@@ -2455,37 +2416,36 @@
                 }
             ],
             "description": "Function mocking with Patchwork",
-            "time": "2017-09-12T11:55:15+00:00"
+            "time": "2018-04-18T15:25:42+00:00"
         },
         {
             "name": "lucatume/wp-browser",
-            "version": "1.23.3.3",
+            "version": "1.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucatume/wp-browser.git",
-                "reference": "01749b404a0118f8025a9d700938fa1ce564ecba"
+                "reference": "108e3f483d4d6bf5b3aeb2e9a5561b2faecb6727"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucatume/wp-browser/zipball/01749b404a0118f8025a9d700938fa1ce564ecba",
-                "reference": "01749b404a0118f8025a9d700938fa1ce564ecba",
+                "url": "https://api.github.com/repos/lucatume/wp-browser/zipball/108e3f483d4d6bf5b3aeb2e9a5561b2faecb6727",
+                "reference": "108e3f483d4d6bf5b3aeb2e9a5561b2faecb6727",
                 "shasum": ""
             },
             "require": {
                 "antecedent/patchwork": "^2.0",
                 "codeception/codeception": "^2.3",
-                "electrolinux/phpquery": "^0.9.6",
                 "gumlet/php-image-resize": "^1.6",
                 "lucatume/codeception-setup-local": "~1.0",
                 "lucatume/wp-browser-commons": "^1.2.5",
                 "symfony/process": ">=2.7 <5.0",
+                "vlucas/phpdotenv": "^2.4",
                 "wp-cli/wp-cli": "^1.1"
             },
             "require-dev": {
                 "mikey179/vfsstream": "^1.6",
                 "ofbeaton/console-tester": "^1.1",
-                "site5/phantoman": "^1.1",
-                "vlucas/phpdotenv": "^2.4"
+                "site5/phantoman": "^1.1"
             },
             "bin": [
                 "wpcept"
@@ -2519,7 +2479,7 @@
                 "codeception",
                 "wordpress"
             ],
-            "time": "2018-04-05T17:59:26+00:00"
+            "time": "2018-04-17T11:14:40+00:00"
         },
         {
             "name": "lucatume/wp-browser-commons",
@@ -2764,16 +2724,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.25.0",
+            "version": "1.26.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4"
+                "reference": "e3d9014279133a3cccc01f6a691322a2d5a6a87b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/cbcf13da0b531767e39eb86e9687f5deba9857b4",
-                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e3d9014279133a3cccc01f6a691322a2d5a6a87b",
+                "reference": "e3d9014279133a3cccc01f6a691322a2d5a6a87b",
                 "shasum": ""
             },
             "require": {
@@ -2785,14 +2745,9 @@
                 "phpunit/phpunit": "^4.8.35 || ^5.7"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.23-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
-                    "Carbon\\": "src/Carbon/"
+                    "": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2813,7 +2768,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-03-19T15:50:49+00:00"
+            "time": "2018-04-17T15:35:42+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -3071,23 +3026,23 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.7.5",
+            "version": "1.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "dfd6be44111a7c41c2e884a336cc4f461b3b2401"
+                "reference": "33a7e3c4fda54e912ff6338c48823bd5c0f0b712"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/dfd6be44111a7c41c2e884a336cc4f461b3b2401",
-                "reference": "dfd6be44111a7c41c2e884a336cc4f461b3b2401",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/33a7e3c4fda54e912ff6338c48823bd5c0f0b712",
+                "reference": "33a7e3c4fda54e912ff6338c48823bd5c0f0b712",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
                 "php": "^5.3|^7.0",
                 "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0",
-                "sebastian/comparator": "^1.1|^2.0",
+                "sebastian/comparator": "^1.1|^2.0|^3.0",
                 "sebastian/recursion-context": "^1.0|^2.0|^3.0"
             },
             "require-dev": {
@@ -3130,7 +3085,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2018-02-19T10:16:54+00:00"
+            "time": "2018-04-18T13:57:24+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -5314,6 +5269,56 @@
             "time": "2017-04-07T12:08:54+00:00"
         },
         {
+            "name": "vlucas/phpdotenv",
+            "version": "v2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
+                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8 || ^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dotenv\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause-Attribution"
+            ],
+            "authors": [
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "http://www.vancelucas.com"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
             "name": "webmozart/assert",
             "version": "1.3.0",
             "source": {
@@ -5471,16 +5476,16 @@
         },
         {
             "name": "wp-cli/checksum-command",
-            "version": "v1.0.8",
+            "version": "v1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/checksum-command.git",
-                "reference": "360c0c658242919e9a74ba06917fd8a691484174"
+                "reference": "89a319440651f2867f282339c2223cfe5e9cc3fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/checksum-command/zipball/360c0c658242919e9a74ba06917fd8a691484174",
-                "reference": "360c0c658242919e9a74ba06917fd8a691484174",
+                "url": "https://api.github.com/repos/wp-cli/checksum-command/zipball/89a319440651f2867f282339c2223cfe5e9cc3fb",
+                "reference": "89a319440651f2867f282339c2223cfe5e9cc3fb",
                 "shasum": ""
             },
             "require-dev": {
@@ -5519,24 +5524,24 @@
             ],
             "description": "Verifies file integrity by comparing to published checksums.",
             "homepage": "https://github.com/wp-cli/checksum-command",
-            "time": "2018-01-29T16:56:18+00:00"
+            "time": "2018-04-20T07:47:27+00:00"
         },
         {
             "name": "wp-cli/config-command",
-            "version": "v1.1.8",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/config-command.git",
-                "reference": "4e44b3fab9e1ddb8f91e3189b27354ff4ae141ad"
+                "reference": "7bec9b4685b4022ab511630422dd6acccadfca9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/config-command/zipball/4e44b3fab9e1ddb8f91e3189b27354ff4ae141ad",
-                "reference": "4e44b3fab9e1ddb8f91e3189b27354ff4ae141ad",
+                "url": "https://api.github.com/repos/wp-cli/config-command/zipball/7bec9b4685b4022ab511630422dd6acccadfca9b",
+                "reference": "7bec9b4685b4022ab511630422dd6acccadfca9b",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-config-transformer": "^1.2"
+                "wp-cli/wp-config-transformer": "^1.2.1"
             },
             "require-dev": {
                 "behat/behat": "~2.5",
@@ -5550,6 +5555,7 @@
                 "bundled": true,
                 "commands": [
                     "config",
+                    "config edit",
                     "config delete",
                     "config create",
                     "config get",
@@ -5585,7 +5591,7 @@
             ],
             "description": "Generates and reads the wp-config.php file.",
             "homepage": "https://github.com/wp-cli/config-command",
-            "time": "2018-01-30T14:12:41+00:00"
+            "time": "2018-04-20T08:03:51+00:00"
         },
         {
             "name": "wp-cli/core-command",
@@ -6431,16 +6437,16 @@
         },
         {
             "name": "wp-cli/package-command",
-            "version": "v1.0.12",
+            "version": "v1.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/package-command.git",
-                "reference": "bb8b02d9ba1cded95564767000738ceaefbc885b"
+                "reference": "c912f5bbad216997d7496d46fc5c05af0e16fc5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/bb8b02d9ba1cded95564767000738ceaefbc885b",
-                "reference": "bb8b02d9ba1cded95564767000738ceaefbc885b",
+                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/c912f5bbad216997d7496d46fc5c05af0e16fc5b",
+                "reference": "c912f5bbad216997d7496d46fc5c05af0e16fc5b",
                 "shasum": ""
             },
             "require": {
@@ -6486,20 +6492,20 @@
             ],
             "description": "Lists, installs, and removes WP-CLI packages.",
             "homepage": "https://github.com/wp-cli/package-command",
-            "time": "2018-02-09T09:55:33+00:00"
+            "time": "2018-04-20T23:33:22+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
-            "version": "v0.11.8",
+            "version": "v0.11.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/php-cli-tools.git",
-                "reference": "363c75349f5dde561e0b416dd00f7aaa76fa2c27"
+                "reference": "766653b45f99c817edb2b05dc23f7ee9a893768d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/363c75349f5dde561e0b416dd00f7aaa76fa2c27",
-                "reference": "363c75349f5dde561e0b416dd00f7aaa76fa2c27",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/766653b45f99c817edb2b05dc23f7ee9a893768d",
+                "reference": "766653b45f99c817edb2b05dc23f7ee9a893768d",
                 "shasum": ""
             },
             "require": {
@@ -6536,7 +6542,7 @@
                 "cli",
                 "console"
             ],
-            "time": "2017-10-12T21:50:48+00:00"
+            "time": "2018-04-20T08:11:30+00:00"
         },
         {
             "name": "wp-cli/rewrite-command",
@@ -6594,16 +6600,16 @@
         },
         {
             "name": "wp-cli/role-command",
-            "version": "v1.0.5",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/role-command.git",
-                "reference": "be7f8ea91922864d0c75e45953fbe41d44bebb25"
+                "reference": "f50134ea9c27c108b1069cf044f7395c8f9bf716"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/role-command/zipball/be7f8ea91922864d0c75e45953fbe41d44bebb25",
-                "reference": "be7f8ea91922864d0c75e45953fbe41d44bebb25",
+                "url": "https://api.github.com/repos/wp-cli/role-command/zipball/f50134ea9c27c108b1069cf044f7395c8f9bf716",
+                "reference": "f50134ea9c27c108b1069cf044f7395c8f9bf716",
                 "shasum": ""
             },
             "require-dev": {
@@ -6650,20 +6656,20 @@
             ],
             "description": "Adds, removes, lists, and resets roles and capabilities.",
             "homepage": "https://github.com/wp-cli/role-command",
-            "time": "2017-12-08T17:51:40+00:00"
+            "time": "2018-04-20T08:05:51+00:00"
         },
         {
             "name": "wp-cli/scaffold-command",
-            "version": "v1.1.2",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/scaffold-command.git",
-                "reference": "a7ef51b2abd88a2ecb17ecdf7aaad92da37d1eb7"
+                "reference": "659348f05ebb47e70d7286b2e989146893a3c588"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/scaffold-command/zipball/a7ef51b2abd88a2ecb17ecdf7aaad92da37d1eb7",
-                "reference": "a7ef51b2abd88a2ecb17ecdf7aaad92da37d1eb7",
+                "url": "https://api.github.com/repos/wp-cli/scaffold-command/zipball/659348f05ebb47e70d7286b2e989146893a3c588",
+                "reference": "659348f05ebb47e70d7286b2e989146893a3c588",
                 "shasum": ""
             },
             "require-dev": {
@@ -6709,20 +6715,20 @@
             ],
             "description": "Generates code for post types, taxonomies, blocks, plugins, child themes, etc.",
             "homepage": "https://github.com/wp-cli/scaffold-command",
-            "time": "2018-01-29T02:29:34+00:00"
+            "time": "2018-04-20T18:37:18+00:00"
         },
         {
             "name": "wp-cli/search-replace-command",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/search-replace-command.git",
-                "reference": "c688e51b35bb87b26a3de308287d6a30cda78e44"
+                "reference": "df1092f65a5953dddace5fc060a9155f430a560e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/c688e51b35bb87b26a3de308287d6a30cda78e44",
-                "reference": "c688e51b35bb87b26a3de308287d6a30cda78e44",
+                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/df1092f65a5953dddace5fc060a9155f430a560e",
+                "reference": "df1092f65a5953dddace5fc060a9155f430a560e",
                 "shasum": ""
             },
             "require-dev": {
@@ -6760,7 +6766,7 @@
             ],
             "description": "Searches/replaces strings in the database.",
             "homepage": "https://github.com/wp-cli/search-replace-command",
-            "time": "2018-01-29T06:27:32+00:00"
+            "time": "2018-04-21T01:30:44+00:00"
         },
         {
             "name": "wp-cli/server-command",
@@ -6985,16 +6991,16 @@
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "v1.5.0",
+            "version": "v1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "01d0ac3fe71f89f8ccba866151b982cc01a541bd"
+                "reference": "76ee045996169a50b3466dac518e38cdf24109a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/01d0ac3fe71f89f8ccba866151b982cc01a541bd",
-                "reference": "01d0ac3fe71f89f8ccba866151b982cc01a541bd",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/76ee045996169a50b3466dac518e38cdf24109a7",
+                "reference": "76ee045996169a50b3466dac518e38cdf24109a7",
                 "shasum": ""
             },
             "require": {
@@ -7087,7 +7093,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2018-01-31T09:42:08+00:00"
+            "time": "2018-04-14T14:35:48+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -7206,7 +7212,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "grottopress/jentil": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
