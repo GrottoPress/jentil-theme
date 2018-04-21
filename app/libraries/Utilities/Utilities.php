@@ -49,7 +49,7 @@ class Utilities
         return $this->app;
     }
 
-    private function getFileSystem()
+    private function getFileSystem(): FileSystem
     {
         if (null === $this->fileSystem) {
             $this->fileSystem =  new FileSystem($this);
