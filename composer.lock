@@ -489,12 +489,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrottoPress/jentil.git",
-                "reference": "d0d55579d63d640ea4a30eeab28a60be9468c2a5"
+                "reference": "ef5b260df91eecc01b72418ef9ed94814aa5555d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/d0d55579d63d640ea4a30eeab28a60be9468c2a5",
-                "reference": "d0d55579d63d640ea4a30eeab28a60be9468c2a5",
+                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/ef5b260df91eecc01b72418ef9ed94814aa5555d",
+                "reference": "ef5b260df91eecc01b72418ef9ed94814aa5555d",
                 "shasum": ""
             },
             "require": {
@@ -540,7 +540,7 @@
                 "jentil",
                 "wordpress"
             ],
-            "time": "2018-04-27T14:35:12+00:00"
+            "time": "2018-05-03T21:17:29+00:00"
         },
         {
             "name": "grottopress/mobile-detector",
