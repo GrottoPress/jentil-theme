@@ -7,7 +7,7 @@ const rtlcss = require('gulp-rtlcss')
 const cleanCSS = require('gulp-clean-css')
 const sass = require('gulp-sass')
 const sourcemaps = require('gulp-sourcemaps')
-const ts = require('gulp-typescript')
+const typescript = require('gulp-typescript')
 
 const scripts_src = ['./assets/scripts/**/*.ts']
 const scripts_dest = './dist/scripts'
@@ -17,7 +17,7 @@ const styles_dest = './dist/styles'
 gulp.task('scripts', () =>
     gulp.src(scripts_src)
         .pipe(sourcemaps.init())
-        .pipe(ts({
+        .pipe(typescript({
             "module": "commonjs",
             "target": "es5",
             "noImplicitAny": true,
