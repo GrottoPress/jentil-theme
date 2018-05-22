@@ -1,3 +1,5 @@
+/// <reference path="../../vendor/grottopress/jentil/assets/scripts/global.d.ts" />
+
 /*
 |--------------------------------------------------------------------------
 | Declaration files
