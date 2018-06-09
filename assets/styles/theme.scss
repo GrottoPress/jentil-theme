@@ -2,9 +2,6 @@
  * Theme styles
  */
 
-@import 'variables';
-@import 'mixins';
-
 /*
 |-----------------------------------------------------------------------
 | About SCSS
@@ -34,3 +31,6 @@
 |   `npm run watch`
 |
 */
+
+@import 'variables';
+@import 'mixins';
