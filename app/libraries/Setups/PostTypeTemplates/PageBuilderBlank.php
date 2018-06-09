@@ -4,7 +4,6 @@ declare (strict_types = 1);
 namespace Jentil\Theme\Setups\PostTypeTemplates;
 
 use GrottoPress\Jentil\Setups\PostTypeTemplates\AbstractTemplate;
-use WP_Theme;
 
 /*
 |---------------------------------------------------------------------
