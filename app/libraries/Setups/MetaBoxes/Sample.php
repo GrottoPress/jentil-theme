@@ -22,7 +22,7 @@ final class Sample extends AbstractMetaBox
     {
         parent::__construct($theme);
 
-        $this->id = 'jentil-theme-sample-meta-box';
+        $this->id = 'jentil-theme-sample';
         $this->context = 'side';
     }
 
@@ -58,6 +58,9 @@ final class Sample extends AbstractMetaBox
         $this->app->parent->utilities->metaBox($box)->save($post_id);
     }
 
+    /**
+     * @return mixed[string]
+     */
     private function box(WP_Post $post): array
     {
         if (!\current_user_can('edit_others_posts')) {

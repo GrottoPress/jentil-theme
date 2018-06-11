@@ -5,7 +5,6 @@ namespace Jentil\Theme\Setups\Views;
 
 use Codeception\Util\Stub;
 use Jentil\Theme\AbstractTestCase;
-use Jentil\Theme\Setups\Views\Header;
 use GrottoPress\Jentil\AbstractChildTheme;
 use tad\FunctionMocker\FunctionMocker;
 
@@ -23,7 +22,8 @@ class HeaderTest extends AbstractTestCase
 
         $add_action->wasCalledWithOnce([
             'jentil_inside_header',
-            [$header, 'renderLogo']
+            [$header, 'renderLogo'],
+            8
         ]);
     }
 

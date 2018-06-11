@@ -1,6 +1,4 @@
-/**
- * Declarations
- */
+/// <reference path='../../vendor/grottopress/jentil/assets/scripts/global.d.ts' />
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +14,7 @@
 |
 | See `assets/scripts/global.d.ts` in Jentil for examples.
 |
-| Add `///<reference path="./global.d.ts"/>` in any new `.ts` file, to use
+| Add `/// <reference path="./global.d.ts" />` in any new `.ts` file, to use
 | the declarations here in that file.
 |
 | Read more:

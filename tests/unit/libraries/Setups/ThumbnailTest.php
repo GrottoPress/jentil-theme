@@ -26,39 +26,6 @@ class ThumbnailTest extends AbstractTestCase
         ]);
     }
 
-    public function testRemoveSizes()
-    {
-        $remove_action = FunctionMocker::replace('remove_action');
-
-        $theme = Stub::makeEmpty(AbstractChildTheme::class, [
-            'parent' => Stub::makeEmpty(AbstractTheme::class, [
-                'setups' => ['Thumbnail' => true],
-            ]),
-        ]);
-
-        $thumbnails = new Thumbnail($theme);
-
-        $thumbnails->removeSizes();
-
-        $remove_action->wasCalledOnce();
-        $remove_action->wasCalledWithOnce([
-            'after_setup_theme',
-            [$theme->parent->setups['Thumbnail'], 'setSize']
-        ]);
-    }
-
-    public function testSetSize()
-    {
-        $set_thumb_size = FunctionMocker::replace('set_post_thumbnail_size');
-
-        $thumbnails = new Thumbnail(Stub::makeEmpty(AbstractChildTheme::class));
-
-        $thumbnails->setSize();
-
-        $set_thumb_size->wasCalledOnce();
-        $set_thumb_size->wasCalledWithOnce([700, 350, true]);
-    }
-
     public function testAddSizes()
     {
         $add_size = FunctionMocker::replace('add_image_size');

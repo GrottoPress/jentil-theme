@@ -1,6 +1,6 @@
 {
   "name": "@grottopress/jentil-theme",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A starter for building WordPress themes with Jentil",
   "license": "MIT",
   "author": {
@@ -16,16 +16,16 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@types/jquery": "^3.3.1",
+    "@types/jquery": "^3.3.2",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.9.3",
-    "gulp-rename": "^1.2.2",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-rename": "^1.2.3",
     "gulp-rtlcss": "^1.2.0",
     "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-typescript": "^4.0.2",
     "gulp-uglify": "^3.0.0",
-    "typescript": "^2.8.1"
+    "typescript": "^2.9.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

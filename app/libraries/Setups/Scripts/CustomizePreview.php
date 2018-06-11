@@ -73,7 +73,7 @@ final class CustomizePreview extends AbstractScript
 
         \remove_action('wp_enqueue_scripts', [
             $this->app->parent->setups['Scripts\CustomizePreview'],
-            'addInlineScript2'
+            'addFrontEndInlineScript'
         ]);
     }
 }

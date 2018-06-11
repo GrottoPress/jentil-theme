@@ -41,6 +41,10 @@ final class Customizer extends AbstractCustomizer
             ->remove($wp_customizer);
 
         $this->app->parent->setups['Customizer\Customizer']
+            ->sections['Title\Title']->controls['PostType_post']
+            ->remove($wp_customizer);
+
+        $this->app->parent->setups['Customizer\Customizer']
             ->sections['Title\Title']->settings['PostType_post']
             ->remove($wp_customizer);
 

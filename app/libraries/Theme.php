@@ -63,7 +63,7 @@ final class Theme extends AbstractChildTheme
 
     private function setUpMetaBoxes()
     {
-        $this->setups['MetaBox\Sample'] = new Setups\MetaBoxes\Sample($this);
+        $this->setups['MetaBoxes\Sample'] = new Setups\MetaBoxes\Sample($this);
     }
 
     private function setUpStyles()
