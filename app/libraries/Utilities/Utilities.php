@@ -52,7 +52,7 @@ class Utilities
     private function getFileSystem(): FileSystem
     {
         if (null === $this->fileSystem) {
-            $this->fileSystem =  new FileSystem($this);
+            $this->fileSystem = new FileSystem($this);
         }
 
         return $this->fileSystem;
