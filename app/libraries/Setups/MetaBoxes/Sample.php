@@ -76,7 +76,7 @@ final class Sample extends AbstractMetaBox
             'title' => \esc_html__('Sample Meta Box', 'jentil-theme'),
             'context' => $this->context,
             'priority' => 'default',
-            'callback' => '',
+            'callbackArgs' => ['__block_editor_compatible_meta_box' => true],
             'fields' => [
                 [
                     'id' => 'sample-text-field',
