@@ -3,6 +3,8 @@
   "version": "0.2.0",
   "description": "A starter for building WordPress themes with Jentil",
   "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/GrottoPress/jentil-theme#README",
   "author": {
     "name": "GrottoPress.com",
     "email": "info@grottopress.com",
@@ -17,14 +19,19 @@
   "dependencies": {},
   "devDependencies": {
     "@types/jquery": "^3.3.4",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.0.5",
+    "cssnano-preset-advanced": "^4.0.0",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.9.4",
+    "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.3.0",
     "gulp-rtlcss": "^1.2.0",
     "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-typescript": "^4.0.2",
     "gulp-uglify": "^3.0.0",
+    "postcss-focus": "^3.0.0",
+    "sort-css-media-queries": "^1.3.4",
     "typescript": "^2.9.2"
   },
   "scripts": {
@@ -43,5 +50,23 @@
   "bugs": {
     "url": "https://github.com/GrottoPress/jentil-theme/issues"
   },
-  "homepage": "https://github.com/GrottoPress/jentil-theme#README"
+  "browserslist": [
+    "last 3 years",
+    "> 0.1%"
+  ],
+  "cssnano": {
+    "preset": [
+      "advanced",
+      {
+        "autoprefixer": {
+          "add": true,
+          "remove": true
+        },
+        "zindex": false,
+        "reduceIdents": false,
+        "mergeIdents": false,
+        "discardUnused": false
+      }
+    ]
+  }
 }
