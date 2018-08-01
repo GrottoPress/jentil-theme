@@ -32,5 +32,10 @@
 |
 */
 
+@import '../../vendor/grottopress/jentil/assets/vendor/@grottopress/scss/src/all';
+
+@import '../../vendor/grottopress/jentil/assets/styles/variables';
+@import '../../vendor/grottopress/jentil/assets/styles/mixins';
+
 @import 'variables';
 @import 'mixins';

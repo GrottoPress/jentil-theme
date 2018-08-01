@@ -31,7 +31,7 @@ gulp.task('scripts', () =>
             "strictFunctionTypes": true
         }))
         .pipe(uglify())
-        .pipe(rename({'suffix' : '.min'}))
+        .pipe(rename({'suffix': '.min'}))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(scripts_dest))
 )
