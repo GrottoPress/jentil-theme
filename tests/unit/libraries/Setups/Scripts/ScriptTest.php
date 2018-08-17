@@ -43,7 +43,7 @@ class ScriptTest extends AbstractTestCase
         ]);
 
         $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [
-            'themeDir' => function (string $type, string $append) {
+            'themeDir' => function (string $type, string $append): string {
                 return "http://my.site/themes/my-theme{$append}";
             }
         ]);
