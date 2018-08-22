@@ -18,11 +18,17 @@ class HeaderTest extends AbstractTestCase
 
         $header->run();
 
-        $add_action->wasCalledOnce();
+        $add_action->wasCalledTimes(2);
 
         $add_action->wasCalledWithOnce([
             'jentil_inside_header',
             [$header, 'renderLogo'],
+            8
+        ]);
+
+        $add_action->wasCalledWithOnce([
+            'jentil_after_after_header',
+            [$header, 'renderSample'],
             8
         ]);
     }

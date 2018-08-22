@@ -4,6 +4,7 @@ declare (strict_types = 1);
 namespace Jentil\Theme\Utilities;
 
 use Jentil\Theme\Theme;
+use Jentil\Theme\Utilities\ThemeMods\ThemeMods;
 use GrottoPress\Getter\GetterTrait;
 
 /*
@@ -39,6 +40,16 @@ class Utilities
      */
     private $fileSystem;
 
+    /**
+     * @var ThemeMods
+     */
+    private $themeMods;
+
+    /**
+     * @var Sample
+     */
+    private $sample;
+
     public function __construct(Theme $theme)
     {
         $this->app = $theme;
@@ -58,8 +69,21 @@ class Utilities
         return $this->fileSystem;
     }
 
-    // public function anotherSampleUtility(array $args): AnotherSampleUtility
-    // {
-    //     return new AnotherSampleUtility($this, $args);
-    // }
+    private function getThemeMods(): ThemeMods
+    {
+        if (null === $this->themeMods) {
+            $this->themeMods = new ThemeMods($this);
+        }
+
+        return $this->themeMods;
+    }
+
+    private function getSample(): Sample
+    {
+        if (null === $this->sample) {
+            $this->sample = new Sample($this);
+        }
+
+        return $this->sample;
+    }
 }

@@ -20,6 +20,7 @@ final class Header extends AbstractSetup
     {
         // \add_action('after_setup_theme', [$this, 'removeMenu']);
         \add_action('jentil_inside_header', [$this, 'renderLogo'], 8);
+        \add_action('jentil_after_after_header', [$this, 'renderSample'], 8);
     }
 
     /**
@@ -44,5 +45,19 @@ final class Header extends AbstractSetup
     public function renderLogo()
     {
         \the_custom_logo();
+    }
+
+    /**
+     * @action jentil_after_after_header
+     */
+    public function renderSample()
+    {
+        $utility = $this->app->utilities->sample;
+
+        if (!$utility->where()) {
+            return;
+        }
+
+        echo $utility->render();
     }
 }

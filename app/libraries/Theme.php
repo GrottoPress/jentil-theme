@@ -29,7 +29,7 @@ final class Theme extends AbstractChildTheme
     protected function __construct()
     {
         $this->setUpMisc();
-        // $this->setUpCustomizer();
+        $this->setUpCustomizer();
         // $this->setUpMetaBoxes();
         $this->setUpStyles();
         $this->setUpScripts();

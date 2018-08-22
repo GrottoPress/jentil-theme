@@ -27,8 +27,8 @@ final class Customizer extends AbstractCustomizer
 {
     public function run()
     {
-        // \add_action('customize_register', [$this, 'register']);
-        \add_action('customize_register', [$this, 'removeItems'], 20);
+        \add_action('customize_register', [$this, 'register']);
+        // \add_action('customize_register', [$this, 'removeItems'], 20);
     }
 
     /**
@@ -58,8 +58,8 @@ final class Customizer extends AbstractCustomizer
      */
     public function register(WPCustomizer $wp_customizer)
     {
-        // $this->panels['SamplePanel\SamplePanel'] =
-        //     new SamplePanel\SamplePanel($this);
+        $this->panels['SamplePanel\SamplePanel'] =
+            new SamplePanel\SamplePanel($this);
 
         // $this->sections['SampleSection\SampleSection'] =
         //     new SampleSection\SampleSection($this);
