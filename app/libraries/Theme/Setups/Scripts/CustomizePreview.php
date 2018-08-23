@@ -28,23 +28,7 @@ final class CustomizePreview extends AbstractScript
     {
         // \add_action('after_setup_theme', [$this, 'dequeue']);
         \add_action('customize_preview_init', [$this, 'enqueue']);
-    }
-
-    /**
-     * @action customize_preview_init
-     */
-    public function enqueue()
-    {
-        \wp_enqueue_script(
-            $this->id,
-            $this->app->utilities->fileSystem->themeDir(
-                'url',
-                '/dist/scripts/customize-preview.min.js'
-            ),
-            ['customize-preview'],
-            '',
-            true
-        );
+        \add_action('customize_preview_init', [$this, 'addInlineScript']);
     }
 
     /**
@@ -75,5 +59,36 @@ final class CustomizePreview extends AbstractScript
             $this->app->parent->setups['Scripts\CustomizePreview'],
             'addFrontEndInlineScript'
         ]);
+    }
+
+    /**
+     * @action customize_preview_init
+     */
+    public function enqueue()
+    {
+        \wp_enqueue_script(
+            $this->id,
+            $this->app->utilities->fileSystem->themeDir(
+                'url',
+                '/dist/scripts/customize-preview.min.js'
+            ),
+            ['customize-preview'],
+            '',
+            true
+        );
+    }
+
+    /**
+     * @action customize_preview_init
+     */
+    public function addInlineScript()
+    {
+        $script = 'var jentilThemeAwesomePostsHeadingModId = "'.
+            $this->app->setups['Customizer']
+                ->sections['AwesomePosts']
+                ->settings['Heading']->id.
+        '";';
+
+        \wp_add_inline_script($this->id, $script, 'before');
     }
 }

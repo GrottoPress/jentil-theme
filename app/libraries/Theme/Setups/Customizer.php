@@ -29,6 +29,7 @@ final class Customizer extends AbstractCustomizer
     {
         \add_action('customize_register', [$this, 'register']);
         // \add_action('customize_register', [$this, 'removeItems'], 20);
+        \add_action('customize_register', [$this, 'hideItems'], 20);
     }
 
     /**
@@ -56,11 +57,59 @@ final class Customizer extends AbstractCustomizer
     /**
      * @action customize_register
      */
+    public function hideItems(WPCustomizer $wp_customizer)
+    {
+        $parent = $this->app->parent;
+
+        $single_page_active_cb = $parent->setups['Customizer']
+            ->panels['Posts']
+            ->sections['Singular_page']
+            ->get($wp_customizer)
+            ->active_callback;
+
+        $related_page_active_cb = $parent->setups['Customizer']
+            ->panels['Posts']
+            ->sections['Related_page']
+            ->get($wp_customizer)
+            ->active_callback;
+
+        $parent->setups['Customizer']
+            ->panels['Posts']
+            ->sections['Singular_page']
+            ->get($wp_customizer)
+            ->active_callback =
+                function () use ($single_page_active_cb, $parent): bool {
+                    if ('page' === \get_option('show_on_front')) {
+                        return $parent->utilities->page->is('page') &&
+                            !$parent->utilities->page->is('front_page');
+                    }
+
+                    return (bool)$single_page_active_cb();
+                };
+
+        $parent->setups['Customizer']
+            ->panels['Posts']
+            ->sections['Related_page']
+            ->get($wp_customizer)
+            ->active_callback =
+                function () use ($related_page_active_cb, $parent): bool {
+                    if ('page' === \get_option('show_on_front')) {
+                        return $parent->utilities->page->is('page') &&
+                            !$parent->utilities->page->is('front_page');
+                    }
+
+                    return (bool)$related_page_active_cb();
+                };
+    }
+
+    /**
+     * @action customize_register
+     */
     public function register(WPCustomizer $wp_customizer)
     {
         $this->panels['SamplePanel'] = new Customizer\SamplePanel($this);
-
-        // $this->sections['SampleSection'] = new Customizer\SampleSection($this);
+        $this->sections['AwesomePosts'] = new Customizer\AwesomePosts($this);
+        //
 
         parent::register($wp_customizer);
     }

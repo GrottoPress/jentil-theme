@@ -30,7 +30,7 @@ final class Theme extends AbstractChildTheme
     protected function __construct()
     {
         $this->setUpMisc();
-        // $this->setUpMetaBoxes();
+        $this->setUpMetaBoxes();
         $this->setUpStyles();
         $this->setUpScripts();
         // $this->setUpSidebars();
@@ -58,7 +58,10 @@ final class Theme extends AbstractChildTheme
 
     private function setUpMetaBoxes()
     {
-        $this->setups['MetaBoxes\Sample'] = new Setups\MetaBoxes\Sample($this);
+        // $this->setups['MetaBoxes\Sample'] =
+        //     new Setups\MetaBoxes\Sample($this);
+        $this->setups['MetaBoxes\Featured'] =
+            new Setups\MetaBoxes\Featured($this);
     }
 
     private function setUpStyles()
@@ -69,8 +72,8 @@ final class Theme extends AbstractChildTheme
     private function setUpScripts()
     {
         $this->setups['Scripts\Script'] = new Setups\Scripts\Script($this);
-        // $this->setups['Scripts\CustomizePreview'] =
-        //     new Setups\Scripts\CustomizePreview($this);
+        $this->setups['Scripts\CustomizePreview'] =
+            new Setups\Scripts\CustomizePreview($this);
     }
 
     private function setUpSidebars()
@@ -92,6 +95,6 @@ final class Theme extends AbstractChildTheme
     private function setUpViews()
     {
         $this->setups['Views\Header'] = new Setups\Views\Header($this);
-        // $this->setups['Views\Singular'] = new Setups\Views\Singular($this);
+        $this->setups['Views\Page'] = new Setups\Views\Page($this);
     }
 }

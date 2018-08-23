@@ -23,4 +23,9 @@ class ThemeMods
     ): ThemeMods\SamplePanel {
         return new ThemeMods\SamplePanel($this, $section, $setting);
     }
+
+    public function awesomePosts(string $setting): ThemeMods\AwesomePosts
+    {
+        return new ThemeMods\AwesomePosts($this, $setting);
+    }
 }

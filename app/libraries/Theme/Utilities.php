@@ -46,9 +46,14 @@ class Utilities
     private $themeMods;
 
     /**
-     * @var Sample
+     * @var Utilities\Sample
      */
     private $sample;
+
+    /**
+     * @var Utilities\AwesomePosts
+     */
+    private $awesomePosts;
 
     public function __construct(Theme $theme)
     {
@@ -85,5 +90,14 @@ class Utilities
         }
 
         return $this->sample;
+    }
+
+    private function getAwesomePosts(): Utilities\AwesomePosts
+    {
+        if (null === $this->awesomePosts) {
+            $this->awesomePosts = new Utilities\AwesomePosts($this);
+        }
+
+        return $this->awesomePosts;
     }
 }
