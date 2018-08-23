@@ -3,9 +3,9 @@ declare (strict_types = 1);
 
 namespace Jentil\Theme\Setups;
 
-use Codeception\Util\Stub;
 use Jentil\Theme\AbstractTestCase;
 use GrottoPress\Jentil\AbstractChildTheme;
+use Codeception\Util\Stub;
 use tad\FunctionMocker\FunctionMocker;
 
 class BackgroundTest extends AbstractTestCase

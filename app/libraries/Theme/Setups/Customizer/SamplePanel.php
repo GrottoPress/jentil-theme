@@ -1,7 +1,7 @@
 <?php
-namespace Jentil\Theme\Setups\Customizer\SamplePanel;
+namespace Jentil\Theme\Setups\Customizer;
 
-use Jentil\Theme\Setups\Customizer\Customizer;
+use Jentil\Theme\Setups\Customizer;
 use GrottoPress\Jentil\Setups\Customizer\AbstractPanel;
 use WP_Customize_Manager as WPCustomizer;
 
@@ -18,7 +18,7 @@ final class SamplePanel extends AbstractPanel
 
     public function add(WPCustomizer $wp_customizer)
     {
-        $this->sections['SampleSection'] = new SampleSection($this);
+        $this->sections['SampleSection'] = new SamplePanel\SampleSection($this);
 
         parent::add($wp_customizer);
     }

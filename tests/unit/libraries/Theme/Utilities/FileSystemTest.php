@@ -3,12 +3,12 @@ declare (strict_types = 1);
 
 namespace Jentil\Theme\Utilities;
 
-use Codeception\Util\Stub;
 use Jentil\Theme\AbstractTestCase;
 use GrottoPress\Jentil\AbstractChildTheme;
 use GrottoPress\Jentil\AbstractTheme;
-use GrottoPress\Jentil\Utilities\Utilities as JUtilities;
+use GrottoPress\Jentil\Utilities as JUtilities;
 use GrottoPress\Jentil\Utilities\FileSystem as JFileSystem;
+use Codeception\Util\Stub;
 use tad\FunctionMocker\FunctionMocker;
 
 class LanguageTest extends AbstractTestCase

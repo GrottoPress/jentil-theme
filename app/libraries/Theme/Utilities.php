@@ -1,10 +1,10 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Utilities;
+namespace Jentil\Theme;
 
-use Jentil\Theme\Theme;
-use Jentil\Theme\Utilities\ThemeMods\ThemeMods;
+use Jentil\Theme;
+use Jentil\Theme\Utilities\ThemeMods;
 use GrottoPress\Getter\GetterTrait;
 
 /*
@@ -22,7 +22,7 @@ use GrottoPress\Getter\GetterTrait;
 |   `$this->app->utilities->anotherSampleUtility($args...)`,
 |       for utilities that take args.
 |
-| @see GrottoPress\Jentil\Utilities\Utilities
+| @see GrottoPress\Jentil\Utilities
 |
 */
 
@@ -36,12 +36,12 @@ class Utilities
     private $app;
 
     /**
-     * @var FileSystem
+     * @var Utilities\FileSystem
      */
     private $fileSystem;
 
     /**
-     * @var ThemeMods
+     * @var Utilities\ThemeMods
      */
     private $themeMods;
 
@@ -60,28 +60,28 @@ class Utilities
         return $this->app;
     }
 
-    private function getFileSystem(): FileSystem
+    private function getFileSystem(): Utilities\FileSystem
     {
         if (null === $this->fileSystem) {
-            $this->fileSystem = new FileSystem($this);
+            $this->fileSystem = new Utilities\FileSystem($this);
         }
 
         return $this->fileSystem;
     }
 
-    private function getThemeMods(): ThemeMods
+    private function getThemeMods(): Utilities\ThemeMods
     {
         if (null === $this->themeMods) {
-            $this->themeMods = new ThemeMods($this);
+            $this->themeMods = new Utilities\ThemeMods($this);
         }
 
         return $this->themeMods;
     }
 
-    private function getSample(): Sample
+    private function getSample(): Utilities\Sample
     {
         if (null === $this->sample) {
-            $this->sample = new Sample($this);
+            $this->sample = new Utilities\Sample($this);
         }
 
         return $this->sample;

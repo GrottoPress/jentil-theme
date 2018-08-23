@@ -3,10 +3,10 @@ declare (strict_types = 1);
 
 namespace Jentil\Theme\Setups;
 
-use Codeception\Util\Stub;
 use Jentil\Theme\AbstractTestCase;
 use GrottoPress\Jentil\AbstractChildTheme;
 use GrottoPress\Jentil\AbstractTheme;
+use Codeception\Util\Stub;
 use tad\FunctionMocker\FunctionMocker;
 
 class ThumbnailTest extends AbstractTestCase

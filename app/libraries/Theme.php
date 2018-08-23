@@ -1,9 +1,10 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme;
+namespace Jentil;
 
-use Jentil\Theme\Utilities\Utilities;
+use Jentil\Theme\Setups;
+use Jentil\Theme\Utilities;
 use GrottoPress\Jentil\AbstractChildTheme;
 
 /*
@@ -15,7 +16,7 @@ use GrottoPress\Jentil\AbstractChildTheme;
 | in your theme's function.php
 |
 | @see GrottoPress\Jentil\AbstractChildTheme
-| @see GrottoPress\Jentil\Jentil
+| @see GrottoPress\Jentil
 |
 */
 
@@ -29,7 +30,6 @@ final class Theme extends AbstractChildTheme
     protected function __construct()
     {
         $this->setUpMisc();
-        $this->setUpCustomizer();
         // $this->setUpMetaBoxes();
         $this->setUpStyles();
         $this->setUpScripts();
@@ -50,15 +50,10 @@ final class Theme extends AbstractChildTheme
     private function setUpMisc()
     {
         $this->setups['Language'] = new Setups\Language($this);
+        $this->setups['Customizer'] = new Setups\Customizer($this);
         // $this->setups['Background'] = new Setups\Background($this);
         $this->setups['Thumbnail'] = new Setups\Thumbnail($this);
         $this->setups['Logo'] = new Setups\Logo($this);
-    }
-
-    private function setUpCustomizer()
-    {
-        $this->setups['Customizer\Customizer'] =
-            new Setups\Customizer\Customizer($this);
     }
 
     private function setUpMetaBoxes()

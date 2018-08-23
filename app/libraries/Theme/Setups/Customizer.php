@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer;
+namespace Jentil\Theme\Setups;
 
 use GrottoPress\Jentil\Setups\Customizer\AbstractCustomizer;
 use WP_Customize_Manager as WPCustomizer;
@@ -18,7 +18,7 @@ use WP_Customize_Manager as WPCustomizer;
 | `AbstractCustomizer`, `AbstractPanel`, `AbstractSection`,
 | `AbstractSetting` which your own classes can inherit.
 |
-| @see GrottoPress\Jentil\Setups\Customizer\Customizer for how
+| @see GrottoPress\Jentil\Setups\Customizer for how
 | Jentil's own customizer is set up.
 |
 */
@@ -36,20 +36,20 @@ final class Customizer extends AbstractCustomizer
      */
     public function removeItems(WPCustomizer $wp_customizer)
     {
-        $this->app->parent->setups['Customizer\Customizer']
-            ->panels['Posts\Posts']->sections['Sticky_post']
+        $this->app->parent->setups['Customizer']
+            ->panels['Posts']->sections['Sticky_post']
             ->remove($wp_customizer);
 
-        $this->app->parent->setups['Customizer\Customizer']
-            ->sections['Title\Title']->controls['PostType_post']
+        $this->app->parent->setups['Customizer']
+            ->sections['Title']->controls['PostType_post']
             ->remove($wp_customizer);
 
-        $this->app->parent->setups['Customizer\Customizer']
-            ->sections['Title\Title']->settings['PostType_post']
+        $this->app->parent->setups['Customizer']
+            ->sections['Title']->settings['PostType_post']
             ->remove($wp_customizer);
 
-        $this->app->parent->setups['Customizer\Customizer']
-            ->sections['Colophon\Colophon']/*->settings['colophon']*/
+        $this->app->parent->setups['Customizer']
+            ->sections['Footer']/*->settings['colophon']*/
             ->remove($wp_customizer);
     }
 
@@ -58,11 +58,9 @@ final class Customizer extends AbstractCustomizer
      */
     public function register(WPCustomizer $wp_customizer)
     {
-        $this->panels['SamplePanel\SamplePanel'] =
-            new SamplePanel\SamplePanel($this);
+        $this->panels['SamplePanel'] = new Customizer\SamplePanel($this);
 
-        // $this->sections['SampleSection\SampleSection'] =
-        //     new SampleSection\SampleSection($this);
+        // $this->sections['SampleSection'] = new Customizer\SampleSection($this);
 
         parent::register($wp_customizer);
     }

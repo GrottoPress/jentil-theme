@@ -3,6 +3,8 @@ declare (strict_types = 1);
 
 namespace Jentil\Theme\Setups\Customizer\SamplePanel;
 
+use Jentil\Theme\Setups\Customizer\SamplePanel;
+
 final class SampleSection extends AbstractSection
 {
     public function __construct(SamplePanel $sample_panel)

@@ -3,12 +3,12 @@ declare (strict_types = 1);
 
 namespace Jentil\Theme\Setups\Scripts;
 
-use Codeception\Util\Stub;
 use Jentil\Theme\AbstractTestCase;
-use Jentil\Theme\Utilities\Utilities;
+use Jentil\Theme\Utilities;
 use Jentil\Theme\Utilities\FileSystem;
 use GrottoPress\Jentil\AbstractChildTheme;
 use GrottoPress\Jentil\AbstractTheme;
+use Codeception\Util\Stub;
 use tad\FunctionMocker\FunctionMocker;
 
 class ScriptTest extends AbstractTestCase

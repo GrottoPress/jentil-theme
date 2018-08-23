@@ -53,7 +53,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Jentil\\Theme\\": "app/libraries/"
+      "Jentil\\": "app/libraries/"
     },
     "files": [
       "app/helpers.php"
@@ -61,7 +61,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Jentil\\Theme\\": "tests/unit/libraries/"
+      "Jentil\\": "tests/unit/libraries/"
     }
   }
 }

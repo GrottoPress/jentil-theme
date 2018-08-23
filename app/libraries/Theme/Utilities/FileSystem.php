@@ -3,6 +3,8 @@ declare (strict_types = 1);
 
 namespace Jentil\Theme\Utilities;
 
+use Jentil\Theme\Utilities;
+
 /*
 |------------------------------------------------------------------------
 | File System Utility

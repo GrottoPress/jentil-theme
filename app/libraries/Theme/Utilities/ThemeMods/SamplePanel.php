@@ -3,6 +3,7 @@ declare (strict_types = 1);
 
 namespace Jentil\Theme\Utilities\ThemeMods;
 
+use Jentil\Theme\Utilities\ThemeMods;
 use GrottoPress\Jentil\Utilities\ThemeMods\AbstractThemeMod;
 
 class SamplePanel extends AbstractThemeMod

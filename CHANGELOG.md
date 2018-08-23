@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - Explicitly mark sample meta box as compatible with Gutenberg.
+- Moved composing classes one level up for shorter namespaces
 
 ## 0.2.0 - 2018-06-11
 
