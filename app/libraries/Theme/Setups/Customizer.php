@@ -108,8 +108,13 @@ final class Customizer extends AbstractCustomizer
     public function register(WPCustomizer $wp_customizer)
     {
         $this->panels['SamplePanel'] = new Customizer\SamplePanel($this);
+
         $this->sections['AwesomePosts'] = new Customizer\AwesomePosts($this);
-        //
+
+        $this->settings['Footer\Settings\Logo'] =
+            new Customizer\Footer\Settings\Logo($this);
+        $this->controls['Footer\Controls\Logo'] =
+            new Customizer\Footer\Controls\Logo($this);
 
         parent::register($wp_customizer);
     }

@@ -55,6 +55,11 @@ class Utilities
      */
     private $awesomePosts;
 
+    /**
+     * @var Utilities\Footer
+     */
+    private $footer;
+
     public function __construct(Theme $theme)
     {
         $this->app = $theme;
@@ -99,5 +104,14 @@ class Utilities
         }
 
         return $this->awesomePosts;
+    }
+
+    private function getFooter(): Utilities\Footer
+    {
+        if (null === $this->footer) {
+            $this->footer = new Utilities\Footer($this);
+        }
+
+        return $this->footer;
     }
 }

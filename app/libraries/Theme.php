@@ -30,6 +30,7 @@ final class Theme extends AbstractChildTheme
     protected function __construct()
     {
         $this->setUpMisc();
+        // $this->setUpThemeMods();
         $this->setUpMetaBoxes();
         $this->setUpStyles();
         $this->setUpScripts();
@@ -54,6 +55,11 @@ final class Theme extends AbstractChildTheme
         // $this->setups['Background'] = new Setups\Background($this);
         $this->setups['Thumbnail'] = new Setups\Thumbnail($this);
         $this->setups['Logo'] = new Setups\Logo($this);
+    }
+
+    private function setUpThemeMods()
+    {
+        $this->setups['ThemeMods\Footer'] = new Setups\ThemeMods\Footer($this);
     }
 
     private function setUpMetaBoxes()
@@ -96,5 +102,6 @@ final class Theme extends AbstractChildTheme
     {
         $this->setups['Views\Header'] = new Setups\Views\Header($this);
         $this->setups['Views\Page'] = new Setups\Views\Page($this);
+        $this->setups['Views\Footer'] = new Setups\Views\Footer($this);
     }
 }
