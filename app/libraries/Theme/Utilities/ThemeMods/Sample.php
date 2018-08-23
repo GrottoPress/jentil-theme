@@ -6,7 +6,7 @@ namespace Jentil\Theme\Utilities\ThemeMods;
 use Jentil\Theme\Utilities\ThemeMods;
 use GrottoPress\Jentil\Utilities\ThemeMods\AbstractThemeMod;
 
-class SamplePanel extends AbstractThemeMod
+class Sample extends AbstractThemeMod
 {
     /**
      * @var ThemeMods

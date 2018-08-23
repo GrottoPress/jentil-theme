@@ -4,15 +4,15 @@ declare (strict_types = 1);
 namespace Jentil\Theme\Utilities;
 
 use Jentil\Theme\Utilities;
-use Jentil\Theme\Utilities\ThemeMods\SamplePanel as SamplePanelMod;
+use Jentil\Theme\Utilities\ThemeMods\Sample as SampleMod;
 
 /*
 |------------------------------------------------------------------------
 | Sample Utility
 |------------------------------------------------------------------------
 |
-| @see Jentil\Theme\Setups\Customizer\SamplePanel
-| @see Jentil\Theme\Utilities\ThemeMods\SamplePanel
+| @see Jentil\Theme\Setups\Customizer\Sample
+| @see Jentil\Theme\Utilities\ThemeMods\Sample
 |
 */
 
@@ -41,9 +41,9 @@ class Sample
         );
     }
 
-    public function themeMod(string $section, string $setting): SamplePanelMod
+    public function themeMod(string $section, string $setting): SampleMod
     {
-        return $this->utilities->themeMods->samplePanel($section, $setting);
+        return $this->utilities->themeMods->sample($section, $setting);
     }
 
     /**

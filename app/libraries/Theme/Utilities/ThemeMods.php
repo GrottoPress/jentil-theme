@@ -17,11 +17,9 @@ class ThemeMods
         $this->utilities = $utilities;
     }
 
-    public function samplePanel(
-        string $section,
-        string $setting
-    ): ThemeMods\SamplePanel {
-        return new ThemeMods\SamplePanel($this, $section, $setting);
+    public function sample(string $section, string $setting): ThemeMods\Sample
+    {
+        return new ThemeMods\Sample($this, $section, $setting);
     }
 
     public function awesomePosts(string $setting): ThemeMods\AwesomePosts

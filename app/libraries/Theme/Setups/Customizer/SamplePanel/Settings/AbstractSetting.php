@@ -4,7 +4,7 @@ declare (strict_types = 1);
 namespace Jentil\Theme\Setups\Customizer\SamplePanel\Settings;
 
 use Jentil\Theme\Setups\Customizer\SamplePanel\AbstractSection;
-use Jentil\Theme\Utilities\ThemeMods\SamplePanel as SamplePanelMod;
+use Jentil\Theme\Utilities\ThemeMods\Sample as SampleMod;
 use GrottoPress\Jentil\Setups\Customizer\AbstractSetting as Setting;
 
 abstract class AbstractSetting extends Setting
@@ -21,9 +21,9 @@ abstract class AbstractSetting extends Setting
         parent::__construct($this->section->customizer);
     }
 
-    protected function themeMod(string $setting): SamplePanelMod
+    protected function themeMod(string $setting): SampleMod
     {
-        return $this->customizer->app->utilities->themeMods->samplePanel(
+        return $this->customizer->app->utilities->themeMods->sample(
             $this->section->id,
             $setting
         );
