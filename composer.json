@@ -1,5 +1,5 @@
 {
-  "name": "grottopress/jentil-theme",
+  "name": "grottopress/my-theme",
   "description": "A starter for building WordPress themes with Jentil",
   "type": "wordpress-theme",
   "license": "MIT",
@@ -21,14 +21,14 @@
     "wordpress"
   ],
   "support": {
-    "issues": "https://github.com/GrottoPress/jentil-theme/issues",
-    "wiki": "https://github.com/GrottoPress/jentil-theme/wiki",
-    "source": "https://github.com/GrottoPress/jentil-theme"
+    "issues": "https://github.com/GrottoPress/my-theme/issues",
+    "wiki": "https://github.com/GrottoPress/my-theme/wiki",
+    "source": "https://github.com/GrottoPress/my-theme"
   },
   "require": {
     "php": ">=7.0",
     "composer/installers": "^1.3",
-    "grottopress/jentil": "^0.7"
+    "grottopress/jentil": "^0.8"
   },
   "require-dev": {
     "lucatume/wp-browser": "^2.0",
@@ -53,7 +53,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Jentil\\Theme\\": "app/libraries/"
+      "My\\": "app/libraries/"
     },
     "files": [
       "app/helpers.php"
@@ -61,7 +61,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Jentil\\Theme\\": "tests/unit/libraries/"
+      "My\\": "tests/unit/libraries/"
     }
   }
 }

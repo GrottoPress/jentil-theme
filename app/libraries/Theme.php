@@ -1,9 +1,10 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme;
+namespace My;
 
-use Jentil\Theme\Utilities\Utilities;
+use My\Theme\Setups;
+use My\Theme\Utilities;
 use GrottoPress\Jentil\AbstractChildTheme;
 
 /*
@@ -15,7 +16,7 @@ use GrottoPress\Jentil\AbstractChildTheme;
 | in your theme's function.php
 |
 | @see GrottoPress\Jentil\AbstractChildTheme
-| @see GrottoPress\Jentil\Jentil
+| @see GrottoPress\Jentil
 |
 */
 
@@ -29,8 +30,8 @@ final class Theme extends AbstractChildTheme
     protected function __construct()
     {
         $this->setUpMisc();
-        // $this->setUpCustomizer();
-        // $this->setUpMetaBoxes();
+        // $this->setUpThemeMods();
+        $this->setUpMetaBoxes();
         $this->setUpStyles();
         $this->setUpScripts();
         // $this->setUpSidebars();
@@ -50,20 +51,23 @@ final class Theme extends AbstractChildTheme
     private function setUpMisc()
     {
         $this->setups['Language'] = new Setups\Language($this);
+        $this->setups['Customizer'] = new Setups\Customizer($this);
         // $this->setups['Background'] = new Setups\Background($this);
         $this->setups['Thumbnail'] = new Setups\Thumbnail($this);
         $this->setups['Logo'] = new Setups\Logo($this);
     }
 
-    private function setUpCustomizer()
+    private function setUpThemeMods()
     {
-        $this->setups['Customizer\Customizer'] =
-            new Setups\Customizer\Customizer($this);
+        $this->setups['ThemeMods\Footer'] = new Setups\ThemeMods\Footer($this);
     }
 
     private function setUpMetaBoxes()
     {
-        $this->setups['MetaBoxes\Sample'] = new Setups\MetaBoxes\Sample($this);
+        // $this->setups['MetaBoxes\Sample'] =
+        //     new Setups\MetaBoxes\Sample($this);
+        $this->setups['MetaBoxes\Featured'] =
+            new Setups\MetaBoxes\Featured($this);
     }
 
     private function setUpStyles()
@@ -74,8 +78,8 @@ final class Theme extends AbstractChildTheme
     private function setUpScripts()
     {
         $this->setups['Scripts\Script'] = new Setups\Scripts\Script($this);
-        // $this->setups['Scripts\CustomizePreview'] =
-        //     new Setups\Scripts\CustomizePreview($this);
+        $this->setups['Scripts\CustomizePreview'] =
+            new Setups\Scripts\CustomizePreview($this);
     }
 
     private function setUpSidebars()
@@ -97,6 +101,7 @@ final class Theme extends AbstractChildTheme
     private function setUpViews()
     {
         $this->setups['Views\Header'] = new Setups\Views\Header($this);
-        // $this->setups['Views\Singular'] = new Setups\Views\Singular($this);
+        $this->setups['Views\Page'] = new Setups\Views\Page($this);
+        $this->setups['Views\Footer'] = new Setups\Views\Footer($this);
     }
 }
