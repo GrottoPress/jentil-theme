@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Sidebars;
+namespace My\Theme\Setups\Sidebars;
 
 use GrottoPress\Jentil\Setups\Sidebars\AbstractSidebar;
 

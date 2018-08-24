@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme;
+namespace My\Theme;
 
 use Codeception\Test\Unit;
 use tad\FunctionMocker\FunctionMocker;

@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Views;
+namespace My\Theme\Setups\Views;
 
-use Jentil\Theme\AbstractTestCase;
+use My\Theme\AbstractTestCase;
 use GrottoPress\Jentil\AbstractChildTheme;
 use Codeception\Util\Stub;
 use tad\FunctionMocker\FunctionMocker;

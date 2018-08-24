@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\MetaBoxes;
+namespace My\Theme\Setups\MetaBoxes;
 
 use GrottoPress\Jentil\Setups\MetaBoxes\AbstractMetaBox;
 use GrottoPress\Jentil\AbstractChildTheme;
@@ -73,7 +73,7 @@ final class Sample extends AbstractMetaBox
 
         return [
             'id' => $this->id,
-            'title' => \esc_html__('Sample Meta Box', 'jentil-theme'),
+            'title' => \esc_html__('Sample Meta Box', 'my-theme'),
             'context' => $this->context,
             'priority' => 'default',
             'callbackArgs' => ['__block_editor_compatible_meta_box' => true],
@@ -81,20 +81,20 @@ final class Sample extends AbstractMetaBox
                 [
                     'id' => 'sample-text-field',
                     'type' => 'text',
-                    'label' => \esc_html__('Type anything', 'jentil-theme'),
+                    'label' => \esc_html__('Type anything', 'my-theme'),
                     'labelPos' => 'before_field',
                 ],
                 [
                     'id' => 'sample-select-field',
                     'type' => 'select',
                     'choices' => ['a' => 'A', 'b' => 'B', 'c' => 'C'],
-                    'label' => \esc_html__('Select any', 'jentil-theme'),
+                    'label' => \esc_html__('Select any', 'my-theme'),
                     'labelPos' => 'before_field',
                 ],
             ],
             'notes' => '<p>'.\esc_html__(
                 'This is just an example meta box.',
-                'jentil-theme'
+                'my-theme'
             ).'</p>',
         ];
     }

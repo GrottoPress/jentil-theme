@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\Footer\Controls;
+namespace My\Theme\Setups\Customizer\Footer\Controls;
 
-use Jentil\Theme\Setups\Customizer;
+use My\Theme\Setups\Customizer;
 use GrottoPress\Jentil\Setups\Customizer\AbstractControl as Control;
 
 abstract class AbstractControl extends Control

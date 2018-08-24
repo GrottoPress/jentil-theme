@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\Footer\Controls;
+namespace My\Theme\Setups\Customizer\Footer\Controls;
 
-use Jentil\Theme\Setups\Customizer;
+use My\Theme\Setups\Customizer;
 use WP_Customize_Cropped_Image_Control as CroppedImageControl;
 use WP_Customize_Manager as WPCustomizer;
 
@@ -15,7 +15,7 @@ final class Logo extends AbstractControl
 
         $this->id = $customizer->settings['Footer\Settings\Logo']->id;
 
-        $this->args['label'] = \esc_html__('Logo', 'jentil-theme');
+        $this->args['label'] = \esc_html__('Logo', 'my-theme');
         $this->args['width'] = 200;
         $this->args['height'] = 60;
     }

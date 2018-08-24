@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Scripts;
+namespace My\Theme\Setups\Scripts;
 
 use GrottoPress\Jentil\Setups\Scripts\AbstractScript;
 use GrottoPress\Jentil\AbstractChildTheme;

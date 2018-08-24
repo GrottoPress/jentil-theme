@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\PostTypeTemplates;
+namespace My\Theme\Setups\PostTypeTemplates;
 
 use GrottoPress\Jentil\Setups\PostTypeTemplates\AbstractTemplate;
 

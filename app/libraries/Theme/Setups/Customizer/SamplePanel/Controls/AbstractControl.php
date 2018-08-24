@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\SamplePanel\Controls;
+namespace My\Theme\Setups\Customizer\SamplePanel\Controls;
 
-use Jentil\Theme\Setups\Customizer\SamplePanel\AbstractSection;
+use My\Theme\Setups\Customizer\SamplePanel\AbstractSection;
 use GrottoPress\Jentil\Setups\Customizer\AbstractControl as Control;
 
 abstract class AbstractControl extends Control

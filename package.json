@@ -1,10 +1,10 @@
 {
-  "name": "@grottopress/jentil-theme",
+  "name": "@grottopress/my-theme",
   "version": "0.2.0",
   "description": "A starter for building WordPress themes with Jentil",
   "license": "MIT",
   "private": true,
-  "homepage": "https://github.com/GrottoPress/jentil-theme#README",
+  "homepage": "https://github.com/GrottoPress/my-theme#README",
   "author": {
     "name": "GrottoPress.com",
     "email": "info@grottopress.com",
@@ -41,14 +41,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GrottoPress/jentil-theme.git"
+    "url": "git+https://github.com/GrottoPress/my-theme.git"
   },
   "keywords": [
     "jentil",
     "wordpress"
   ],
   "bugs": {
-    "url": "https://github.com/GrottoPress/jentil-theme/issues"
+    "url": "https://github.com/GrottoPress/my-theme/issues"
   },
   "browserslist": [
     "last 3 years",

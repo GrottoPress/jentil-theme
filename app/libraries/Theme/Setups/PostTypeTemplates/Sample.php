@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\PostTypeTemplates;
+namespace My\Theme\Setups\PostTypeTemplates;
 
 use GrottoPress\Jentil\Setups\PostTypeTemplates\AbstractTemplate;
 use GrottoPress\Jentil\AbstractChildTheme;
@@ -62,7 +62,7 @@ final class Sample extends AbstractTemplate
     ): array {
         $templates[$this->slug] = \esc_html__(
             'Sample Template',
-            'jentil-theme'
+            'my-theme'
         );
 
         return $templates;

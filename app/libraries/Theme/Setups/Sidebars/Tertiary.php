@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Sidebars;
+namespace My\Theme\Setups\Sidebars;
 
 use GrottoPress\Jentil\Setups\Sidebars\AbstractSidebar;
 use GrottoPress\Jentil\AbstractChildTheme;
@@ -35,11 +35,11 @@ final class Tertiary extends AbstractSidebar
     public function register()
     {
         \register_sidebar([
-            'name'          => \esc_html__('Tertiary', 'jentil-theme'),
+            'name'          => \esc_html__('Tertiary', 'my-theme'),
             'id'            => $this->id,
             'description'   => \esc_html__(
                 'Tertiary widget area',
-                'jentil-theme'
+                'my-theme'
             ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',

@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Utilities;
+namespace My\Theme\Utilities;
 
-use Jentil\Theme\AbstractTestCase;
+use My\Theme\AbstractTestCase;
 use GrottoPress\Jentil\AbstractChildTheme;
 use GrottoPress\Jentil\AbstractTheme;
 use GrottoPress\Jentil\Utilities as JUtilities;

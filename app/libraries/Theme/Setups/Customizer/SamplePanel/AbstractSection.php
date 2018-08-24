@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\SamplePanel;
+namespace My\Theme\Setups\Customizer\SamplePanel;
 
-use Jentil\Theme\Setups\Customizer\SamplePanel;
+use My\Theme\Setups\Customizer\SamplePanel;
 use GrottoPress\Jentil\Setups\Customizer\AbstractSection as Section;
 use WP_Customize_Manager as WPCustomizer;
 

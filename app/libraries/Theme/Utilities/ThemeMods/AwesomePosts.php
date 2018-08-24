@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Utilities\ThemeMods;
+namespace My\Theme\Utilities\ThemeMods;
 
-use Jentil\Theme\Utilities\ThemeMods;
+use My\Theme\Utilities\ThemeMods;
 use GrottoPress\Jentil\Utilities\ThemeMods\AbstractThemeMod;
 
 class AwesomePosts extends AbstractThemeMod
@@ -34,12 +34,12 @@ class AwesomePosts extends AbstractThemeMod
     {
         return [
             'number' => 3,
-            'heading' => \esc_html__('Awesome Posts', 'jentil-theme'),
+            'heading' => \esc_html__('Awesome Posts', 'my-theme'),
             'excerpt' => 1,
             'post_type' => 'post',
             'after_title' => '',
             'after_title_sep' => '|',
-            'more_text' => \esc_html__('Read more &raquo;', 'jentil-theme'),
+            'more_text' => \esc_html__('Read more &raquo;', 'my-theme'),
         ];
     }
 }

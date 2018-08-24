@@ -4,7 +4,7 @@
  * NOTE: Keep code in this file compatible with PHP 5.2
  */
 
-define('THEME_SLUG', 'jentil-theme'); // Update as appropriate
+define('THEME_SLUG', 'my-theme'); // Update as appropriate
 define('MINIMUM_PHP', '7.0');
 define('MINIMUM_WP', '4.7');
 

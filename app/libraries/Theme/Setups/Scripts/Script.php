@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Scripts;
+namespace My\Theme\Setups\Scripts;
 
 use GrottoPress\Jentil\Setups\Scripts\AbstractScript;
 use GrottoPress\Jentil\AbstractChildTheme;
@@ -21,7 +21,7 @@ final class Script extends AbstractScript
     {
         parent::__construct($theme);
 
-        $this->id = 'jentil-theme';
+        $this->id = 'my-theme';
     }
 
     public function run()

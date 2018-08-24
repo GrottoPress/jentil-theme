@@ -1,10 +1,10 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\SamplePanel\Settings;
+namespace My\Theme\Setups\Customizer\SamplePanel\Settings;
 
-use Jentil\Theme\Setups\Customizer\SamplePanel\AbstractSection;
-use Jentil\Theme\Utilities\ThemeMods\Sample as SampleMod;
+use My\Theme\Setups\Customizer\SamplePanel\AbstractSection;
+use My\Theme\Utilities\ThemeMods\Sample as SampleMod;
 use GrottoPress\Jentil\Setups\Customizer\AbstractSetting as Setting;
 
 abstract class AbstractSetting extends Setting

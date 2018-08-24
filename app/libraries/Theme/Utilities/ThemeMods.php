@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Utilities;
+namespace My\Theme\Utilities;
 
-use Jentil\Theme\Utilities;
+use My\Theme\Utilities;
 
 class ThemeMods
 {

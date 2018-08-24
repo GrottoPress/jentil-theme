@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\AwesomePosts\Controls;
+namespace My\Theme\Setups\Customizer\AwesomePosts\Controls;
 
-use Jentil\Theme\Setups\Customizer\AwesomePosts;
+use My\Theme\Setups\Customizer\AwesomePosts;
 use GrottoPress\Jentil\Setups\Customizer\AbstractControl as Control;
 
 abstract class AbstractControl extends Control

@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-use Jentil\Theme;
+use My\Theme;
 
 function Theme(): Theme
 {

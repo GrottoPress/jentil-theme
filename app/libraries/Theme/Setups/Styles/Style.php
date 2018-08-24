@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Styles;
+namespace My\Theme\Setups\Styles;
 
 use GrottoPress\Jentil\Setups\Styles\AbstractStyle;
 use GrottoPress\Jentil\AbstractChildTheme;
@@ -23,7 +23,7 @@ final class Style extends AbstractStyle
     {
         parent::__construct($theme);
 
-        $this->id = 'jentil-theme';
+        $this->id = 'my-theme';
     }
 
     public function run()

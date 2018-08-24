@@ -1,4 +1,4 @@
-# Jentil Theme
+# My Theme
 
 A starter for building WordPress themes with [Jentil](https://www.grottopress.com/jentil/).
 

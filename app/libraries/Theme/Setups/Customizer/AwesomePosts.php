@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer;
+namespace My\Theme\Setups\Customizer;
 
-use Jentil\Theme\Setups\Customizer;
+use My\Theme\Setups\Customizer;
 use GrottoPress\Jentil\Setups\Customizer\AbstractSection;
 use WP_Customize_Manager as WPCustomizer;
 
@@ -15,7 +15,7 @@ final class AwesomePosts extends AbstractSection
 
         $this->id = 'awesome_posts';
 
-        $this->args['title'] = \esc_html__('Awesome Posts', 'jentil-theme');
+        $this->args['title'] = \esc_html__('Awesome Posts', 'my-theme');
         $this->args['panel'] = $this->customizer->app->parent
             ->setups['Customizer']->panels['Posts']->id;
         $this->args['active_callback'] = function (): bool {

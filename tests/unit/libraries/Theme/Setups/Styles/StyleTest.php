@@ -1,11 +1,11 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Styles;
+namespace My\Theme\Setups\Styles;
 
-use Jentil\Theme\AbstractTestCase;
-use Jentil\Theme\Utilities;
-use Jentil\Theme\Utilities\FileSystem;
+use My\Theme\AbstractTestCase;
+use My\Theme\Utilities;
+use My\Theme\Utilities\FileSystem;
 use GrottoPress\Jentil\AbstractChildTheme;
 use GrottoPress\Jentil\AbstractTheme;
 use Codeception\Util\Stub;

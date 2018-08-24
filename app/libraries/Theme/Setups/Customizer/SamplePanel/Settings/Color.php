@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\SamplePanel\Settings;
+namespace My\Theme\Setups\Customizer\SamplePanel\Settings;
 
-use Jentil\Theme\Setups\Customizer\SamplePanel\AbstractSection;
+use My\Theme\Setups\Customizer\SamplePanel\AbstractSection;
 
 final class Color extends AbstractSetting
 {

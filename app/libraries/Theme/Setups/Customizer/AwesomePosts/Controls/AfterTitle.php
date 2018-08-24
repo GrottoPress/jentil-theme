@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\AwesomePosts\Controls;
+namespace My\Theme\Setups\Customizer\AwesomePosts\Controls;
 
-use Jentil\Theme\Setups\Customizer\AwesomePosts;
+use My\Theme\Setups\Customizer\AwesomePosts;
 
 final class AfterTitle extends AbstractControl
 {
@@ -14,7 +14,7 @@ final class AfterTitle extends AbstractControl
         $this->id = $awesome_posts->settings['AfterTitle']->id;
 
         $this->args['type'] = 'text';
-        $this->args['label'] = \esc_html__('After title', 'jentil-theme');
-        $this->args['description'] = \esc_html__('Comma-separated', 'jentil-theme');
+        $this->args['label'] = \esc_html__('After title', 'my-theme');
+        $this->args['description'] = \esc_html__('Comma-separated', 'my-theme');
     }
 }

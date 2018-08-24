@@ -1,11 +1,11 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups;
+namespace My\Theme\Setups;
 
-use Jentil\Theme\AbstractTestCase;
-use Jentil\Theme\Utilities;
-use Jentil\Theme\Utilities\FileSystem;
+use My\Theme\AbstractTestCase;
+use My\Theme\Utilities;
+use My\Theme\Utilities\FileSystem;
 use GrottoPress\Jentil\AbstractChildTheme;
 use Codeception\Util\Stub;
 use tad\FunctionMocker\FunctionMocker;
@@ -48,7 +48,7 @@ class LanguageTest extends AbstractTestCase
 
         $load->wasCalledOnce();
         $load->wasCalledWithOnce([
-            'jentil-theme',
+            'my-theme',
             '/var/www/themes/my-theme/languages'
         ]);
     }

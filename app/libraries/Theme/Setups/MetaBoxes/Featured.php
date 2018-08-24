@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\MetaBoxes;
+namespace My\Theme\Setups\MetaBoxes;
 
 use GrottoPress\Jentil\Setups\MetaBoxes\AbstractMetaBox;
 use GrottoPress\Jentil\AbstractChildTheme;
@@ -73,7 +73,7 @@ final class Featured extends AbstractMetaBox
             $fields[] = [
                 'id' => $utilities->awesomePosts->id(),
                 'type' => 'checkbox',
-                'label' => \esc_html__('Add to Awesome Posts', 'jentil-theme'),
+                'label' => \esc_html__('Add to Awesome Posts', 'my-theme'),
             ];
         }
 
@@ -81,7 +81,7 @@ final class Featured extends AbstractMetaBox
             return [
                 'id' => $this->id,
                 'context' => $this->context,
-                'title' => \esc_html__('Featured', 'jentil-theme'),
+                'title' => \esc_html__('Featured', 'my-theme'),
                 'priority' => 'default',
                 'callbackArgs' => ['__block_editor_compatible_meta_box' => true],
                 'fields' => $fields,

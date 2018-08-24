@@ -1,10 +1,10 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil;
+namespace My;
 
-use Jentil\Theme\Setups;
-use Jentil\Theme\Utilities;
+use My\Theme\Setups;
+use My\Theme\Utilities;
 use GrottoPress\Jentil\AbstractChildTheme;
 
 /*

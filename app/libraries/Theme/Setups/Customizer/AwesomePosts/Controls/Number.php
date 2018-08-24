@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\AwesomePosts\Controls;
+namespace My\Theme\Setups\Customizer\AwesomePosts\Controls;
 
-use Jentil\Theme\Setups\Customizer\AwesomePosts;
+use My\Theme\Setups\Customizer\AwesomePosts;
 
 final class Number extends AbstractControl
 {
@@ -14,7 +14,7 @@ final class Number extends AbstractControl
         $this->id = $awesome_posts->settings['Number']->id;
 
         $this->args['type'] = 'select';
-        $this->args['label'] = \esc_html__('Number or posts', 'jentil-theme');
+        $this->args['label'] = \esc_html__('Number or posts', 'my-theme');
         $this->args['choices'] = \array_combine(($num = \range(0, 6, 1)), $num);
     }
 }

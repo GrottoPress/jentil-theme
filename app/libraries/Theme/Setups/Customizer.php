@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups;
+namespace My\Theme\Setups;
 
 use GrottoPress\Jentil\Setups\Customizer\AbstractCustomizer;
 use WP_Customize_Manager as WPCustomizer;

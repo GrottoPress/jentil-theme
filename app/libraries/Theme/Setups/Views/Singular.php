@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Views;
+namespace My\Theme\Setups\Views;
 
 use GrottoPress\Jentil\Setups\AbstractSetup;
 

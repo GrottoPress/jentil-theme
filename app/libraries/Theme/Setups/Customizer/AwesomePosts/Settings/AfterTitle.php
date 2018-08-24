@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\AwesomePosts\Settings;
+namespace My\Theme\Setups\Customizer\AwesomePosts\Settings;
 
-use Jentil\Theme\Setups\Customizer\AwesomePosts;
+use My\Theme\Setups\Customizer\AwesomePosts;
 
 final class AfterTitle extends AbstractSetting
 {

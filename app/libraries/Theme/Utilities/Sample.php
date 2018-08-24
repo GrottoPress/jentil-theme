@@ -1,18 +1,18 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Utilities;
+namespace My\Theme\Utilities;
 
-use Jentil\Theme\Utilities;
-use Jentil\Theme\Utilities\ThemeMods\Sample as SampleMod;
+use My\Theme\Utilities;
+use My\Theme\Utilities\ThemeMods\Sample as SampleMod;
 
 /*
 |------------------------------------------------------------------------
 | Sample Utility
 |------------------------------------------------------------------------
 |
-| @see Jentil\Theme\Setups\Customizer\Sample
-| @see Jentil\Theme\Utilities\ThemeMods\Sample
+| @see My\Theme\Setups\Customizer\Sample
+| @see My\Theme\Utilities\ThemeMods\Sample
 |
 */
 

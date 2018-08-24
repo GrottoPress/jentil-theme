@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\SamplePanel;
+namespace My\Theme\Setups\Customizer\SamplePanel;
 
-use Jentil\Theme\Setups\Customizer\SamplePanel;
+use My\Theme\Setups\Customizer\SamplePanel;
 
 final class SampleSection extends AbstractSection
 {
@@ -13,7 +13,7 @@ final class SampleSection extends AbstractSection
 
         $this->id = 'sample_section';
 
-        $this->args['title'] = \esc_html__('Sample Section', 'jentil-theme');
+        $this->args['title'] = \esc_html__('Sample Section', 'my-theme');
         $this->args['active_callback'] = function (): bool {
             return $this->customizer->app->utilities->sample->where();
         };

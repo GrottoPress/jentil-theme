@@ -1,10 +1,10 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme;
+namespace My\Theme;
 
-use Jentil\Theme;
-use Jentil\Theme\Utilities\ThemeMods;
+use My\Theme;
+use My\Theme\Utilities\ThemeMods;
 use GrottoPress\Getter\GetterTrait;
 
 /*

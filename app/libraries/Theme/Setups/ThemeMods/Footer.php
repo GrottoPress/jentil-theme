@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\ThemeMods;
+namespace My\Theme\Setups\ThemeMods;
 
 use GrottoPress\Jentil\Setups\AbstractSetup;
 

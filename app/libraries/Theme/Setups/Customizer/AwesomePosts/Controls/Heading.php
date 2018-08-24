@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\AwesomePosts\Controls;
+namespace My\Theme\Setups\Customizer\AwesomePosts\Controls;
 
-use Jentil\Theme\Setups\Customizer\AwesomePosts;
+use My\Theme\Setups\Customizer\AwesomePosts;
 
 final class Heading extends AbstractControl
 {
@@ -14,6 +14,6 @@ final class Heading extends AbstractControl
         $this->id = $awesome_posts->settings['Heading']->id;
 
         $this->args['type'] = 'text';
-        $this->args['label'] = \esc_html__('Heading', 'jentil-theme');
+        $this->args['label'] = \esc_html__('Heading', 'my-theme');
     }
 }

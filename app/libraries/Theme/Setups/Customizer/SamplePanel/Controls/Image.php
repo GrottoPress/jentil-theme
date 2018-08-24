@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\SamplePanel\Controls;
+namespace My\Theme\Setups\Customizer\SamplePanel\Controls;
 
-use Jentil\Theme\Setups\Customizer\SamplePanel\AbstractSection;
+use My\Theme\Setups\Customizer\SamplePanel\AbstractSection;
 use WP_Customize_Image_Control as ImageControl;
 use WP_Customize_Manager as WPCustomizer;
 
@@ -15,7 +15,7 @@ final class Image extends AbstractControl
 
         $this->id = $section->settings['Image']->id;
 
-        $this->args['label'] = \esc_html__('Image', 'jentil-theme');
+        $this->args['label'] = \esc_html__('Image', 'my-theme');
     }
 
     public function add(WPCustomizer $wp_customizer)

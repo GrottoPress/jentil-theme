@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\Footer\Settings;
+namespace My\Theme\Setups\Customizer\Footer\Settings;
 
-use Jentil\Theme\Setups\Customizer;
+use My\Theme\Setups\Customizer;
 
 final class Logo extends AbstractSetting
 {

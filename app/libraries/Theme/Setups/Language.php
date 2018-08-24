@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups;
+namespace My\Theme\Setups;
 
 use GrottoPress\Jentil\Setups\AbstractSetup;
 
@@ -27,7 +27,7 @@ final class Language extends AbstractSetup
     public function loadTextDomain()
     {
         \load_theme_textdomain(
-            'jentil-theme',
+            'my-theme',
             $this->app->utilities->fileSystem->themeDir('path', '/languages')
         );
     }

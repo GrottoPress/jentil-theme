@@ -1,10 +1,10 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\AwesomePosts\Settings;
+namespace My\Theme\Setups\Customizer\AwesomePosts\Settings;
 
-use Jentil\Theme\Setups\Customizer\AwesomePosts;
-use Jentil\Theme\Utilities\ThemeMods\AwesomePosts as AwesomePostsMod;
+use My\Theme\Setups\Customizer\AwesomePosts;
+use My\Theme\Utilities\ThemeMods\AwesomePosts as AwesomePostsMod;
 use GrottoPress\Jentil\Setups\Customizer\AbstractSetting as Setting;
 
 abstract class AbstractSetting extends Setting

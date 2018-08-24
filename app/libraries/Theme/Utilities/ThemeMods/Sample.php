@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Utilities\ThemeMods;
+namespace My\Theme\Utilities\ThemeMods;
 
-use Jentil\Theme\Utilities\ThemeMods;
+use My\Theme\Utilities\ThemeMods;
 use GrottoPress\Jentil\Utilities\ThemeMods\AbstractThemeMod;
 
 class Sample extends AbstractThemeMod
@@ -43,7 +43,7 @@ class Sample extends AbstractThemeMod
     private function defaults(): array
     {
         $defaults = [
-            'text' => \esc_html('Text', 'jentil-theme'),
+            'text' => \esc_html('Text', 'my-theme'),
             'color' => '#ffeedd',
             'image' => '',
             'select' => 1,

@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Jentil\Theme\Setups\Customizer\SamplePanel\Controls;
+namespace My\Theme\Setups\Customizer\SamplePanel\Controls;
 
-use Jentil\Theme\Setups\Customizer\SamplePanel\AbstractSection;
+use My\Theme\Setups\Customizer\SamplePanel\AbstractSection;
 use WP_Customize_Color_Control as ColorControl;
 use WP_Customize_Manager as WPCustomizer;
 
@@ -16,7 +16,7 @@ final class Select extends AbstractControl
         $this->id = $section->settings['Select']->id;
 
         $this->args['type'] = 'select';
-        $this->args['label'] = \esc_html__('Select', 'jentil-theme');
+        $this->args['label'] = \esc_html__('Select', 'my-theme');
         $this->args['choices'] =
             $this->customizer->app->utilities->sample->dropdown();
     }
