@@ -28,7 +28,7 @@
   "require": {
     "php": ">=7.0",
     "composer/installers": "^1.3",
-    "grottopress/jentil": "dev-dev"
+    "grottopress/jentil": "^0.8"
   },
   "require-dev": {
     "lucatume/wp-browser": "^2.0",
