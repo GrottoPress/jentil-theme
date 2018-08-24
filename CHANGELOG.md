@@ -8,8 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 - Set up [postcss](https://postcss.org)
+- Example customizer panel, sections, settings.
 
 ### Changed
+- Rename theme to `my-theme`
 - Explicitly mark sample meta box as compatible with Gutenberg.
 - Moved composing classes one level up for shorter namespaces
 
