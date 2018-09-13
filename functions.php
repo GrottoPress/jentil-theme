@@ -30,8 +30,9 @@ function printJentilThemeReqNotice()
     echo '<div class="notice notice-error">
         <p>'.
         sprintf(
-            __(
-                '%1$s theme has been deactivated as it requires PHP >= %2$s and WordPress >= %3$s'
+            esc_html__(
+                '%1$s theme has been deactivated as it requires PHP >= %2$s and WordPress >= %3$s',
+                'my-theme'
             ),
             '<code>'.THEME_SLUG.'</code>',
             '<strong>'.MINIMUM_PHP.'</strong>',
