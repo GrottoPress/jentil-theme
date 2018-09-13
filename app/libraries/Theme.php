@@ -30,6 +30,7 @@ final class Theme extends AbstractChildTheme
     protected function __construct()
     {
         $this->setUpMisc();
+        $this->setUpTranslations();
         // $this->setUpThemeMods();
         $this->setUpMetaBoxes();
         $this->setUpStyles();
@@ -50,11 +51,16 @@ final class Theme extends AbstractChildTheme
 
     private function setUpMisc()
     {
-        $this->setups['Language'] = new Setups\Language($this);
         $this->setups['Customizer'] = new Setups\Customizer($this);
         // $this->setups['Background'] = new Setups\Background($this);
         $this->setups['Thumbnail'] = new Setups\Thumbnail($this);
         $this->setups['Logo'] = new Setups\Logo($this);
+    }
+
+    private function setUpTranslations()
+    {
+        $this->setups['Translations\Translation'] =
+            new Setups\Translations\Translation($this);
     }
 
     private function setUpThemeMods()

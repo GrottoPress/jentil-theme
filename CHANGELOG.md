@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - Rename `language/` directory to `lang/`
+- Rename `Language` setup to `Translations\Translation`
 
 ## 0.3.0 - 2018-08-24
 

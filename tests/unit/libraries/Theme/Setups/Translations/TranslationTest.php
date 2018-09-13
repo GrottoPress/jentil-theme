@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace My\Theme\Setups;
+namespace My\Theme\Setups\Translations;
 
 use My\Theme\AbstractTestCase;
 use My\Theme\Utilities;
@@ -10,21 +10,23 @@ use GrottoPress\Jentil\AbstractChildTheme;
 use Codeception\Util\Stub;
 use tad\FunctionMocker\FunctionMocker;
 
-class LanguageTest extends AbstractTestCase
+class TranslationTest extends AbstractTestCase
 {
     public function testRun()
     {
         $add_action = FunctionMocker::replace('add_action');
 
-        $language = new Language(Stub::makeEmpty(AbstractChildTheme::class));
+        $translation = new Translation(
+            Stub::makeEmpty(AbstractChildTheme::class)
+        );
 
-        $language->run();
+        $translation->run();
 
         $add_action->wasCalledOnce();
 
         $add_action->wasCalledWithOnce([
             'after_setup_theme',
-            [$language, 'loadTextDomain']
+            [$translation, 'loadTextDomain']
         ]);
     }
 
@@ -42,14 +44,14 @@ class LanguageTest extends AbstractTestCase
             }
         ]);
 
-        $language = new Language($theme);
+        $translation = new Translation($theme);
 
-        $language->loadTextDomain();
+        $translation->loadTextDomain();
 
         $load->wasCalledOnce();
         $load->wasCalledWithOnce([
-            'my-theme',
-            '/var/www/themes/my-theme/languages'
+            $translation->textDomain,
+            '/var/www/themes/my-theme/lang'
         ]);
     }
 }
