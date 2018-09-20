@@ -16,9 +16,9 @@ class TranslationTest extends AbstractTestCase
     {
         $add_action = FunctionMocker::replace('add_action');
 
-        $translation = new Translation(
-            Stub::makeEmpty(AbstractChildTheme::class)
-        );
+        $translation = new Translation(Stub::makeEmpty(
+            AbstractChildTheme::class
+        ));
 
         $translation->run();
 
