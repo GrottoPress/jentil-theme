@@ -21,7 +21,7 @@ final class CustomizePreview extends AbstractScript
     {
         parent::__construct($theme);
 
-        $this->id = 'jentil-theme-customize-preview';
+        $this->id = 'my-theme-customize-preview';
     }
 
     public function run()

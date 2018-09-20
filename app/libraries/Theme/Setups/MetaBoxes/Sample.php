@@ -22,7 +22,7 @@ final class Sample extends AbstractMetaBox
     {
         parent::__construct($theme);
 
-        $this->id = 'jentil-theme-sample';
+        $this->id = 'my-theme-sample';
         $this->context = 'side';
     }
 

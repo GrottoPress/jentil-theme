@@ -13,7 +13,7 @@ final class Featured extends AbstractMetaBox
     {
         parent::__construct($theme);
 
-        $this->id = 'jentil-theme-featured';
+        $this->id = 'my-theme-featured';
         $this->context = 'side';
     }
 
