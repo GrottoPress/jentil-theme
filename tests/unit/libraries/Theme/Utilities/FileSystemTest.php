@@ -11,7 +11,7 @@ use GrottoPress\Jentil\Utilities\FileSystem as JFileSystem;
 use Codeception\Util\Stub;
 use tad\FunctionMocker\FunctionMocker;
 
-class LanguageTest extends AbstractTestCase
+class FileSystemTest extends AbstractTestCase
 {
     /**
      * @dataProvider themeDirProvider
