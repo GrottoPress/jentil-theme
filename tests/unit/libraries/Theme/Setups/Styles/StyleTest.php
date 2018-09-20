@@ -17,7 +17,20 @@ class StyleTest extends AbstractTestCase
     {
         $add_action = FunctionMocker::replace('add_action');
 
-        $style = new Style(Stub::makeEmpty(AbstractChildTheme::class));
+        $theme = new class extends AbstractChildTheme {
+            function __construct()
+            {
+            }
+
+            function get()
+            {
+                return new class {
+                    public $stylesheet;
+                };
+            }
+        };
+
+        $style = new Style($theme);
 
         $style->run();
 
@@ -38,13 +51,26 @@ class StyleTest extends AbstractTestCase
         $is_rtl = FunctionMocker::replace('is_rtl', $rtl);
         $wp_enqueue_style = FunctionMocker::replace('wp_enqueue_style');
 
-        $theme = Stub::makeEmpty(AbstractChildTheme::class, [
-            'utilities' => Stub::makeEmpty(Utilities::class),
-            'parent' => Stub::makeEmpty(AbstractTheme::class, [
-                'setups' => ['Styles\Style' => new class {
-                    public $id;
-                }],
-            ]),
+        $theme = new class extends AbstractChildTheme {
+            public $parent;
+
+            function __construct()
+            {
+            }
+
+            function get()
+            {
+                return new class {
+                    public $stylesheet = 'my-theme';
+                };
+            }
+        };
+
+        $theme->utilities = Stub::makeEmpty(Utilities::class);
+        $theme->parent = Stub::makeEmpty(AbstractTheme::class, [
+            'setups' => ['Styles\Style' => new class {
+                public $id;
+            }],
         ]);
 
         $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [

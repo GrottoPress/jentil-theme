@@ -21,7 +21,7 @@ final class Script extends AbstractScript
     {
         parent::__construct($theme);
 
-        $this->id = 'my-theme';
+        $this->id = $this->app->get()->stylesheet;
     }
 
     public function run()

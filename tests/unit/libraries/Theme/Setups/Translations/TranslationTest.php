@@ -16,9 +16,23 @@ class TranslationTest extends AbstractTestCase
     {
         $add_action = FunctionMocker::replace('add_action');
 
-        $translation = new Translation(Stub::makeEmpty(
-            AbstractChildTheme::class
-        ));
+        $theme = new class extends AbstractChildTheme {
+            function __construct()
+            {
+            }
+
+            function get()
+            {
+                return new class {
+                    function get(): string
+                    {
+                        return '/lang';
+                    }
+                };
+            }
+        };
+
+        $translation = new Translation($theme);
 
         $translation->run();
 
@@ -34,10 +48,25 @@ class TranslationTest extends AbstractTestCase
     {
         $load = FunctionMocker::replace('load_theme_textdomain');
 
-        $theme = Stub::makeEmpty(AbstractChildTheme::class, [
-            'utilities' => Stub::makeEmpty(Utilities::class),
-        ]);
+        $theme = new class extends AbstractChildTheme {
+            public $parent;
 
+            function __construct()
+            {
+            }
+
+            function get()
+            {
+                return new class {
+                    function get(): string
+                    {
+                        return '/lang';
+                    }
+                };
+            }
+        };
+
+        $theme->utilities = Stub::makeEmpty(Utilities::class);
         $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [
             'themeDir' => function (string $type, string $append) {
                 return "/var/www/themes/my-theme{$append}";

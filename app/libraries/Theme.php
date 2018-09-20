@@ -6,6 +6,7 @@ namespace My;
 use My\Theme\Setups;
 use My\Theme\Utilities;
 use GrottoPress\Jentil\AbstractChildTheme;
+use WP_Theme;
 
 /*
 |---------------------------------------------------------------
@@ -47,6 +48,11 @@ final class Theme extends AbstractChildTheme
         }
 
         return $this->utilities;
+    }
+
+    public function get(): WP_Theme
+    {
+        return \wp_get_theme('my-theme');
     }
 
     private function setUpMisc()

@@ -21,7 +21,7 @@ final class Translation extends AbstractTranslation
     {
         parent::__construct($theme);
 
-        $this->textDomain = 'my-theme';
+        $this->textDomain = $this->app->get()->get('TextDomain');
     }
 
     public function run()

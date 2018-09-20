@@ -17,7 +17,20 @@ class ScriptTest extends AbstractTestCase
     {
         $add_action = FunctionMocker::replace('add_action');
 
-        $script = new Script(Stub::makeEmpty(AbstractChildTheme::class));
+        $theme = new class extends AbstractChildTheme {
+            function __construct()
+            {
+            }
+
+            function get()
+            {
+                return new class {
+                    public $stylesheet;
+                };
+            }
+        };
+
+        $script = new Script($theme);
 
         $script->run();
 
@@ -33,13 +46,26 @@ class ScriptTest extends AbstractTestCase
     {
         $wp_enqueue_script = FunctionMocker::replace('wp_enqueue_script');
 
-        $theme = Stub::makeEmpty(AbstractChildTheme::class, [
-            'utilities' => Stub::makeEmpty(Utilities::class),
-            'parent' => Stub::makeEmpty(AbstractTheme::class, [
-                'setups' => ['Scripts\Script' => new class {
-                    public $id;
-                }],
-            ]),
+        $theme = new class extends AbstractChildTheme {
+            public $parent;
+
+            function __construct()
+            {
+            }
+
+            function get()
+            {
+                return new class {
+                    public $stylesheet = 'my-theme';
+                };
+            }
+        };
+
+        $theme->utilities = Stub::makeEmpty(Utilities::class);
+        $theme->parent = Stub::makeEmpty(AbstractTheme::class, [
+            'setups' => ['Scripts\Script' => new class {
+                public $id;
+            }],
         ]);
 
         $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [
