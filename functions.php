@@ -11,21 +11,21 @@ define('MINIMUM_WP', '4.7');
 if (version_compare(PHP_VERSION, MINIMUM_PHP, '<') ||
     version_compare(get_bloginfo('version'), MINIMUM_WP, '<')
 ) {
-    add_action('admin_notices', 'printJentilThemeReqNotice');
+    add_action('admin_notices', 'printMyThemeReqNotice');
 
-    deactivateJentilTheme();
+    deactivateMyTheme();
 } else {
     require __DIR__.'/vendor/autoload.php';
 
-    add_action('after_setup_theme', 'runJentilTheme', 2);
+    add_action('after_setup_theme', 'runMyTheme', 2);
 }
 
-function runJentilTheme()
+function runMyTheme()
 {
-    Theme()->run();
+    MyTheme()->run();
 }
 
-function printJentilThemeReqNotice()
+function printMyThemeReqNotice()
 {
     echo '<div class="notice notice-error">
         <p>'.
@@ -42,7 +42,7 @@ function printJentilThemeReqNotice()
     </div>';
 }
 
-function deactivateJentilTheme()
+function deactivateMyTheme()
 {
     $themes = wp_get_themes(['allowed' => true]);
     unset($themes[THEME_SLUG]);
