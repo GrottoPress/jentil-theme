@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Rename `language/` directory to `lang/`
 - Rename `Language` setup to `Translations\Translation`
 - Split up thumbnail setup into separate setups
+- Prefix global constant names with `MY_THEME_`
 
 ## 0.3.0 - 2018-08-24
 

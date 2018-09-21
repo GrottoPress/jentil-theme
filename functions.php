@@ -5,11 +5,11 @@
  */
 
 define('THEME_SLUG', 'my-theme'); // Update as appropriate
-define('MINIMUM_PHP', '7.0');
-define('MINIMUM_WP', '4.7');
+define('MY_THEME_MIN_PHP', '7.0');
+define('MY_THEME_MIN_WP', '4.7');
 
-if (version_compare(PHP_VERSION, MINIMUM_PHP, '<') ||
-    version_compare(get_bloginfo('version'), MINIMUM_WP, '<')
+if (version_compare(PHP_VERSION, MY_THEME_MIN_PHP, '<') ||
+    version_compare(get_bloginfo('version'), MY_THEME_MIN_WP, '<')
 ) {
     add_action('admin_notices', 'printMyThemeReqNotice');
 
@@ -35,8 +35,8 @@ function printMyThemeReqNotice()
                 'my-theme'
             ),
             '<code>'.THEME_SLUG.'</code>',
-            '<strong>'.MINIMUM_PHP.'</strong>',
-            '<strong>'.MINIMUM_WP.'</strong>'
+            '<strong>'.MY_THEME_MIN_PHP.'</strong>',
+            '<strong>'.MY_THEME_MIN_WP.'</strong>'
         ).
         '</p>
     </div>';
