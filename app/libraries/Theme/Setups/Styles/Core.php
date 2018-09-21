@@ -46,7 +46,7 @@ final class Core extends AbstractStyle
         \wp_enqueue_style(
             $this->id,
             $this->app->utilities->fileSystem->themeDir('url', $file),
-            [$this->app->parent->setups['Styles\Style']->id],
+            [$this->app->parent->setups['Styles\Core']->id],
             \filemtime(
                 $this->app->utilities->fileSystem->themeDir('path', $file)
             )
@@ -63,11 +63,11 @@ final class Core extends AbstractStyle
     {
         \remove_action(
             'wp_enqueue_scripts',
-            [$this->app->parent->setups['Styles\Style'], 'enqueue']
+            [$this->app->parent->setups['Styles\Core'], 'enqueue']
         );
 
         // OR
         // @action wp_enqueue_scripts Use priority > 10 (eg: 20)
-        // \wp_dequeue_style($this->app->parent->setups['Styles\Style']->id);
+        // \wp_dequeue_style($this->app->parent->setups['Styles\Core']->id);
     }
 }

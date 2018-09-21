@@ -70,7 +70,7 @@ class CoreTest extends AbstractTestCase
 
         $theme->utilities = Stub::makeEmpty(Utilities::class);
         $theme->parent = Stub::makeEmpty(AbstractTheme::class, [
-            'setups' => ['Styles\Style' => new class {
+            'setups' => ['Styles\Core' => new class {
                 public $id;
             }],
         ]);
@@ -97,7 +97,7 @@ class CoreTest extends AbstractTestCase
                 'http://my.url/dist/styles/core-rtl.min.css' :
                 'http://my.url/dist/styles/core.min.css'
             ),
-            [$theme->parent->setups['Styles\Style']->id],
+            [$theme->parent->setups['Styles\Core']->id],
             \filemtime($test_css),
         ]);
     }

@@ -6,6 +6,7 @@ namespace My\Theme;
 use My\Theme;
 use My\Theme\Utilities\ThemeMods;
 use GrottoPress\Getter\GetterTrait;
+use GrottoPress\WordPress\MetaBox;
 
 /*
 |------------------------------------------------------------------------
@@ -113,5 +114,13 @@ class Utilities
         }
 
         return $this->footer;
+    }
+
+    /**
+     * @param mixed[string] $args
+     */
+    public function metaBox(array $args): MetaBox
+    {
+        return $this->app->parent->utilities->metaBox($args);
     }
 }

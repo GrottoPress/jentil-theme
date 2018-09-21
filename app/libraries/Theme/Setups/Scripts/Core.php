@@ -58,11 +58,11 @@ final class Core extends AbstractScript
     {
         \remove_action(
             'wp_enqueue_scripts',
-            [$this->app->parent->setups['Scripts\Script'], 'enqueue']
+            [$this->app->parent->setups['Scripts\Core'], 'enqueue']
         );
 
         // OR
         // @action wp_enqueue_scripts Use priority > 10 (eg: 20)
-        // \wp_dequeue_script($this->app->parent->setups['Scripts\Script']->id);
+        // \wp_dequeue_script($this->app->parent->setups['Scripts\Core']->id);
     }
 }
