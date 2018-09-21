@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Add `Theme::get()` method that returns `WP_Theme` instance of this theme.
 - Append enqueued assets URL with last modified time for cache busting.
+- Add Gutenberg editor styles
 
 ### Changed
 - Rename `language/` directory to `lang/`
