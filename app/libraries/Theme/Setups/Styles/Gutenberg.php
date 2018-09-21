@@ -17,7 +17,7 @@ final class Gutenberg extends AbstractStyle
 
     public function run()
     {
-        \add_action('enqueue_block_editor_assets', [$this, 'enqueue']);
+        \add_action('enqueue_block_editor_assets', [$this, 'enqueue'], 20);
     }
 
     /**

@@ -25,7 +25,8 @@ class GutenbergTest extends AbstractTestCase
 
         $add_action->wasCalledWithOnce([
             'enqueue_block_editor_assets',
-            [$style, 'enqueue']
+            [$style, 'enqueue'],
+            20
         ]);
     }
 
