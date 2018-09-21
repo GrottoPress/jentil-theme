@@ -34,6 +34,7 @@ final class Theme extends AbstractChildTheme
         $this->setUpTranslations();
         // $this->setUpThemeMods();
         $this->setUpMetaBoxes();
+        // $this->setUpThumbnails();
         $this->setUpStyles();
         $this->setUpScripts();
         // $this->setUpSidebars();
@@ -59,7 +60,7 @@ final class Theme extends AbstractChildTheme
     {
         $this->setups['Customizer'] = new Setups\Customizer($this);
         // $this->setups['Background'] = new Setups\Background($this);
-        $this->setups['Thumbnail'] = new Setups\Thumbnail($this);
+        // $this->setups['FeaturedImage'] = new Setups\FeaturedImage($this);
         $this->setups['Logo'] = new Setups\Logo($this);
     }
 
@@ -80,6 +81,12 @@ final class Theme extends AbstractChildTheme
         //     new Setups\MetaBoxes\Sample($this);
         $this->setups['MetaBoxes\Featured'] =
             new Setups\MetaBoxes\Featured($this);
+    }
+
+    public function setUpThumbnails()
+    {
+        $this->setups['Thumbnails\Micro'] = new Setups\Thumbnails\Micro($this);
+        $this->setups['Thumbnails\Small'] = new Setups\Thumbnails\Small($this);
     }
 
     private function setUpStyles()
