@@ -22,4 +22,4 @@
 |
 */
 
-declare const jentilThemeAwesomePostsHeadingModId: string
+declare const myThemeAwesomePostsHeadingModId: string

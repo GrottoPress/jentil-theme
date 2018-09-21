@@ -83,7 +83,7 @@ final class CustomizePreview extends AbstractScript
      */
     public function addInlineScript()
     {
-        $script = 'var jentilThemeAwesomePostsHeadingModId = "'.
+        $script = 'var myThemeAwesomePostsHeadingModId = "'.
             $this->app->setups['Customizer']
                 ->sections['AwesomePosts']
                 ->settings['Heading']->id.

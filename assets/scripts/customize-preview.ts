@@ -5,7 +5,7 @@
 
     const { customize } = _wp
 
-    customize(jentilThemeAwesomePostsHeadingModId, (from: () => void): void => {
+    customize(myThemeAwesomePostsHeadingModId, (from: () => void): void => {
         from.bind((to: string): void => {
             $('#awesome-posts .heading').html(to)
         })
