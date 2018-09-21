@@ -65,8 +65,8 @@ final class Theme extends AbstractChildTheme
 
     private function setUpTranslations()
     {
-        $this->setups['Translations\Translation'] =
-            new Setups\Translations\Translation($this);
+        $this->setups['Translations\Core'] =
+            new Setups\Translations\Core($this);
     }
 
     private function setUpThemeMods()
@@ -84,12 +84,12 @@ final class Theme extends AbstractChildTheme
 
     private function setUpStyles()
     {
-        $this->setups['Styles\Style'] = new Setups\Styles\Style($this);
+        $this->setups['Styles\Core'] = new Setups\Styles\Core($this);
     }
 
     private function setUpScripts()
     {
-        $this->setups['Scripts\Script'] = new Setups\Scripts\Script($this);
+        $this->setups['Scripts\Core'] = new Setups\Scripts\Core($this);
         $this->setups['Scripts\CustomizePreview'] =
             new Setups\Scripts\CustomizePreview($this);
     }

@@ -11,11 +11,11 @@ use GrottoPress\Jentil\Setups\Translations\AbstractTranslation;
 | Translation Setup
 |------------------------------------------------------------------------
 |
-| @see GrottoPress\Jentil\Setups\Translations\Translation
+| @see GrottoPress\Jentil\Setups\Translations\Core
 |
 */
 
-final class Translation extends AbstractTranslation
+final class Core extends AbstractTranslation
 {
     public function __construct(AbstractChildTheme $theme)
     {

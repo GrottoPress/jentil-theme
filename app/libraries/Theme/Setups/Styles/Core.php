@@ -13,11 +13,11 @@ use GrottoPress\Jentil\AbstractChildTheme;
 |
 | Enqueue your theme's main style sheet here.
 |
-| @see GrottoPress\Jentil\Setups\Styles\Style
+| @see GrottoPress\Jentil\Setups\Styles\Core
 |
 */
 
-final class Style extends AbstractStyle
+final class Core extends AbstractStyle
 {
     public function __construct(AbstractChildTheme $theme)
     {
@@ -38,9 +38,9 @@ final class Style extends AbstractStyle
     public function enqueue()
     {
         if (\is_rtl()) {
-            $style = 'theme-rtl.min.css';
+            $style = 'core-rtl.min.css';
         } else {
-            $style = 'theme.min.css';
+            $style = 'core.min.css';
         }
 
         \wp_enqueue_style(

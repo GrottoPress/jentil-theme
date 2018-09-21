@@ -11,11 +11,11 @@ use GrottoPress\Jentil\AbstractChildTheme;
 | Main theme script setup
 |-----------------------------------------------------------------
 |
-| @see GrottoPress\Jentil\Setups\Scripts\Script
+| @see GrottoPress\Jentil\Setups\Scripts\Core
 |
 */
 
-final class Script extends AbstractScript
+final class Core extends AbstractScript
 {
     public function __construct(AbstractChildTheme $theme)
     {
@@ -39,7 +39,7 @@ final class Script extends AbstractScript
             $this->id,
             $this->app->utilities->fileSystem->themeDir(
                 'url',
-                '/dist/scripts/theme.min.js'
+                '/dist/scripts/core.min.js'
             ),
             ['jquery'],
             '',

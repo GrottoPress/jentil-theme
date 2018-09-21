@@ -10,7 +10,7 @@ use GrottoPress\Jentil\AbstractChildTheme;
 use Codeception\Util\Stub;
 use tad\FunctionMocker\FunctionMocker;
 
-class TranslationTest extends AbstractTestCase
+class CoreTest extends AbstractTestCase
 {
     public function testRun()
     {
@@ -32,7 +32,7 @@ class TranslationTest extends AbstractTestCase
             }
         };
 
-        $translation = new Translation($theme);
+        $translation = new Core($theme);
 
         $translation->run();
 
@@ -73,7 +73,7 @@ class TranslationTest extends AbstractTestCase
             }
         ]);
 
-        $translation = new Translation($theme);
+        $translation = new Core($theme);
 
         $translation->loadTextDomain();
 

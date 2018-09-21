@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace My\Theme\Setups\Styles;
+namespace My\Theme\Setups\Scripts;
 
 use My\Theme\AbstractTestCase;
 use My\Theme\Utilities;
@@ -11,7 +11,7 @@ use GrottoPress\Jentil\AbstractTheme;
 use Codeception\Util\Stub;
 use tad\FunctionMocker\FunctionMocker;
 
-class StyleTest extends AbstractTestCase
+class CoreTest extends AbstractTestCase
 {
     public function testRun()
     {
@@ -30,26 +30,21 @@ class StyleTest extends AbstractTestCase
             }
         };
 
-        $style = new Style($theme);
+        $script = new Core($theme);
 
-        $style->run();
+        $script->run();
 
         $add_action->wasCalledOnce();
 
         $add_action->wasCalledWithOnce([
             'wp_enqueue_scripts',
-            [$style, 'enqueue'],
-            20
+            [$script, 'enqueue']
         ]);
     }
 
-    /**
-     * @dataProvider enqueueProvider
-     */
-    public function testEnqueue(bool $rtl)
+    public function testEnqueue()
     {
-        $is_rtl = FunctionMocker::replace('is_rtl', $rtl);
-        $wp_enqueue_style = FunctionMocker::replace('wp_enqueue_style');
+        $wp_enqueue_script = FunctionMocker::replace('wp_enqueue_script');
 
         $theme = new class extends AbstractChildTheme {
             public $parent;
@@ -79,26 +74,17 @@ class StyleTest extends AbstractTestCase
             }
         ]);
 
-        $style = new Style($theme);
+        $script = new Core($theme);
 
-        $style->enqueue();
+        $script->enqueue();
 
-        $is_rtl->wasCalledOnce();
-        $wp_enqueue_style->wasCalledOnce();
-        $wp_enqueue_style->wasCalledWithOnce([
-            $style->id,
-            ($rtl ?
-            'http://my.site/themes/my-theme/dist/styles/theme-rtl.min.css'
-            : 'http://my.site/themes/my-theme/dist/styles/theme.min.css'),
-            [$theme->parent->setups['Styles\Style']->id]
+        $wp_enqueue_script->wasCalledOnce();
+        $wp_enqueue_script->wasCalledWithOnce([
+            $script->id,
+            'http://my.site/themes/my-theme/dist/scripts/core.min.js',
+            ['jquery'],
+            '',
+            true
         ]);
-    }
-
-    public function enqueueProvider()
-    {
-        return [
-            'is RTL' => [true],
-            'is LTR' => [false],
-        ];
     }
 }
