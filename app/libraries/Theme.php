@@ -83,7 +83,7 @@ final class Theme extends AbstractChildTheme
             new Setups\MetaBoxes\Featured($this);
     }
 
-    public function setUpThumbnails()
+    private function setUpThumbnails()
     {
         $this->setups['Thumbnails\Micro'] = new Setups\Thumbnails\Micro($this);
         $this->setups['Thumbnails\Small'] = new Setups\Thumbnails\Small($this);
