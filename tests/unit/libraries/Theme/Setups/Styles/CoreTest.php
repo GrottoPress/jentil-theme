@@ -51,6 +51,8 @@ class CoreTest extends AbstractTestCase
         $is_rtl = FunctionMocker::replace('is_rtl', $rtl);
         $wp_enqueue_style = FunctionMocker::replace('wp_enqueue_style');
 
+        $test_css = \codecept_data_dir('styles/test.css');
+
         $theme = new class extends AbstractChildTheme {
             public $parent;
 
@@ -74,23 +76,29 @@ class CoreTest extends AbstractTestCase
         ]);
 
         $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [
-            'themeDir' => function (string $type, string $append): string {
-                return "http://my.site/themes/my-theme{$append}";
-            }
+            'themeDir' => function (
+                string $type,
+                string $append
+            ) use ($test_css): string {
+                return 'path' === $type ? $test_css : "http://my.url{$append}";
+            },
         ]);
 
         $style = new Core($theme);
 
         $style->enqueue();
 
-        $is_rtl->wasCalledOnce();
+        // $is_rtl->wasCalledOnce();
         $wp_enqueue_style->wasCalledOnce();
         $wp_enqueue_style->wasCalledWithOnce([
             $style->id,
-            ($rtl ?
-            'http://my.site/themes/my-theme/dist/styles/core-rtl.min.css'
-            : 'http://my.site/themes/my-theme/dist/styles/core.min.css'),
-            [$theme->parent->setups['Styles\Style']->id]
+            (
+                $rtl ?
+                'http://my.url/dist/styles/core-rtl.min.css' :
+                'http://my.url/dist/styles/core.min.css'
+            ),
+            [$theme->parent->setups['Styles\Style']->id],
+            \filemtime($test_css),
         ]);
     }
 

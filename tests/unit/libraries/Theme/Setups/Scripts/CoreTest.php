@@ -46,6 +46,8 @@ class CoreTest extends AbstractTestCase
     {
         $wp_enqueue_script = FunctionMocker::replace('wp_enqueue_script');
 
+        $test_js = \codecept_data_dir('scripts/test.js');
+
         $theme = new class extends AbstractChildTheme {
             public $parent;
 
@@ -62,16 +64,15 @@ class CoreTest extends AbstractTestCase
         };
 
         $theme->utilities = Stub::makeEmpty(Utilities::class);
-        $theme->parent = Stub::makeEmpty(AbstractTheme::class, [
-            'setups' => ['Styles\Style' => new class {
-                public $id;
-            }],
-        ]);
+        $theme->parent = Stub::makeEmpty(AbstractTheme::class);
 
         $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [
-            'themeDir' => function (string $type, string $append): string {
-                return "http://my.site/themes/my-theme{$append}";
-            }
+            'themeDir' => function (
+                string $type,
+                string $append
+            ) use ($test_js): string {
+                return 'path' === $type ? $test_js : "http://my.url/test.js";
+            },
         ]);
 
         $script = new Core($theme);
@@ -81,9 +82,9 @@ class CoreTest extends AbstractTestCase
         $wp_enqueue_script->wasCalledOnce();
         $wp_enqueue_script->wasCalledWithOnce([
             $script->id,
-            'http://my.site/themes/my-theme/dist/scripts/core.min.js',
+            'http://my.url/test.js',
             ['jquery'],
-            '',
+            \filemtime($test_js),
             true
         ]);
     }

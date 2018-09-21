@@ -66,14 +66,15 @@ final class CustomizePreview extends AbstractScript
      */
     public function enqueue()
     {
+        $file = '/dist/scripts/customize-preview.min.js';
+
         \wp_enqueue_script(
             $this->id,
-            $this->app->utilities->fileSystem->themeDir(
-                'url',
-                '/dist/scripts/customize-preview.min.js'
-            ),
+            $this->app->utilities->fileSystem->themeDir('url', $file),
             ['customize-preview'],
-            '',
+            \filemtime(
+                $this->app->utilities->fileSystem->themeDir('path', $file)
+            ),
             true
         );
     }

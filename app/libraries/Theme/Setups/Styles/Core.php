@@ -38,18 +38,18 @@ final class Core extends AbstractStyle
     public function enqueue()
     {
         if (\is_rtl()) {
-            $style = 'core-rtl.min.css';
+            $file = '/dist/styles/core-rtl.min.css';
         } else {
-            $style = 'core.min.css';
+            $file = '/dist/styles/core.min.css';
         }
 
         \wp_enqueue_style(
             $this->id,
-            $this->app->utilities->fileSystem->themeDir(
-                'url',
-                "/dist/styles/${style}"
-            ),
-            [$this->app->parent->setups['Styles\Style']->id]
+            $this->app->utilities->fileSystem->themeDir('url', $file),
+            [$this->app->parent->setups['Styles\Style']->id],
+            \filemtime(
+                $this->app->utilities->fileSystem->themeDir('path', $file)
+            )
         );
     }
 
