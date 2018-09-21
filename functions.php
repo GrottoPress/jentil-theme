@@ -4,7 +4,6 @@
  * NOTE: Keep code in this file compatible with PHP 5.2
  */
 
-define('THEME_SLUG', 'my-theme'); // Update as appropriate
 define('MY_THEME_MIN_PHP', '7.0');
 define('MY_THEME_MIN_WP', '4.7');
 
@@ -34,7 +33,7 @@ function printMyThemeReqNotice()
                 '%1$s theme has been deactivated as it requires PHP >= %2$s and WordPress >= %3$s',
                 'my-theme'
             ),
-            '<code>'.THEME_SLUG.'</code>',
+            '<code>my-theme</code>',
             '<strong>'.MY_THEME_MIN_PHP.'</strong>',
             '<strong>'.MY_THEME_MIN_WP.'</strong>'
         ).
@@ -45,7 +44,7 @@ function printMyThemeReqNotice()
 function deactivateMyTheme()
 {
     $themes = wp_get_themes(['allowed' => true]);
-    unset($themes[THEME_SLUG]);
+    unset($themes['my-theme']);
 
     $theme = reset($themes);
     $name = null === key($themes) ? '' : $theme->get_stylesheet();
