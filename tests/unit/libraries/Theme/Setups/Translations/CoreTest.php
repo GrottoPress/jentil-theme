@@ -16,23 +16,14 @@ class CoreTest extends AbstractTestCase
     {
         $add_action = FunctionMocker::replace('add_action');
 
-        $theme = new class extends AbstractChildTheme {
-            function __construct()
-            {
+        $translation = new Core(Stub::makeEmpty(AbstractChildTheme::class, [
+            'theme' => new class {
+                function get()
+                {
+                    return 'my-theme';
+                }
             }
-
-            function get()
-            {
-                return new class {
-                    function get(): string
-                    {
-                        return '/lang';
-                    }
-                };
-            }
-        };
-
-        $translation = new Core($theme);
+        ]));
 
         $translation->run();
 
@@ -48,23 +39,15 @@ class CoreTest extends AbstractTestCase
     {
         $load = FunctionMocker::replace('load_theme_textdomain');
 
-        $theme = new class extends AbstractChildTheme {
-            public $parent;
-
-            function __construct()
-            {
+        $theme = Stub::makeEmpty(AbstractChildTheme::class, [
+            'utilities' => Stub::makeEmpty(Utilities::class),
+            'theme' => new class {
+                function get()
+                {
+                    return 'my-theme';
+                }
             }
-
-            function get()
-            {
-                return new class {
-                    function get(): string
-                    {
-                        return '/lang';
-                    }
-                };
-            }
-        };
+        ]);
 
         $theme->utilities = Stub::makeEmpty(Utilities::class);
         $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [

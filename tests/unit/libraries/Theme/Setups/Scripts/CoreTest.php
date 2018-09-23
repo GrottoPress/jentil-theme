@@ -17,20 +17,11 @@ class CoreTest extends AbstractTestCase
     {
         $add_action = FunctionMocker::replace('add_action');
 
-        $theme = new class extends AbstractChildTheme {
-            function __construct()
-            {
+        $script = new Core(Stub::makeEmpty(AbstractChildTheme::class, [
+            'theme' => new class {
+                public $stylesheet;
             }
-
-            function get()
-            {
-                return new class {
-                    public $stylesheet;
-                };
-            }
-        };
-
-        $script = new Core($theme);
+        ]));
 
         $script->run();
 
@@ -48,23 +39,13 @@ class CoreTest extends AbstractTestCase
 
         $test_js = \codecept_data_dir('scripts/test.js');
 
-        $theme = new class extends AbstractChildTheme {
-            public $parent;
-
-            function __construct()
-            {
+        $theme = Stub::makeEmpty(AbstractChildTheme::class, [
+            'utilities' => Stub::makeEmpty(Utilities::class),
+            'parent' => Stub::makeEmpty(AbstractTheme::class),
+            'theme' => new class {
+                public $stylesheet = 'my-theme';
             }
-
-            function get()
-            {
-                return new class {
-                    public $stylesheet = 'my-theme';
-                };
-            }
-        };
-
-        $theme->utilities = Stub::makeEmpty(Utilities::class);
-        $theme->parent = Stub::makeEmpty(AbstractTheme::class);
+        ]);
 
         $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [
             'themeDir' => function (

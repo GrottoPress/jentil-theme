@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## Unreleased
 
 ### Added
-- Add `Theme::get()` method that returns `WP_Theme` instance of this theme.
+- Add `Theme::$theme` attribute that returns `WP_Theme` instance of this theme.
 - Append enqueued assets URL with last modified time for cache busting.
 - Add Gutenberg editor styles
 

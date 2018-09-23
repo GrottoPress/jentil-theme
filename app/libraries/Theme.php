@@ -28,6 +28,11 @@ final class Theme extends AbstractChildTheme
      */
     private $utilities = null;
 
+    /**
+     * @var WP_Theme
+     */
+    private $theme;
+
     protected function __construct()
     {
         $this->setUpMisc();
@@ -51,9 +56,13 @@ final class Theme extends AbstractChildTheme
         return $this->utilities;
     }
 
-    public function get(): WP_Theme
+    protected function getTheme(): WP_Theme
     {
-        return \wp_get_theme('my-theme');
+        if (null === $this->theme) {
+            $this->theme = \wp_get_theme('my-theme');
+        }
+
+        return $this->theme;
     }
 
     private function setUpMisc()

@@ -17,20 +17,11 @@ class CoreTest extends AbstractTestCase
     {
         $add_action = FunctionMocker::replace('add_action');
 
-        $theme = new class extends AbstractChildTheme {
-            function __construct()
-            {
+        $style = new Core(Stub::makeEmpty(AbstractChildTheme::class, [
+            'theme' => new class {
+                public $stylesheet;
             }
-
-            function get()
-            {
-                return new class {
-                    public $stylesheet;
-                };
-            }
-        };
-
-        $style = new Core($theme);
+        ]));
 
         $style->run();
 
@@ -51,29 +42,35 @@ class CoreTest extends AbstractTestCase
         $is_rtl = FunctionMocker::replace('is_rtl', $rtl);
         $wp_enqueue_style = FunctionMocker::replace('wp_enqueue_style');
 
+        FunctionMocker::replace('wp_get_theme');
+
         $test_css = \codecept_data_dir('styles/test.css');
 
         $theme = new class extends AbstractChildTheme {
+            public $utilities;
             public $parent;
+            public $theme;
 
             function __construct()
             {
-            }
+                $this->utilities = Stub::makeEmpty(Utilities::class);
+                $this->parent = new class extends AbstractTheme {
+                    public $setups;
 
-            function get()
-            {
-                return new class {
+                    function __construct()
+                    {
+                        $this->setups = ['Styles\Core' => new class {
+                            public $id;
+                        }];
+                    }
+                };
+                $this->theme = new class {
                     public $stylesheet = 'my-theme';
                 };
             }
         };
 
-        $theme->utilities = Stub::makeEmpty(Utilities::class);
-        $theme->parent = Stub::makeEmpty(AbstractTheme::class, [
-            'setups' => ['Styles\Core' => new class {
-                public $id;
-            }],
-        ]);
+        // $theme = new class extends AbstractChildTheme
 
         $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [
             'themeDir' => function (
