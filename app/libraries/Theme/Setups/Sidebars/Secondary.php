@@ -3,7 +3,7 @@ declare (strict_types = 1);
 
 namespace My\Theme\Setups\Sidebars;
 
-use GrottoPress\Jentil\Setups\Sidebars\AbstractSidebar;
+use GrottoPress\Jentil\Setups\AbstractSetup;
 
 /*
 |-----------------------------------------------------------------
@@ -17,7 +17,7 @@ use GrottoPress\Jentil\Setups\Sidebars\AbstractSidebar;
 |
 */
 
-final class Secondary extends AbstractSidebar
+final class Secondary extends AbstractSetup
 {
     public function run()
     {
