@@ -489,12 +489,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrottoPress/jentil.git",
-                "reference": "8fd27a7e5f489abf80d4fbd190e185c27975dba3"
+                "reference": "e98bc4265f2498b33ff312503710a77f81f9cb94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/8fd27a7e5f489abf80d4fbd190e185c27975dba3",
-                "reference": "8fd27a7e5f489abf80d4fbd190e185c27975dba3",
+                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/e98bc4265f2498b33ff312503710a77f81f9cb94",
+                "reference": "e98bc4265f2498b33ff312503710a77f81f9cb94",
                 "shasum": ""
             },
             "require": {
@@ -539,7 +539,7 @@
                 "jentil",
                 "wordpress"
             ],
-            "time": "2018-09-21T12:21:48+00:00"
+            "time": "2018-09-23T19:14:56+00:00"
         },
         {
             "name": "grottopress/mobile-detector",
@@ -796,16 +796,16 @@
         },
         {
             "name": "grottopress/wordpress-posts",
-            "version": "0.12.0",
+            "version": "0.12.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrottoPress/wordpress-posts.git",
-                "reference": "94894e0c95229483778891b456749d1c32b8f26b"
+                "reference": "b79eaff390a68c42cdfafc78b0cc63042069316f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrottoPress/wordpress-posts/zipball/94894e0c95229483778891b456749d1c32b8f26b",
-                "reference": "94894e0c95229483778891b456749d1c32b8f26b",
+                "url": "https://api.github.com/repos/GrottoPress/wordpress-posts/zipball/b79eaff390a68c42cdfafc78b0cc63042069316f",
+                "reference": "b79eaff390a68c42cdfafc78b0cc63042069316f",
                 "shasum": ""
             },
             "require": {
@@ -843,7 +843,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-09-12T14:19:24+00:00"
+            "time": "2018-09-23T00:50:52+00:00"
         },
         {
             "name": "grottopress/wordpress-suv",
