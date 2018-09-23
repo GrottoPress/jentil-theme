@@ -21,7 +21,7 @@ final class Tertiary extends AbstractSidebar
     {
         parent::__construct($theme);
 
-        $this->id = 'tertiary-widget-area';
+        $this->id = "{$this->app->theme->stylesheet}-tertiary";
     }
 
     public function run()
@@ -35,8 +35,8 @@ final class Tertiary extends AbstractSidebar
     public function register()
     {
         \register_sidebar([
-            'name'          => \esc_html__('Tertiary', 'my-theme'),
             'id'            => $this->id,
+            'name'          => \esc_html__('Tertiary', 'my-theme'),
             'description'   => \esc_html__(
                 'Tertiary widget area',
                 'my-theme'

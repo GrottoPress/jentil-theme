@@ -22,7 +22,7 @@ final class Sample extends AbstractMetaBox
     {
         parent::__construct($theme);
 
-        $this->id = 'my-theme-sample';
+        $this->id = "{$this->app->theme->stylesheet}-sample";
         $this->context = 'side';
     }
 
