@@ -11,6 +11,13 @@
         })
     })
 
+    /**
+     * You may need these, if your theme adds 'custom-background'
+     * support.
+     *
+     * Corresponds to PHP method: `Setups\Background::addBodyClasses()`
+     */
+
     // customize('background_color', (from: () => void): void => {
     //     from.bind((to: string): void => {
     //         if (-1 === ['#fff', '#ffffff'].indexOf(to)) {
