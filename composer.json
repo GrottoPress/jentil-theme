@@ -27,7 +27,7 @@
   },
   "require": {
     "php": ">=7.0",
-    "grottopress/jentil": "dev-dev"
+    "grottopress/jentil": "^0.9"
   },
   "require-dev": {
     "lucatume/wp-browser": "^2.0",

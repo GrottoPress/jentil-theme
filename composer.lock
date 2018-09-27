@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ec6cff7cdbae14d0c791e389205c3fef",
+    "content-hash": "be42b4f918b59c65ad40a741d9e65fee",
     "packages": [
         {
             "name": "aura/html",
@@ -365,16 +365,16 @@
         },
         {
             "name": "grottopress/jentil",
-            "version": "dev-dev",
+            "version": "0.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrottoPress/jentil.git",
-                "reference": "00d2bf8b09bf4e32204517c50c786f0430ca207d"
+                "reference": "5c4066fb3c8d19b5b9824a6299122e86362842d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/00d2bf8b09bf4e32204517c50c786f0430ca207d",
-                "reference": "00d2bf8b09bf4e32204517c50c786f0430ca207d",
+                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/5c4066fb3c8d19b5b9824a6299122e86362842d7",
+                "reference": "5c4066fb3c8d19b5b9824a6299122e86362842d7",
                 "shasum": ""
             },
             "require": {
@@ -419,7 +419,7 @@
                 "jentil",
                 "wordpress"
             ],
-            "time": "2018-09-26T20:33:46+00:00"
+            "time": "2018-09-27T18:46:19+00:00"
         },
         {
             "name": "grottopress/mobile-detector",
@@ -7252,9 +7252,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "grottopress/jentil": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
