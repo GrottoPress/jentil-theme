@@ -22,7 +22,7 @@ final class Sample extends AbstractMetaBox
     {
         parent::__construct($theme);
 
-        $this->id = 'jentil-theme-sample';
+        $this->id = "{$this->app->theme->stylesheet}-sample";
         $this->context = 'side';
     }
 
@@ -34,34 +34,9 @@ final class Sample extends AbstractMetaBox
     }
 
     /**
-     * @action add_meta_boxes
-     */
-    public function add(string $post_type, WP_Post $post)
-    {
-        if (!($box = $this->box($post))) {
-            return;
-        }
-
-        $this->app->parent->utilities->metaBox($box)->add();
-    }
-
-    /**
-     * @action save_post
-     * @action edit_attachment
-     */
-    public function save(int $post_id)
-    {
-        if (!($box = $this->box(\get_post($post_id)))) {
-            return;
-        }
-
-        $this->app->parent->utilities->metaBox($box)->save($post_id);
-    }
-
-    /**
      * @return mixed[string]
      */
-    private function box(WP_Post $post): array
+    protected function box(WP_Post $post): array
     {
         if (!\current_user_can('edit_others_posts')) {
             return [];
@@ -73,8 +48,8 @@ final class Sample extends AbstractMetaBox
 
         return [
             'id' => $this->id,
-            'title' => \esc_html__('Sample Meta Box', 'my-theme'),
             'context' => $this->context,
+            'title' => \esc_html__('Sample Meta Box', 'my-theme'),
             'priority' => 'default',
             'callbackArgs' => ['__block_editor_compatible_meta_box' => true],
             'fields' => [

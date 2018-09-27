@@ -92,7 +92,7 @@ class AwesomePosts
 
     public function id(): string
     {
-        return '_jentil-theme-awesome-posts';
+        return '_my-theme-awesome-posts';
     }
 
     public function where(): bool

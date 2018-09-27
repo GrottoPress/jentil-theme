@@ -4,7 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## Unreleased 0.3.0 - 2018-08-24
+## 0.4.0 - 2018-09-27
+
+### Added
+- Add `Theme::$theme` attribute that returns `WP_Theme` instance of this theme.
+- Append enqueued assets URL with last modified time for cache busting.
+- Add Gutenberg editor styles
+
+### Changed
+- Rename `language/` directory to `lang/`
+- Rename `Language` setup to `Translations\Translation`
+- Split up thumbnail setup into separate setups
+- Prefix global constant names with `MY_THEME_`
+- Dynamically prefix ids using our new `Theme::$theme` attribute
+
+## 0.3.0 - 2018-08-24
 
 ### Added
 - Set up [postcss](https://postcss.org)

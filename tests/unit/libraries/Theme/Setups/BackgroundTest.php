@@ -13,16 +13,25 @@ class BackgroundTest extends AbstractTestCase
     public function testRun()
     {
         $add_action = FunctionMocker::replace('add_action');
+        $add_filter = FunctionMocker::replace('add_filter');
 
-        $background = new Background(Stub::makeEmpty(AbstractChildTheme::class));
+        $background = new Background(Stub::makeEmpty(
+            AbstractChildTheme::class
+        ));
 
         $background->run();
 
         $add_action->wasCalledOnce();
+        $add_filter->wasCalledOnce();
 
         $add_action->wasCalledWithOnce([
             'after_setup_theme',
             [$background, 'addSupport']
+        ]);
+
+        $add_filter->wasCalledWithOnce([
+            'body_class',
+            [$background, 'addBodyClasses']
         ]);
     }
 

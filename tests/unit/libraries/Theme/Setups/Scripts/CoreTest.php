@@ -11,13 +11,17 @@ use GrottoPress\Jentil\AbstractTheme;
 use Codeception\Util\Stub;
 use tad\FunctionMocker\FunctionMocker;
 
-class ScriptTest extends AbstractTestCase
+class CoreTest extends AbstractTestCase
 {
     public function testRun()
     {
         $add_action = FunctionMocker::replace('add_action');
 
-        $script = new Script(Stub::makeEmpty(AbstractChildTheme::class));
+        $script = new Core(Stub::makeEmpty(AbstractChildTheme::class, [
+            'theme' => new class {
+                public $stylesheet;
+            }
+        ]));
 
         $script->run();
 
@@ -33,31 +37,35 @@ class ScriptTest extends AbstractTestCase
     {
         $wp_enqueue_script = FunctionMocker::replace('wp_enqueue_script');
 
+        $test_js = \codecept_data_dir('scripts/test.js');
+
         $theme = Stub::makeEmpty(AbstractChildTheme::class, [
             'utilities' => Stub::makeEmpty(Utilities::class),
-            'parent' => Stub::makeEmpty(AbstractTheme::class, [
-                'setups' => ['Scripts\Script' => new class {
-                    public $id;
-                }],
-            ]),
-        ]);
-
-        $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [
-            'themeDir' => function (string $type, string $append): string {
-                return "http://my.site/themes/my-theme{$append}";
+            'parent' => Stub::makeEmpty(AbstractTheme::class),
+            'theme' => new class {
+                public $stylesheet = 'my-theme';
             }
         ]);
 
-        $script = new Script($theme);
+        $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [
+            'themeDir' => function (
+                string $type,
+                string $append
+            ) use ($test_js): string {
+                return 'path' === $type ? $test_js : "http://my.url/test.js";
+            },
+        ]);
+
+        $script = new Core($theme);
 
         $script->enqueue();
 
         $wp_enqueue_script->wasCalledOnce();
         $wp_enqueue_script->wasCalledWithOnce([
             $script->id,
-            'http://my.site/themes/my-theme/dist/scripts/theme.min.js',
+            'http://my.url/test.js',
             ['jquery'],
-            '',
+            \filemtime($test_js),
             true
         ]);
     }

@@ -11,17 +11,17 @@ use GrottoPress\Jentil\AbstractChildTheme;
 | Main theme script setup
 |-----------------------------------------------------------------
 |
-| @see GrottoPress\Jentil\Setups\Scripts\Script
+| @see GrottoPress\Jentil\Setups\Scripts\Core
 |
 */
 
-final class Script extends AbstractScript
+final class Core extends AbstractScript
 {
     public function __construct(AbstractChildTheme $theme)
     {
         parent::__construct($theme);
 
-        $this->id = 'my-theme';
+        $this->id = $this->app->theme->stylesheet;
     }
 
     public function run()
@@ -35,14 +35,15 @@ final class Script extends AbstractScript
      */
     public function enqueue()
     {
+        $file = '/dist/scripts/core.min.js';
+
         \wp_enqueue_script(
             $this->id,
-            $this->app->utilities->fileSystem->themeDir(
-                'url',
-                '/dist/scripts/theme.min.js'
-            ),
+            $this->app->utilities->fileSystem->themeDir('url', $file),
             ['jquery'],
-            '',
+            \filemtime(
+                $this->app->utilities->fileSystem->themeDir('path', $file)
+            ),
             true
         );
     }
@@ -57,11 +58,11 @@ final class Script extends AbstractScript
     {
         \remove_action(
             'wp_enqueue_scripts',
-            [$this->app->parent->setups['Scripts\Script'], 'enqueue']
+            [$this->app->parent->setups['Scripts\Core'], 'enqueue']
         );
 
         // OR
         // @action wp_enqueue_scripts Use priority > 10 (eg: 20)
-        // \wp_dequeue_script($this->app->parent->setups['Scripts\Script']->id);
+        // \wp_dequeue_script($this->app->parent->setups['Scripts\Core']->id);
     }
 }

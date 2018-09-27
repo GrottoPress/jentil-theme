@@ -6,6 +6,7 @@ namespace My\Theme;
 use My\Theme;
 use My\Theme\Utilities\ThemeMods;
 use GrottoPress\Getter\GetterTrait;
+use GrottoPress\WordPress\MetaBox;
 
 /*
 |------------------------------------------------------------------------
@@ -72,46 +73,46 @@ class Utilities
 
     private function getFileSystem(): Utilities\FileSystem
     {
-        if (null === $this->fileSystem) {
-            $this->fileSystem = new Utilities\FileSystem($this);
-        }
+        $this->fileSystem = $this->fileSystem ?:
+            new Utilities\FileSystem($this);
 
         return $this->fileSystem;
     }
 
     private function getThemeMods(): Utilities\ThemeMods
     {
-        if (null === $this->themeMods) {
-            $this->themeMods = new Utilities\ThemeMods($this);
-        }
+        $this->themeMods = $this->themeMods ?: new Utilities\ThemeMods($this);
 
         return $this->themeMods;
     }
 
     private function getSample(): Utilities\Sample
     {
-        if (null === $this->sample) {
-            $this->sample = new Utilities\Sample($this);
-        }
+        $this->sample = $this->sample ?: new Utilities\Sample($this);
 
         return $this->sample;
     }
 
     private function getAwesomePosts(): Utilities\AwesomePosts
     {
-        if (null === $this->awesomePosts) {
-            $this->awesomePosts = new Utilities\AwesomePosts($this);
-        }
+        $this->awesomePosts = $this->awesomePosts ?:
+            new Utilities\AwesomePosts($this);
 
         return $this->awesomePosts;
     }
 
     private function getFooter(): Utilities\Footer
     {
-        if (null === $this->footer) {
-            $this->footer = new Utilities\Footer($this);
-        }
+        $this->footer = $this->footer ?: new Utilities\Footer($this);
 
         return $this->footer;
+    }
+
+    /**
+     * @param mixed[string] $args
+     */
+    public function metaBox(array $args): MetaBox
+    {
+        return $this->app->parent->utilities->metaBox($args);
     }
 }

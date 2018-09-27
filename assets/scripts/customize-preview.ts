@@ -5,11 +5,18 @@
 
     const { customize } = _wp
 
-    customize(jentilThemeAwesomePostsHeadingModId, (from: () => void): void => {
+    customize(myThemeAwesomePostsHeadingModId, (from: () => void): void => {
         from.bind((to: string): void => {
             $('#awesome-posts .heading').html(to)
         })
     })
+
+    /**
+     * You may need these, if your theme adds 'custom-background'
+     * support.
+     *
+     * Corresponds to PHP method: `Setups\Background::addBodyClasses()`
+     */
 
     // customize('background_color', (from: () => void): void => {
     //     from.bind((to: string): void => {

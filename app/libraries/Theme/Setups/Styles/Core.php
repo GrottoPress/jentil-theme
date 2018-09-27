@@ -13,17 +13,17 @@ use GrottoPress\Jentil\AbstractChildTheme;
 |
 | Enqueue your theme's main style sheet here.
 |
-| @see GrottoPress\Jentil\Setups\Styles\Style
+| @see GrottoPress\Jentil\Setups\Styles\Core
 |
 */
 
-final class Style extends AbstractStyle
+final class Core extends AbstractStyle
 {
     public function __construct(AbstractChildTheme $theme)
     {
         parent::__construct($theme);
 
-        $this->id = 'my-theme';
+        $this->id = $this->app->theme->stylesheet;
     }
 
     public function run()
@@ -38,18 +38,18 @@ final class Style extends AbstractStyle
     public function enqueue()
     {
         if (\is_rtl()) {
-            $style = 'theme-rtl.min.css';
+            $file = '/dist/styles/core-rtl.min.css';
         } else {
-            $style = 'theme.min.css';
+            $file = '/dist/styles/core.min.css';
         }
 
         \wp_enqueue_style(
             $this->id,
-            $this->app->utilities->fileSystem->themeDir(
-                'url',
-                "/dist/styles/${style}"
-            ),
-            [$this->app->parent->setups['Styles\Style']->id]
+            $this->app->utilities->fileSystem->themeDir('url', $file),
+            [$this->app->parent->setups['Styles\Core']->id],
+            \filemtime(
+                $this->app->utilities->fileSystem->themeDir('path', $file)
+            )
         );
     }
 
@@ -63,11 +63,11 @@ final class Style extends AbstractStyle
     {
         \remove_action(
             'wp_enqueue_scripts',
-            [$this->app->parent->setups['Styles\Style'], 'enqueue']
+            [$this->app->parent->setups['Styles\Core'], 'enqueue']
         );
 
         // OR
         // @action wp_enqueue_scripts Use priority > 10 (eg: 20)
-        // \wp_dequeue_style($this->app->parent->setups['Styles\Style']->id);
+        // \wp_dequeue_style($this->app->parent->setups['Styles\Core']->id);
     }
 }

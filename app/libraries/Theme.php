@@ -6,6 +6,7 @@ namespace My;
 use My\Theme\Setups;
 use My\Theme\Utilities;
 use GrottoPress\Jentil\AbstractChildTheme;
+use WP_Theme;
 
 /*
 |---------------------------------------------------------------
@@ -25,13 +26,20 @@ final class Theme extends AbstractChildTheme
     /**
      * @var Utilities
      */
-    private $utilities = null;
+    private $utilities;
+
+    /**
+     * @var WP_Theme
+     */
+    private $theme;
 
     protected function __construct()
     {
         $this->setUpMisc();
+        $this->setUpTranslations();
         // $this->setUpThemeMods();
         $this->setUpMetaBoxes();
+        // $this->setUpThumbnails();
         $this->setUpStyles();
         $this->setUpScripts();
         // $this->setUpSidebars();
@@ -41,20 +49,30 @@ final class Theme extends AbstractChildTheme
 
     protected function getUtilities(): Utilities
     {
-        if (null === $this->utilities) {
-            $this->utilities = new Utilities($this);
-        }
+        $this->utilities = $this->utilities ?: new Utilities($this);
 
         return $this->utilities;
     }
 
+    protected function getTheme(): WP_Theme
+    {
+        $this->theme = $this->theme ?: \wp_get_theme('my-theme');
+
+        return $this->theme;
+    }
+
     private function setUpMisc()
     {
-        $this->setups['Language'] = new Setups\Language($this);
         $this->setups['Customizer'] = new Setups\Customizer($this);
         // $this->setups['Background'] = new Setups\Background($this);
-        $this->setups['Thumbnail'] = new Setups\Thumbnail($this);
+        // $this->setups['FeaturedImage'] = new Setups\FeaturedImage($this);
         $this->setups['Logo'] = new Setups\Logo($this);
+    }
+
+    private function setUpTranslations()
+    {
+        $this->setups['Translations\Core'] =
+            new Setups\Translations\Core($this);
     }
 
     private function setUpThemeMods()
@@ -70,14 +88,21 @@ final class Theme extends AbstractChildTheme
             new Setups\MetaBoxes\Featured($this);
     }
 
+    private function setUpThumbnails()
+    {
+        $this->setups['Thumbnails\Micro'] = new Setups\Thumbnails\Micro($this);
+        $this->setups['Thumbnails\Small'] = new Setups\Thumbnails\Small($this);
+    }
+
     private function setUpStyles()
     {
-        $this->setups['Styles\Style'] = new Setups\Styles\Style($this);
+        $this->setups['Styles\Core'] = new Setups\Styles\Core($this);
+        $this->setups['Styles\Gutenberg'] = new Setups\Styles\Gutenberg($this);
     }
 
     private function setUpScripts()
     {
-        $this->setups['Scripts\Script'] = new Setups\Scripts\Script($this);
+        $this->setups['Scripts\Core'] = new Setups\Scripts\Core($this);
         $this->setups['Scripts\CustomizePreview'] =
             new Setups\Scripts\CustomizePreview($this);
     }
