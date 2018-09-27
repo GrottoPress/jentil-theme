@@ -16,7 +16,7 @@ use GrottoPress\Jentil\Setups\AbstractSetup;
 
 final class Background extends AbstractSetup
 {
-    const DEFAULT_BG_COLOR = 'f1f1f1';
+    const DEFAULT_COLOR = 'f1f1f1';
 
     public function run()
     {
@@ -30,7 +30,7 @@ final class Background extends AbstractSetup
     public function addSupport()
     {
         \add_theme_support('custom-background', [
-            'default-color' => '#'.self::DEFAULT_BG_COLOR,
+            'default-color' => '#'.self::DEFAULT_COLOR,
         ]);
     }
 
@@ -49,7 +49,7 @@ final class Background extends AbstractSetup
 
         if (\in_array(\sanitize_key(\get_theme_mod(
             'background_color',
-            self::DEFAULT_BG_COLOR
+            self::DEFAULT_COLOR
         )), ['fff', 'ffffff'])) {
             $classes[] = 'no-background-color';
         } else {
