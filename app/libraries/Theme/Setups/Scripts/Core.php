@@ -35,15 +35,14 @@ final class Core extends AbstractScript
      */
     public function enqueue()
     {
+        $file_system = $this->app->utilities->fileSystem;
         $file = '/dist/scripts/core.min.js';
 
         \wp_enqueue_script(
             $this->id,
-            $this->app->utilities->fileSystem->themeDir('url', $file),
+            $file_system->themeDir('url', $file),
             ['jquery'],
-            \filemtime(
-                $this->app->utilities->fileSystem->themeDir('path', $file)
-            ),
+            \filemtime($file_system->themeDir('path', $file)),
             true
         );
     }
