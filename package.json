@@ -1,21 +1,5 @@
 {
-  "name": "@grottopress/my-theme",
-  "version": "0.4.0",
-  "description": "A starter for building WordPress themes with Jentil",
-  "license": "MIT",
   "private": true,
-  "homepage": "https://github.com/GrottoPress/my-theme#README",
-  "author": {
-    "name": "GrottoPress.com",
-    "email": "info@grottopress.com",
-    "url": "https://www.grottopress.com"
-  },
-  "contributors": [
-    {
-      "name": "N Atta Kusi Adusei",
-      "url": "https://twitter.com/akadusei"
-    }
-  ],
   "dependencies": {},
   "devDependencies": {
     "@types/jquery": "^3.3.10",
@@ -38,17 +22,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp styles scripts",
     "watch": "gulp watch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GrottoPress/my-theme.git"
-  },
-  "keywords": [
-    "jentil",
-    "wordpress"
-  ],
-  "bugs": {
-    "url": "https://github.com/GrottoPress/my-theme/issues"
   },
   "browserslist": [
     "last 3 years",
