@@ -92,7 +92,7 @@ class AwesomePosts
 
     public function id(): string
     {
-        return '_my-theme-awesome-posts';
+        return "_{$this->utilities->app->theme->stylesheet}-awesome-posts";
     }
 
     public function where(): bool
