@@ -49,16 +49,12 @@ final class Theme extends AbstractChildTheme
 
     protected function getUtilities(): Utilities
     {
-        $this->utilities = $this->utilities ?: new Utilities($this);
-
-        return $this->utilities;
+        return $this->utilities = $this->utilities ?: new Utilities($this);
     }
 
     protected function getTheme(): WP_Theme
     {
-        $this->theme = $this->theme ?: \wp_get_theme('my-theme');
-
-        return $this->theme;
+        return $this->theme = $this->theme ?: \wp_get_theme('my-theme');
     }
 
     private function setUpMisc()
