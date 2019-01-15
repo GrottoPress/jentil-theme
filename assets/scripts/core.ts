@@ -35,10 +35,23 @@
 |
 */
 
-(($: JQueryStatic): void => {
-    'use strict'
+namespace MyTheme
+{
+    export class App {
+        public constructor(private readonly _j: JQueryStatic)
+        {
+        }
 
-    // Kick some ass, will you? :-)
-    //
+        public run(): void
+        {
+            // this.doSomething()
+        }
 
-})(jQuery)
+        private doSomething(): void
+        {
+            this._j('body').slideDown()
+        }
+    }
+}
+
+new MyTheme.App(jQuery).run()
