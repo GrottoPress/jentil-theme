@@ -1,6 +1,7 @@
 'use strict'
 
-const gulp = require('gulp')
+const { src, dest, watch, series, parallel } = require('gulp')
+
 const uglify = require('gulp-uglify')
 const rename = require('gulp-rename')
 const rtlcss = require('gulp-rtlcss')
@@ -12,52 +13,88 @@ const cssnano = require('cssnano')
 const mqpacker = require('css-mqpacker')
 const mqsort = require('sort-css-media-queries')
 const focus = require('postcss-focus')
+const newer = require('gulp-newer')
+const rimraf = require('rimraf')
+const chmodr = require('chmodr')
 
-const scripts_src = ['./assets/scripts/**/*.ts']
-const scripts_dest = './dist/scripts'
-const styles_src = ['./assets/styles/**/*.scss']
-const styles_dest = './dist/styles'
+const tsConfigFile = './tsconfig.json'
+const tsConfig = require(tsConfigFile)
+const tsProject = typescript.createProject(tsConfigFile)
 
-gulp.task('scripts', () =>
-    gulp.src(scripts_src)
+const paths = {
+    styles: {
+        src: ['./assets/styles/**/*.scss'],
+        dest: './dist/styles'
+    },
+    scripts: {
+        src: tsConfig.include,
+        dest: tsConfig.compilerOptions.outDir
+    },
+    vendor: {
+        dest: {
+            dist: './dist/vendor',
+            assets: './assets/vendor'
+        }
+    }
+}
+
+function _scripts(done)
+{
+    src(paths.scripts.src)
+        .pipe(newer(paths.scripts.dest))
         .pipe(sourcemaps.init())
-        .pipe(typescript({
-            "module": "commonjs",
-            "target": "es5",
-            "noImplicitAny": true,
-            "noImplicitUseStrict": true,
-            "noImplicitThis": true,
-            "strictNullChecks": true,
-            "strictFunctionTypes": true
-        }))
+        .pipe(tsProject())
         .pipe(uglify())
         .pipe(rename({'suffix': '.min'}))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(scripts_dest))
-)
+        .pipe(dest(paths.scripts.dest))
 
-gulp.task('styles', () =>
-    gulp.src(styles_src)
+    done()
+}
+
+function _styles(done)
+{
+    src(paths.styles.src)
+        .pipe(newer(paths.styles.dest))
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss([focus(), mqpacker({sort: mqsort}), cssnano()]))
         .pipe(rename({'suffix': '.min'}))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(styles_dest))
+        .pipe(dest(paths.styles.dest))
         .pipe(rtlcss())
         .pipe(rename((path) =>
             path.basename = path.basename.replace('.min', '-rtl.min')
         ))
-        .pipe(gulp.dest(styles_dest))
-)
+        .pipe(dest(paths.styles.dest))
 
-gulp.task('watch', () => {
-    gulp.watch(scripts_src, ['scripts'])
-    gulp.watch(styles_src, ['styles'])
-})
+    done()
+}
 
-gulp.task('default', [
-    'scripts',
-    'styles',
-    'watch'
-])
+function _watch()
+{
+    watch(paths.scripts.src, {ignoreInitial: false}, _scripts)
+    watch(paths.styles.src, {ignoreInitial: false}, _styles)
+}
+
+function _clean(done)
+{
+    rimraf('./dist', done)
+}
+
+function _chmod(done)
+{
+    const perm = 0o755
+
+    chmodr('./bin', perm, done)
+    chmodr('./vendor/bin', perm, done)
+    chmodr('./node_modules/.bin', perm, done)
+}
+
+exports.styles = _styles
+exports.scripts = _scripts
+exports.watch = _watch
+exports.clean = _clean
+exports.chmod = _chmod
+
+exports.default = series(parallel(_styles, _scripts), _watch)
