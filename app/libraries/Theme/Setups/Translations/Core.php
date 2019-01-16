@@ -21,7 +21,7 @@ final class Core extends AbstractTranslation
     {
         parent::__construct($theme);
 
-        $this->textDomain = $this->app->theme->get('TextDomain');
+        $this->textDomain = $this->app->meta['text_domain'];
     }
 
     public function run()
@@ -36,7 +36,10 @@ final class Core extends AbstractTranslation
     {
         \load_theme_textdomain(
             $this->textDomain,
-            $this->app->utilities->fileSystem->themeDir('path', '/lang')
+            $this->app->utilities->fileSystem->themeDir(
+                'path',
+                $this->app->meta['domain_path']
+            )
         );
     }
 }

@@ -21,7 +21,7 @@ final class CustomizePreview extends AbstractScript
     {
         parent::__construct($theme);
 
-        $this->id = "{$this->app->theme->stylesheet}-customize-preview";
+        $this->id = "{$this->app->meta['slug']}-customize-preview";
     }
 
     public function run()

@@ -29,9 +29,9 @@ final class Theme extends AbstractChildTheme
     private $utilities;
 
     /**
-     * @var WP_Theme
+     * @var string[string]
      */
-    private $theme;
+    private $meta;
 
     protected function __construct()
     {
@@ -52,9 +52,12 @@ final class Theme extends AbstractChildTheme
         return $this->utilities = $this->utilities ?: new Utilities($this);
     }
 
-    protected function getTheme(): WP_Theme
+    /**
+     * @return string[string]
+     */
+    protected function getMeta(): array
     {
-        return $this->theme = $this->theme ?: \wp_get_theme('my-theme');
+        return $this->meta = $this->meta ?: $this->meta();
     }
 
     private function setUpMisc()
@@ -124,5 +127,34 @@ final class Theme extends AbstractChildTheme
         $this->setups['Views\Header'] = new Setups\Views\Header($this);
         $this->setups['Views\Page'] = new Setups\Views\Page($this);
         $this->setups['Views\Footer'] = new Setups\Views\Footer($this);
+    }
+
+    /**
+     * @return string[string]
+     */
+    private function meta(): array
+    {
+        $meta = \array_map('sanitize_text_field', \get_file_data(
+            $this->getUtilities()->fileSystem->themeDir('path', '/style.css'),
+            [
+                'name' => 'Theme Name',
+                'theme_uri' => 'Theme URI',
+                'description' => 'Description',
+                'author' => 'Author',
+                'author_uri' => 'Author URI',
+                'version' => 'Version',
+                'license' => 'License',
+                'license_uri' => 'License URI',
+                'tags' => 'Tags',
+                'text_domain' => 'Text Domain',
+                'domain_path' => 'Domain Path',
+                'documents_uri' => 'Documents URI',
+            ],
+            'theme'
+        ));
+
+        $meta['slug'] = \sanitize_title($meta['name']);
+
+        return $meta;
     }
 }

@@ -18,9 +18,7 @@ class GutenbergTest extends AbstractTestCase
         $add_action = FunctionMocker::replace('add_action');
 
         $style = new Gutenberg(Stub::makeEmpty(AbstractChildTheme::class, [
-            'theme' => new class {
-                public $stylesheet;
-            },
+            'meta' => ['slug' => 'theme'],
         ]));
 
         $style->run();
@@ -46,15 +44,12 @@ class GutenbergTest extends AbstractTestCase
 
         $theme = new class extends AbstractChildTheme {
             public $utilities;
-            public $theme;
             public $parent;
+            public $meta = ['slug' => 'theme'];
 
             function __construct()
             {
                 $this->utilities = Stub::makeEmpty(Utilities::class);
-                $this->theme = new class {
-                    public $stylesheet;
-                };
                 $this->parent = Stub::makeEmpty(AbstractTheme::class, [
                     'setups' => ['Styles\Gutenberg' => new class {
                         public $id;

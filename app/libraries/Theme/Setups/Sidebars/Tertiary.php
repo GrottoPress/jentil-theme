@@ -21,7 +21,7 @@ final class Tertiary extends AbstractSidebar
     {
         parent::__construct($theme);
 
-        $this->id = "{$this->app->theme->stylesheet}-tertiary";
+        $this->id = "{$this->app->meta['slug']}-tertiary";
     }
 
     public function run()

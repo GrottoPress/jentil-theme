@@ -12,7 +12,7 @@ final class Gutenberg extends AbstractStyle
     {
         parent::__construct($theme);
 
-        $this->id = "{$this->app->theme->stylesheet}-gutenberg";
+        $this->id = "{$this->app->meta['slug']}-gutenberg";
     }
 
     public function run()

@@ -23,7 +23,7 @@ final class Core extends AbstractStyle
     {
         parent::__construct($theme);
 
-        $this->id = $this->app->theme->stylesheet;
+        $this->id = $this->app->meta['slug'];
     }
 
     public function run()

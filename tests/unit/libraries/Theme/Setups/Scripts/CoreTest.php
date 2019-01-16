@@ -18,9 +18,7 @@ class CoreTest extends AbstractTestCase
         $add_action = FunctionMocker::replace('add_action');
 
         $script = new Core(Stub::makeEmpty(AbstractChildTheme::class, [
-            'theme' => new class {
-                public $stylesheet;
-            }
+            'meta' => ['slug' => 'theme'],
         ]));
 
         $script->run();
@@ -42,9 +40,7 @@ class CoreTest extends AbstractTestCase
         $theme = Stub::makeEmpty(AbstractChildTheme::class, [
             'utilities' => Stub::makeEmpty(Utilities::class),
             'parent' => Stub::makeEmpty(AbstractTheme::class),
-            'theme' => new class {
-                public $stylesheet = 'my-theme';
-            }
+            'meta' => ['slug' => 'theme']
         ]);
 
         $theme->utilities->fileSystem = Stub::makeEmpty(FileSystem::class, [

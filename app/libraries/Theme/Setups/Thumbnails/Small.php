@@ -25,7 +25,7 @@ final class Small extends AbstractThumbnail
     {
         parent::__construct($theme);
 
-        $this->id = "{$this->app->theme->stylesheet}-small";
+        $this->id = "{$this->app->meta['slug']}-small";
     }
 
     public function run()

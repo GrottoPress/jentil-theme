@@ -13,7 +13,7 @@ final class Featured extends AbstractMetaBox
     {
         parent::__construct($theme);
 
-        $this->id = "{$this->app->theme->stylesheet}-featured";
+        $this->id = "{$this->app->meta['slug']}-featured";
         $this->context = 'side';
     }
 
