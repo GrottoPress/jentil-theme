@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 - Add `.security.txt`
+- Add PHP `7.3` to travis-ci build matrix
 
 ### Changed
 - Rename `LICENSE.md` to `LICENSE`
