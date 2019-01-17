@@ -16,6 +16,7 @@ final class AwesomePosts extends AbstractSection
         $this->id = 'awesome_posts';
 
         $this->args['title'] = \esc_html__('Awesome Posts', 'my-theme');
+        $this->args['priority'] = 150; // Before sticky posts
         $this->args['panel'] = $this->customizer->app->parent
             ->setups['Customizer']->panels['Posts']->id;
         $this->args['active_callback'] = function (): bool {
