@@ -43,7 +43,7 @@ class Sample extends AbstractThemeMod
     private function defaults(): array
     {
         $defaults = [
-            'text' => \esc_html('Text', 'my-theme'),
+            'text' => \esc_html('Text', 'jentil-theme'),
             'color' => '#ffeedd',
             'image' => '',
             'select' => 1,

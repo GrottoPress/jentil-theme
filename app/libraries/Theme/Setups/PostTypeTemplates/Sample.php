@@ -62,7 +62,7 @@ final class Sample extends AbstractTemplate
     ): array {
         $templates[$this->slug] = \esc_html__(
             'Sample Template',
-            'my-theme'
+            'jentil-theme'
         );
 
         return $templates;

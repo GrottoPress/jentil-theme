@@ -14,6 +14,6 @@ final class MoreText extends AbstractControl
         $this->id = $awesome_posts->settings['MoreText']->id;
 
         $this->args['type'] = 'text';
-        $this->args['label'] = \esc_html__('More link text', 'my-theme');
+        $this->args['label'] = \esc_html__('More link text', 'jentil-theme');
     }
 }

@@ -14,6 +14,6 @@ final class Heading extends AbstractControl
         $this->id = $awesome_posts->settings['Heading']->id;
 
         $this->args['type'] = 'text';
-        $this->args['label'] = \esc_html__('Heading', 'my-theme');
+        $this->args['label'] = \esc_html__('Heading', 'jentil-theme');
     }
 }

@@ -13,7 +13,7 @@ final class SampleSection extends AbstractSection
 
         $this->id = 'sample_section';
 
-        $this->args['title'] = \esc_html__('Sample Section', 'my-theme');
+        $this->args['title'] = \esc_html__('Sample Section', 'jentil-theme');
         $this->args['active_callback'] = function (): bool {
             return $this->customizer->app->utilities->sample->where();
         };

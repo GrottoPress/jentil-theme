@@ -31,9 +31,9 @@ function printMyThemeReqNotice()
         sprintf(
             esc_html__(
                 '%1$s theme has been deactivated as it requires PHP >= %2$s and WordPress >= %3$s',
-                'my-theme'
+                'jentil-theme'
             ),
-            '<code>my-theme</code>',
+            '<code>jentil-theme</code>',
             '<strong>'.MY_THEME_MIN_PHP.'</strong>',
             '<strong>'.MY_THEME_MIN_WP.'</strong>'
         ).
@@ -44,7 +44,7 @@ function printMyThemeReqNotice()
 function deactivateMyTheme()
 {
     $themes = wp_get_themes(['allowed' => true]);
-    unset($themes['my-theme']);
+    unset($themes['jentil-theme']);
 
     $theme = reset($themes);
     $name = null === key($themes) ? '' : $theme->get_stylesheet();

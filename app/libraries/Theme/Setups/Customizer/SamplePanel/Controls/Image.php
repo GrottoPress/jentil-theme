@@ -15,7 +15,7 @@ final class Image extends AbstractControl
 
         $this->id = $section->settings['Image']->id;
 
-        $this->args['label'] = \esc_html__('Image', 'my-theme');
+        $this->args['label'] = \esc_html__('Image', 'jentil-theme');
     }
 
     public function add(WPCustomizer $wp_customizer)

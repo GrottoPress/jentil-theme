@@ -14,6 +14,6 @@ final class Excerpt extends AbstractControl
         $this->id = $awesome_posts->settings['Excerpt']->id;
 
         $this->args['type'] = 'checkbox';
-        $this->args['label'] = \esc_html__('Show excerpt?', 'my-theme');
+        $this->args['label'] = \esc_html__('Show excerpt?', 'jentil-theme');
     }
 }

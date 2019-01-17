@@ -16,6 +16,6 @@ final class Text extends AbstractControl
         $this->id = $section->settings['Text']->id;
 
         $this->args['type'] = 'text';
-        $this->args['label'] = \esc_html__('Text', 'my-theme');
+        $this->args['label'] = \esc_html__('Text', 'jentil-theme');
     }
 }

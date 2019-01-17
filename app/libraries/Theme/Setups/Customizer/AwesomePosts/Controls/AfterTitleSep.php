@@ -14,6 +14,6 @@ final class AfterTitleSep extends AbstractControl
         $this->id = $awesome_posts->settings['AfterTitleSep']->id;
 
         $this->args['type'] = 'text';
-        $this->args['label'] = \esc_html__('After title separator', 'my-theme');
+        $this->args['label'] = \esc_html__('After title separator', 'jentil-theme');
     }
 }

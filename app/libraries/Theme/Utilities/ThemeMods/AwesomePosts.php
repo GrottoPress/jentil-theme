@@ -34,12 +34,12 @@ class AwesomePosts extends AbstractThemeMod
     {
         return [
             'number' => 3,
-            'heading' => \esc_html__('Awesome Posts', 'my-theme'),
+            'heading' => \esc_html__('Awesome Posts', 'jentil-theme'),
             'excerpt' => 1,
             'post_type' => 'post',
             'after_title' => '',
             'after_title_sep' => '|',
-            'more_text' => \esc_html__('Read more &raquo;', 'my-theme'),
+            'more_text' => \esc_html__('Read more &raquo;', 'jentil-theme'),
         ];
     }
 }

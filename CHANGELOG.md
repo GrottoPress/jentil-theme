@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add PHP `7.3` to travis-ci build matrix
 
 ### Changed
+- Rename theme back to `jentil-theme`
 - Rename `LICENSE.md` to `LICENSE`
 - Upgrade gulp to version 4
 - Update scripts to use typescript namespaces and classes
