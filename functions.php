@@ -44,7 +44,7 @@ function printMyThemeReqNotice()
 function deactivateMyTheme()
 {
     $themes = wp_get_themes(['allowed' => true]);
-    unset($themes['jentil-theme']);
+    unset($themes['jentil-theme'], $themes['jentil']);
 
     $theme = reset($themes);
     $name = null === key($themes) ? '' : $theme->get_stylesheet();
