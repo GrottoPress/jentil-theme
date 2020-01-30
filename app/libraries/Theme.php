@@ -6,7 +6,6 @@ namespace My;
 use My\Theme\Setups;
 use My\Theme\Utilities;
 use GrottoPress\Jentil\AbstractChildTheme;
-use WP_Theme;
 
 /*
 |---------------------------------------------------------------
