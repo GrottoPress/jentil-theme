@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Set up [broser-sync](https://www.browsersync.io)
 - Add `.gitattributes`
 - Add `Procfile`
+- Add `Dockerfile`
 
 ### Changed
 - Rename theme back to `jentil-theme`
