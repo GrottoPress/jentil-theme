@@ -2,6 +2,7 @@
 
 const { dest, parallel, series, src, watch } = require('gulp')
 
+const bsync = require('browser-sync').create()
 const cssnano = require('cssnano')
 const filter = require('gulp-filter')
 const focus = require('postcss-focus')
@@ -14,6 +15,7 @@ const sass = require('gulp-sass')
 const sh = require('shelljs')
 const uglify = require('gulp-uglify')
 
+const bsConfig = require('./bs-config')
 const roConfig = require('./rollup.config')
 
 const uglifyOpts = {output: {comments: /(^!|\@license|\@preserve)/i}}
@@ -24,6 +26,9 @@ const paths = {
         mapDest: '.',
         src: roConfig.input,
         watchSrc: ['./assets/scripts/**/*.ts']
+    },
+    serve: {
+        src: bsConfig.files
     },
     styles: {
         dest: './dist/styles',
@@ -63,6 +68,13 @@ function _scripts(done)
     done()
 }
 
+function _serve(done)
+{
+    bsync.init(bsConfig)
+
+    done()
+}
+
 function _styles(done)
 {
     src(paths.styles.src, {sourcemaps: true})
@@ -92,7 +104,8 @@ function _watch(done)
 exports.chmod = _chmod
 exports.clean = _clean
 exports.scripts = _scripts
+exports.serve = _serve
 exports.styles = _styles
 exports.watch = _watch
 
-exports.default = series(parallel(_styles, _scripts), _watch)
+exports.default = series(parallel(_styles, _scripts), _serve, _watch)
