@@ -2,10 +2,15 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
+    "@rollup/plugin-typescript": "^3.0.0",
     "@types/jquery": "^3.3.31",
     "cssnano": "^4.1.10",
     "cssnano-preset-advanced": "^4.0.7",
+    "flatten": "^1.0.3",
+    "glob": "^7.1.6",
     "gulp": "^4.0.2",
+    "gulp-better-rollup": "^4.0.1",
+    "gulp-filter": "^6.0.0",
     "gulp-newer": "^1.4.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^2.0.0",
@@ -15,15 +20,17 @@
     "gulp-typescript": "^5.0.1",
     "gulp-uglify": "^3.0.2",
     "postcss-focus": "^4.0.0",
+    "rollup": "^1.31.0",
     "shelljs": "^0.8.3",
+    "tslib": "^1.10.0",
     "typescript": "^3.7.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp styles scripts",
-    "watch": "gulp watch",
+    "chmod": "gulp chmod",
     "clean": "gulp clean",
-    "chmod": "gulp chmod"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch"
   },
   "browserslist": [
     "last 3 years",

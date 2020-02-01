@@ -1,4 +1,4 @@
-/// <reference path='./global.d.ts' />
+/// <reference path='./core/module.d.ts' />
 
 /*
 |-----------------------------------------------------------------------
@@ -35,24 +35,11 @@
 |
 */
 
-namespace MyTheme
-{
-    export class App
-    {
-        public constructor(private readonly _j: JQueryStatic)
-        {
-        }
+import { Base } from './core/base'
 
-        public run(): void
-        {
-            // this.doSomething()
-        }
+import { SomeClass } from './core/some-module'
+import { AnotherClass } from './core/another-module'
 
-        private doSomething(): void
-        {
-            this._j('body').slideDown()
-        }
-    }
-}
+const cores = [new SomeClass(jQuery), new AnotherClass(jQuery)]
 
-new MyTheme.App(jQuery).run()
+jQuery.each(cores, (_, core: Base): void => core.run())

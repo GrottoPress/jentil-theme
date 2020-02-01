@@ -1,20 +1,22 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## [Unreleased] -
 
 ### Added
 - Add `.security.txt`
 - Add PHP `7.3` to travis-ci build matrix
+- Set up JS module bundling with [rollup js](https://rollupjs.org)
 
 ### Changed
 - Rename theme back to `jentil-theme`
 - Rename `LICENSE.md` to `LICENSE`
 - Upgrade gulp to version 4
-- Update scripts to use typescript namespaces and classes
+- Update scripts to use JS modules
 - Replace `Theme::$theme` with `Theme::$meta` (theme info extracted from `style.css`)
 
 ## 0.4.0 - 2018-09-27
