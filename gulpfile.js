@@ -12,8 +12,7 @@ const postcss = require('gulp-postcss')
 const cssnano = require('cssnano')
 const focus = require('postcss-focus')
 const newer = require('gulp-newer')
-const rimraf = require('rimraf')
-const chmodr = require('chmodr')
+const sh = require('shelljs')
 
 const tsConfig = require('./tsconfig.json')
 
@@ -75,16 +74,22 @@ function _watch()
 
 function _clean(done)
 {
-    rimraf('./dist', done)
+    sh.rm(
+        '-rf',
+        paths.styles.dest,
+        paths.scripts.dest,
+        paths.vendor.dest.dist,
+        paths.vendor.dest.assets
+    )
+
+    done()
 }
 
 function _chmod(done)
 {
-    const perm = 0o755
+    sh.chmod('-R', 'a+x', './bin', './vendor/bin', './node_modules/.bin')
 
-    chmodr('./bin', perm, done)
-    chmodr('./vendor/bin', perm, done)
-    chmodr('./node_modules/.bin', perm, done)
+    done()
 }
 
 exports.styles = _styles
