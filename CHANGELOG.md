@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Set up JS module bundling with [rollup js](https://rollupjs.org)
 - Set up [broser-sync](https://www.browsersync.io)
 - Add `.gitattributes`
+- Add `Procfile`
 
 ### Changed
 - Rename theme back to `jentil-theme`
