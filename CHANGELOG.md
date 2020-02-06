@@ -21,7 +21,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Rename `LICENSE.md` to `LICENSE`
 - Upgrade gulp to version 4
 - Update scripts to use JS modules
-- Replace `Theme::$theme` with `Theme::$meta` (theme info extracted from `style.css`)
+
+### Removed
+- Remove HTML microdata
 
 ## 0.4.0 - 2018-09-27
 

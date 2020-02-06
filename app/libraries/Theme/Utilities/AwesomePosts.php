@@ -75,7 +75,7 @@ class AwesomePosts
         if (($heading = $this->themeMod('heading')->get()) ||
             $parent->utilities->page->is('customize_preview')
         ) {
-            $out .= '<h2 class="posts-heading heading" itemprop="name">'.
+            $out .= '<h2 class="posts-heading heading">'.
                 $heading.
             '</h2>';
         }

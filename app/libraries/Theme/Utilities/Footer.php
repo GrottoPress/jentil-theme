@@ -32,7 +32,7 @@ class Footer
             $this->themeMod('logo')->get(),
             'full',
             true,
-            ['class' => 'footer-logo', 'itemprop' => 'image']
+            ['class' => 'footer-logo']
         );
     }
 
