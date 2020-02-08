@@ -1,5 +1,5 @@
 {
-  "name": "grottopress/my-theme",
+  "name": "grottopress/jentil-theme",
   "description": "A starter for building WordPress themes with Jentil",
   "type": "project",
   "license": "MIT",
@@ -21,13 +21,13 @@
     "wordpress"
   ],
   "support": {
-    "issues": "https://github.com/GrottoPress/my-theme/issues",
-    "wiki": "https://github.com/GrottoPress/my-theme/wiki",
-    "source": "https://github.com/GrottoPress/my-theme"
+    "issues": "https://github.com/GrottoPress/jentil-theme/issues",
+    "wiki": "https://github.com/GrottoPress/jentil-theme/wiki",
+    "source": "https://github.com/GrottoPress/jentil-theme"
   },
   "require": {
     "php": ">=7.0",
-    "grottopress/jentil": "^0.9"
+    "grottopress/jentil": "^0.11"
   },
   "require-dev": {
     "lucatume/wp-browser": "^2.0",
@@ -39,8 +39,8 @@
       "npm run build"
     ],
     "post-install-cmd": [
-      "chmod +x ./bin/*",
       "npm install",
+      "npm run chmod",
       "npm run build"
     ],
     "test": [

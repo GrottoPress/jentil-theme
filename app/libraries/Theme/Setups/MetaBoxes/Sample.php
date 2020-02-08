@@ -22,7 +22,7 @@ final class Sample extends AbstractMetaBox
     {
         parent::__construct($theme);
 
-        $this->id = "{$this->app->theme->stylesheet}-sample";
+        $this->id = "{$this->app->meta['slug']}-sample";
         $this->context = 'side';
     }
 
@@ -49,27 +49,27 @@ final class Sample extends AbstractMetaBox
         return [
             'id' => $this->id,
             'context' => $this->context,
-            'title' => \esc_html__('Sample Meta Box', 'my-theme'),
+            'title' => \esc_html__('Sample Meta Box', 'jentil-theme'),
             'priority' => 'default',
             'callbackArgs' => ['__block_editor_compatible_meta_box' => true],
             'fields' => [
                 [
                     'id' => 'sample-text-field',
                     'type' => 'text',
-                    'label' => \esc_html__('Type anything', 'my-theme'),
+                    'label' => \esc_html__('Type anything', 'jentil-theme'),
                     'labelPos' => 'before_field',
                 ],
                 [
                     'id' => 'sample-select-field',
                     'type' => 'select',
                     'choices' => ['a' => 'A', 'b' => 'B', 'c' => 'C'],
-                    'label' => \esc_html__('Select any', 'my-theme'),
+                    'label' => \esc_html__('Select any', 'jentil-theme'),
                     'labelPos' => 'before_field',
                 ],
             ],
             'notes' => '<p>'.\esc_html__(
                 'This is just an example meta box.',
-                'my-theme'
+                'jentil-theme'
             ).'</p>',
         ];
     }

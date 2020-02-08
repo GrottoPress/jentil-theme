@@ -15,7 +15,7 @@ final class Color extends AbstractControl
 
         $this->id = $section->settings['Color']->id;
 
-        $this->args['label'] = \esc_html__('Color', 'my-theme');
+        $this->args['label'] = \esc_html__('Color', 'jentil-theme');
 
         // if ('sample_section' === $section->context) {
         //     $this->args['active_callback'] = function (): bool {

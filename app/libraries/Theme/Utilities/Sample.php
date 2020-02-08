@@ -37,7 +37,7 @@ class Sample
             \attachment_url_to_postid($sample_image),
             'full',
             false,
-            ['class' => 'sample-image', 'itemprop' => 'image']
+            ['class' => 'sample-image']
         );
     }
 

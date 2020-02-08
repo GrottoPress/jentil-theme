@@ -14,7 +14,7 @@ final class PostType extends AbstractControl
         $this->id = $awesome_posts->settings['PostType']->id;
 
         $this->args['type'] = 'select';
-        $this->args['label'] = \esc_html__('Post type', 'my-theme');
+        $this->args['label'] = \esc_html__('Post type', 'jentil-theme');
         $this->args['choices'] = $this->customizer->app
             ->utilities->awesomePosts->postTypes();
     }

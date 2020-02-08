@@ -14,7 +14,7 @@ final class AfterTitle extends AbstractControl
         $this->id = $awesome_posts->settings['AfterTitle']->id;
 
         $this->args['type'] = 'text';
-        $this->args['label'] = \esc_html__('After title', 'my-theme');
-        $this->args['description'] = \esc_html__('Comma-separated', 'my-theme');
+        $this->args['label'] = \esc_html__('After title', 'jentil-theme');
+        $this->args['description'] = \esc_html__('Comma-separated', 'jentil-theme');
     }
 }

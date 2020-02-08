@@ -16,7 +16,7 @@ final class Select extends AbstractControl
         $this->id = $section->settings['Select']->id;
 
         $this->args['type'] = 'select';
-        $this->args['label'] = \esc_html__('Select', 'my-theme');
+        $this->args['label'] = \esc_html__('Select', 'jentil-theme');
         $this->args['choices'] =
             $this->customizer->app->utilities->sample->dropdown();
     }

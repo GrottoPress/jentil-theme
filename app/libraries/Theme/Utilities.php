@@ -73,39 +73,30 @@ class Utilities
 
     private function getFileSystem(): Utilities\FileSystem
     {
-        $this->fileSystem = $this->fileSystem ?:
+        return $this->fileSystem = $this->fileSystem ?:
             new Utilities\FileSystem($this);
-
-        return $this->fileSystem;
     }
 
     private function getThemeMods(): Utilities\ThemeMods
     {
-        $this->themeMods = $this->themeMods ?: new Utilities\ThemeMods($this);
-
-        return $this->themeMods;
+        return $this->themeMods = $this->themeMods ?:
+            new Utilities\ThemeMods($this);
     }
 
     private function getSample(): Utilities\Sample
     {
-        $this->sample = $this->sample ?: new Utilities\Sample($this);
-
-        return $this->sample;
+        return $this->sample = $this->sample ?: new Utilities\Sample($this);
     }
 
     private function getAwesomePosts(): Utilities\AwesomePosts
     {
-        $this->awesomePosts = $this->awesomePosts ?:
+        return $this->awesomePosts = $this->awesomePosts ?:
             new Utilities\AwesomePosts($this);
-
-        return $this->awesomePosts;
     }
 
     private function getFooter(): Utilities\Footer
     {
-        $this->footer = $this->footer ?: new Utilities\Footer($this);
-
-        return $this->footer;
+        return $this->footer = $this->footer ?: new Utilities\Footer($this);
     }
 
     /**

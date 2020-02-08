@@ -13,7 +13,7 @@ final class SamplePanel extends AbstractPanel
 
         $this->id = 'sample_panel';
 
-        $this->args['title'] = \esc_html__('Sample Panel', 'my-theme');
+        $this->args['title'] = \esc_html__('Sample Panel', 'jentil-theme');
     }
 
     public function add(WPCustomizer $wp_customizer)

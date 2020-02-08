@@ -15,7 +15,7 @@ final class Logo extends AbstractControl
 
         $this->id = $customizer->settings['Footer\Settings\Logo']->id;
 
-        $this->args['label'] = \esc_html__('Logo', 'my-theme');
+        $this->args['label'] = \esc_html__('Logo', 'jentil-theme');
         $this->args['width'] = 200;
         $this->args['height'] = 60;
     }

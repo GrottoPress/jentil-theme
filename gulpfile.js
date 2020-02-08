@@ -1,63 +1,111 @@
 'use strict'
 
-const gulp = require('gulp')
-const uglify = require('gulp-uglify')
+const { dest, parallel, series, src, watch } = require('gulp')
+
+const bsync = require('browser-sync').create()
+const cssnano = require('cssnano')
+const filter = require('gulp-filter')
+const focus = require('postcss-focus')
+const newer = require('gulp-newer')
+const postcss = require('gulp-postcss')
 const rename = require('gulp-rename')
+const rollup = require('gulp-better-rollup')
 const rtlcss = require('gulp-rtlcss')
 const sass = require('gulp-sass')
-const sourcemaps = require('gulp-sourcemaps')
-const typescript = require('gulp-typescript')
-const postcss = require('gulp-postcss')
-const cssnano = require('cssnano')
-const mqpacker = require('css-mqpacker')
-const mqsort = require('sort-css-media-queries')
-const focus = require('postcss-focus')
+const sh = require('shelljs')
+const uglify = require('gulp-uglify')
 
-const scripts_src = ['./assets/scripts/**/*.ts']
-const scripts_dest = './dist/scripts'
-const styles_src = ['./assets/styles/**/*.scss']
-const styles_dest = './dist/styles'
+const bsConfig = require('./bs-config')
+const roConfig = require('./rollup.config')
 
-gulp.task('scripts', () =>
-    gulp.src(scripts_src)
-        .pipe(sourcemaps.init())
-        .pipe(typescript({
-            "module": "commonjs",
-            "target": "es5",
-            "noImplicitAny": true,
-            "noImplicitUseStrict": true,
-            "noImplicitThis": true,
-            "strictNullChecks": true,
-            "strictFunctionTypes": true
-        }))
-        .pipe(uglify())
-        .pipe(rename({'suffix': '.min'}))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(scripts_dest))
-)
+const uglifyOpts = {output: {comments: /(^!|\@license|\@preserve)/i}}
 
-gulp.task('styles', () =>
-    gulp.src(styles_src)
-        .pipe(sourcemaps.init())
+const paths = {
+    scripts: {
+        dest: roConfig.output.dir,
+        mapDest: '.',
+        src: roConfig.input,
+        watchSrc: ['./assets/scripts/**/*.ts']
+    },
+    serve: {
+        src: bsConfig.files
+    },
+    styles: {
+        dest: './dist/styles',
+        mapDest: '.',
+        src: ['./assets/styles/*.scss'],
+        watchSrc: ['./assets/styles/**/*.scss']
+    }
+}
+
+function _chmod(done)
+{
+    sh.chmod('-R', 'a+x', './bin', './vendor/bin', './node_modules/.bin')
+
+    done()
+}
+
+function _clean(done)
+{
+    sh.rm(
+        '-rf',
+        paths.styles.dest,
+        paths.scripts.dest
+    )
+
+    done()
+}
+
+function _scripts(done)
+{
+    src(paths.scripts.src, {sourcemaps: true})
+        .pipe(newer(paths.scripts.dest))
+        .pipe(rollup({plugins: roConfig.plugins}, roConfig.output))
+        .pipe(rename({'suffix': '.min', 'extname': '.js'}))
+        .pipe(uglify(uglifyOpts))
+        .pipe(dest(paths.scripts.dest, {sourcemaps: paths.scripts.mapDest}))
+
+    done()
+}
+
+function _serve(done)
+{
+    bsync.init(bsConfig)
+
+    done()
+}
+
+function _styles(done)
+{
+    src(paths.styles.src, {sourcemaps: true})
+        .pipe(newer(paths.styles.dest))
         .pipe(sass().on('error', sass.logError))
-        .pipe(postcss([focus(), mqpacker({sort: mqsort}), cssnano()]))
+        .pipe(postcss([focus(), cssnano()]))
         .pipe(rename({'suffix': '.min'}))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(styles_dest))
+        .pipe(dest(paths.styles.dest, {sourcemaps: paths.styles.mapDest}))
+        .pipe(filter(['**/*.css']))
         .pipe(rtlcss())
-        .pipe(rename((path) =>
+        .pipe(rename(path => {
             path.basename = path.basename.replace('.min', '-rtl.min')
-        ))
-        .pipe(gulp.dest(styles_dest))
-)
+        }))
+        .pipe(dest(paths.styles.dest, {sourcemaps: paths.styles.mapDest}))
 
-gulp.task('watch', () => {
-    gulp.watch(scripts_src, ['scripts'])
-    gulp.watch(styles_src, ['styles'])
-})
+    done()
+}
 
-gulp.task('default', [
-    'scripts',
-    'styles',
-    'watch'
-])
+function _watch(done)
+{
+    watch(paths.scripts.watchSrc, {ignoreInitial: false}, _scripts)
+    watch(paths.styles.watchSrc, {ignoreInitial: false}, _styles)
+
+    done()
+}
+
+exports.chmod = _chmod
+exports.clean = _clean
+exports.scripts = _scripts
+exports.serve = _serve
+exports.styles = _styles
+exports.watch = _watch
+
+exports.default = series(parallel(_styles, _scripts), _serve, _watch)

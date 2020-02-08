@@ -75,7 +75,7 @@ class AwesomePosts
         if (($heading = $this->themeMod('heading')->get()) ||
             $parent->utilities->page->is('customize_preview')
         ) {
-            $out .= '<h2 class="posts-heading heading" itemprop="name">'.
+            $out .= '<h2 class="posts-heading heading">'.
                 $heading.
             '</h2>';
         }
@@ -92,7 +92,7 @@ class AwesomePosts
 
     public function id(): string
     {
-        return '_my-theme-awesome-posts';
+        return "_{$this->utilities->app->meta['slug']}-awesome-posts";
     }
 
     public function where(): bool

@@ -1,4 +1,4 @@
-/// <reference path='./global.d.ts' />
+/// <reference path='./core/module.d.ts' />
 
 /*
 |-----------------------------------------------------------------------
@@ -35,10 +35,11 @@
 |
 */
 
-(($: JQueryStatic): void => {
-    'use strict'
+import { Base } from './core/base'
 
-    // Kick some ass, will you? :-)
-    //
+import { SomeClass } from './core/some-module'
+import { AnotherClass } from './core/another-module'
 
-})(jQuery)
+const cores = [new SomeClass(jQuery), new AnotherClass(jQuery)]
+
+jQuery.each(cores, (_, core: Base): void => core.run())

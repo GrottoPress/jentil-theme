@@ -23,7 +23,7 @@ final class Core extends AbstractStyle
     {
         parent::__construct($theme);
 
-        $this->id = $this->app->theme->stylesheet;
+        $this->id = $this->app->meta['slug'];
     }
 
     public function run()
@@ -37,19 +37,17 @@ final class Core extends AbstractStyle
      */
     public function enqueue()
     {
-        if (\is_rtl()) {
-            $file = '/dist/styles/core-rtl.min.css';
-        } else {
-            $file = '/dist/styles/core.min.css';
-        }
+        $file_system = $this->app->utilities->fileSystem;
+
+        $file = \is_rtl() ?
+            '/dist/styles/core-rtl.min.css' :
+            '/dist/styles/core.min.css';
 
         \wp_enqueue_style(
             $this->id,
-            $this->app->utilities->fileSystem->themeDir('url', $file),
+            $file_system->themeDir('url', $file),
             [$this->app->parent->setups['Styles\Core']->id],
-            \filemtime(
-                $this->app->utilities->fileSystem->themeDir('path', $file)
-            )
+            \filemtime($file_system->themeDir('path', $file))
         );
     }
 
