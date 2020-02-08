@@ -56,7 +56,9 @@ final class Theme extends AbstractChildTheme
      */
     protected function getMeta(): array
     {
-        return $this->meta = $this->meta ?: $this->meta();
+        return $this->meta = $this->meta ?: $this->getParent()->themeData(
+            $this->getUtilities()->fileSystem->themeDir('path')
+        );
     }
 
     private function setUpMisc()
@@ -126,34 +128,5 @@ final class Theme extends AbstractChildTheme
         $this->setups['Views\Header'] = new Setups\Views\Header($this);
         $this->setups['Views\Page'] = new Setups\Views\Page($this);
         $this->setups['Views\Footer'] = new Setups\Views\Footer($this);
-    }
-
-    /**
-     * @return string[string]
-     */
-    private function meta(): array
-    {
-        $meta = \array_map('sanitize_text_field', \get_file_data(
-            $this->getUtilities()->fileSystem->themeDir('path', '/style.css'),
-            [
-                'name' => 'Theme Name',
-                'theme_uri' => 'Theme URI',
-                'description' => 'Description',
-                'author' => 'Author',
-                'author_uri' => 'Author URI',
-                'version' => 'Version',
-                'license' => 'License',
-                'license_uri' => 'License URI',
-                'tags' => 'Tags',
-                'text_domain' => 'Text Domain',
-                'domain_path' => 'Domain Path',
-                'documents_uri' => 'Documents URI',
-            ],
-            'theme'
-        ));
-
-        $meta['slug'] = \sanitize_title($meta['name']);
-
-        return $meta;
     }
 }
