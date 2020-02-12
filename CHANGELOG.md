@@ -7,8 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased] - 
 
+### Added
+- Add WordPress apache Dockerfile
+
+### Changed
+- Move docker files to a new `docker/` directory
+
 ### Fixed
 - Remove unused NPM packages
+- Fix theme deleted in container during WordPress installation
 
 ## [0.5.0] - 2020-02-08
 
