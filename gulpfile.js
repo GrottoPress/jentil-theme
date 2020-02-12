@@ -108,4 +108,4 @@ exports.serve = _serve
 exports.styles = _styles
 exports.watch = _watch
 
-exports.default = series(parallel(_styles, _scripts), _serve, _watch)
+exports.default = series(parallel(_styles, _scripts), parallel(_serve, _watch))
