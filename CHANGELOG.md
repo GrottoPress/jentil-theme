@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased] - 
 
 ### Added
-- Add WordPress apache Dockerfile
+- Add apache variant of Dockerfiles
+- Add Dockerfiles for installing this theme as child theme
 
 ### Changed
 - Move docker files to a new `docker/` directory
