@@ -1,7 +1,7 @@
 ARG PHP_VERSION=7.4
 ARG WORDPRESS_VERSION=5.3
 
-FROM prooph/composer:${PHP_VERSION} as vendor
+FROM prooph/composer:${PHP_VERSION} AS vendor
 
 WORKDIR /tmp
 
@@ -31,7 +31,7 @@ ENV THEME_DIR=${WORDPRESS_DIR}/wp-content/themes/${THEME_NAME}
 
 COPY --chown=www-data . /usr/src/${THEME_NAME}/
 COPY --chown=www-data --from=vendor /tmp/vendor/ /usr/src/${THEME_NAME}/vendor/
-COPY docker/docker-entrypoint.sh /tmp/docker-entrypoint.sh
+COPY docker/docker-entrypoint.sh /tmp/
 
 RUN cat /usr/local/bin/docker-entrypoint.sh | \
         sed '/^\s*exec "$@"/d' > \
