@@ -14,5 +14,5 @@ export abstract class Base
         this.update()
     }
 
-    abstract update(): void
+    protected abstract update(): void
 }

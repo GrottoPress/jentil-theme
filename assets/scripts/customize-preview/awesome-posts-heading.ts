@@ -9,7 +9,7 @@ export class AwesomePostsHeading extends Base
         super(j, wp, [mod_id])
     }
 
-    update(): void
+    protected update(): void
     {
         this._wp.customize(this._mod_ids[0], (from: () => void): void => {
             from.bind((to: string): void => {

@@ -9,7 +9,7 @@ export class BackgroundColor extends Base
         super(j, wp, ['background_color'])
     }
 
-    update(): void
+    protected update(): void
     {
         this._wp.customize(this._mod_ids[0], (from: () => void): void => {
             from.bind((to: string): void => {
