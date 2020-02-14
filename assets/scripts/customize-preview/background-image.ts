@@ -4,14 +4,12 @@ import { Base } from './base'
 
 export class BackgroundImage extends Base
 {
-    constructor(
-        j: JQueryStatic,
-        wp: WP
-    ) {
+    constructor(j: JQueryStatic, wp: WP)
+    {
         super(j, wp, ['background_image'])
     }
 
-    update(): void
+    protected update(): void
     {
         this._wp.customize(this._mod_ids[0], (from: () => void): void => {
             from.bind((to: string): void => {

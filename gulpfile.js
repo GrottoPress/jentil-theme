@@ -47,11 +47,7 @@ function _chmod(done)
 
 function _clean(done)
 {
-    sh.rm(
-        '-rf',
-        paths.styles.dest,
-        paths.scripts.dest
-    )
+    sh.rm('-rf', paths.styles.dest, paths.scripts.dest)
 
     done()
 }
@@ -108,4 +104,4 @@ exports.serve = _serve
 exports.styles = _styles
 exports.watch = _watch
 
-exports.default = series(parallel(_styles, _scripts), _serve, _watch)
+exports.default = series(parallel(_styles, _scripts), parallel(_serve, _watch))
