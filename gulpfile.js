@@ -47,11 +47,7 @@ function _chmod(done)
 
 function _clean(done)
 {
-    sh.rm(
-        '-rf',
-        paths.styles.dest,
-        paths.scripts.dest
-    )
+    sh.rm('-rf', paths.styles.dest, paths.scripts.dest)
 
     done()
 }

@@ -4,11 +4,8 @@ import { Base } from './base'
 
 export class AwesomePostsHeading extends Base
 {
-    constructor(
-        j: JQueryStatic,
-        wp: WP,
-        mod_id: string
-    ) {
+    constructor(j: JQueryStatic, wp: WP, mod_id: string)
+    {
         super(j, wp, [mod_id])
     }
 

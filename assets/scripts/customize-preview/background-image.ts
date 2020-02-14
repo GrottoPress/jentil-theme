@@ -4,10 +4,8 @@ import { Base } from './base'
 
 export class BackgroundImage extends Base
 {
-    constructor(
-        j: JQueryStatic,
-        wp: WP
-    ) {
+    constructor(j: JQueryStatic, wp: WP)
+    {
         super(j, wp, ['background_image'])
     }
 
