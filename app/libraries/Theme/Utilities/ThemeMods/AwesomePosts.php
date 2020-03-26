@@ -11,7 +11,7 @@ class AwesomePosts extends AbstractThemeMod
     /**
      * @var ThemeMods
      */
-    private $themeMods;
+    protected $themeMods;
 
     /**
      * @var string
