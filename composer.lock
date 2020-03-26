@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1438ad415d0ced654d75db59f0e2aee7",
+    "content-hash": "7060ca0a2c623fa765cd572066b9d044",
     "packages": [
         {
             "name": "aura/html",
@@ -2833,16 +2833,16 @@
         },
         {
             "name": "lucatume/wp-browser",
-            "version": "2.2.34",
+            "version": "2.2.37",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lucatume/wp-browser.git",
-                "reference": "ab02739d04edc342a41b317f6dcb72a3d1eef590"
+                "reference": "8c4b6428f220dd159df0855f06c75957a6c5859b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lucatume/wp-browser/zipball/ab02739d04edc342a41b317f6dcb72a3d1eef590",
-                "reference": "ab02739d04edc342a41b317f6dcb72a3d1eef590",
+                "url": "https://api.github.com/repos/lucatume/wp-browser/zipball/8c4b6428f220dd159df0855f06c75957a6c5859b",
+                "reference": "8c4b6428f220dd159df0855f06c75957a6c5859b",
                 "shasum": ""
             },
             "require": {
@@ -2865,7 +2865,7 @@
             },
             "require-dev": {
                 "erusev/parsedown": "^1.7",
-                "lucatume/codeception-snapshot-assertions": "^0.2.2",
+                "lucatume/codeception-snapshot-assertions": "^0.2",
                 "mikey179/vfsstream": "^1.6",
                 "phpstan/phpstan": "^0.11.15",
                 "phpstan/phpstan-shim": "^0.11.15",
@@ -2903,7 +2903,7 @@
                 "codeception",
                 "wordpress"
             ],
-            "time": "2020-01-29T08:30:29+00:00"
+            "time": "2020-02-21T13:28:14+00:00"
         },
         {
             "name": "mck89/peast",
