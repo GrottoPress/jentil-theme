@@ -10,7 +10,7 @@ define('MY_THEME_MIN_WP', '4.7');
 if (version_compare(PHP_VERSION, MY_THEME_MIN_PHP, '<') ||
     version_compare(get_bloginfo('version'), MY_THEME_MIN_WP, '<')
 ) {
-    add_action('admin_notices', 'printMyThemeReqNotice');
+    add_action('admin_notices', 'printMyThemeNotice');
 
     deactivateMyTheme();
 } else {
@@ -24,7 +24,7 @@ function runMyTheme()
     MyTheme()->run();
 }
 
-function printMyThemeReqNotice()
+function printMyThemeNotice()
 {
     echo '<div class="notice notice-error">
         <p>'.
