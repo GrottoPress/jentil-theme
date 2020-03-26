@@ -2,8 +2,8 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "@rollup/plugin-typescript": "^3.0.0",
-    "@types/jquery": "^3.3.31",
+    "@rollup/plugin-typescript": "^3.1.1",
+    "@types/jquery": "^3.3.34",
     "browser-sync": "^2.26.7",
     "cssnano": "^4.1.10",
     "cssnano-preset-advanced": "^4.0.7",
@@ -15,14 +15,14 @@
     "gulp-newer": "^1.4.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-rtlcss": "^1.4.0",
+    "gulp-rtlcss": "^1.4.1",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "postcss-focus": "^4.0.0",
-    "rollup": "^1.31.0",
+    "rollup": "^1.32.1",
     "shelljs": "^0.8.3",
-    "tslib": "^1.10.0",
-    "typescript": "^3.7.5"
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "build": "gulp styles scripts",
