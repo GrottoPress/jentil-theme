@@ -11,7 +11,7 @@ module.exports = {
     output: {
         dir: tsConfig.compilerOptions.outDir,
         format: 'iife',
-        name: 'JentilTheme'
+        name: 'MyTheme'
     },
     plugins: [typescript(tsConfig.compilerOptions)]
 }
