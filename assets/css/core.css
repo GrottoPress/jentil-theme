@@ -1,0 +1,37 @@
+/*!
+ * Core styles
+ */
+
+/*
+|-----------------------------------------------------------------------
+| About Tailwind CSS
+|-----------------------------------------------------------------------
+|
+| Tailwind is a utility-first CSS framework packed with classes that can
+| be composed to build any design, directly in your markup.
+|
+| Try it; you will love it!
+|
+| Read more: https://tailwindcss.com
+|
+*/
+
+/*
+|----------------------------------------------------------------------
+| Build and watch
+|----------------------------------------------------------------------
+|
+| Build assets with:
+|   `npm run dev`
+|
+| Watch assets to automatically build whenever you make changes with:
+|   `npm run watch`
+|
+*/
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* @import 'core/some-style';
+@import 'core/another-style'; */

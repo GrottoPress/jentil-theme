@@ -1,0 +1,9 @@
+/*!
+ * Editor styles
+ */
+
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* @import 'editor/some-style';
+@import 'editor/another-style'; */

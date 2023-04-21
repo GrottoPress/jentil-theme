@@ -97,7 +97,7 @@ final class Theme extends AbstractChildTheme
     private function setUpStyles()
     {
         $this->setups['Styles\Core'] = new Setups\Styles\Core($this);
-        $this->setups['Styles\Gutenberg'] = new Setups\Styles\Gutenberg($this);
+        $this->setups['Styles\Editor'] = new Setups\Styles\Editor($this);
     }
 
     private function setUpScripts()

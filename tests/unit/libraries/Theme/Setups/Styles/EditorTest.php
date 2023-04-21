@@ -11,13 +11,13 @@ use GrottoPress\Jentil\AbstractTheme;
 use Codeception\Util\Stub;
 use tad\FunctionMocker\FunctionMocker;
 
-class CoreTest extends AbstractTestCase
+class EditorTest extends AbstractTestCase
 {
     public function testRun()
     {
         $add_action = FunctionMocker::replace('add_action');
 
-        $style = new Core(Stub::makeEmpty(AbstractChildTheme::class, [
+        $style = new Editor(Stub::makeEmpty(AbstractChildTheme::class, [
             'meta' => ['slug' => 'theme'],
         ]));
 
@@ -26,7 +26,7 @@ class CoreTest extends AbstractTestCase
         $add_action->wasCalledOnce();
 
         $add_action->wasCalledWithOnce([
-            'wp_enqueue_scripts',
+            'enqueue_block_editor_assets',
             [$style, 'enqueue'],
             20
         ]);
@@ -50,16 +50,11 @@ class CoreTest extends AbstractTestCase
             function __construct()
             {
                 $this->utilities = Stub::makeEmpty(Utilities::class);
-                $this->parent = new class extends AbstractTheme {
-                    public $setups;
-
-                    function __construct()
-                    {
-                        $this->setups = ['Styles\Core' => new class {
-                            public $id;
-                        }];
-                    }
-                };
+                $this->parent = Stub::makeEmpty(AbstractTheme::class, [
+                    'setups' => ['Styles\Editor' => new class {
+                        public $id;
+                    }],
+                ]);
             }
         };
 
@@ -72,7 +67,7 @@ class CoreTest extends AbstractTestCase
             },
         ]);
 
-        $style = new Core($theme);
+        $style = new Editor($theme);
 
         $style->enqueue();
 
@@ -82,10 +77,10 @@ class CoreTest extends AbstractTestCase
             $style->id,
             (
                 $rtl ?
-                'http://my.url/dist/css/core-rtl.css' :
-                'http://my.url/dist/css/core.css'
+                'http://my.url/dist/css/editor-rtl.css' :
+                'http://my.url/dist/css/editor.css'
             ),
-            [$theme->parent->setups['Styles\Core']->id],
+            [$theme->parent->setups['Styles\Editor']->id],
             \filemtime($test_css),
         ]);
     }

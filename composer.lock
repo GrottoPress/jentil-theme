@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f009f2bea35eed25837d436b8c98a32b",
+    "content-hash": "834f010fb45c43beee7807fdf73d7e4d",
     "packages": [
         {
             "name": "grottopress/form-field",
@@ -120,29 +120,31 @@
         },
         {
             "name": "grottopress/jentil",
-            "version": "v0.11.3",
+            "version": "v0.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrottoPress/jentil.git",
-                "reference": "dc309cef3c44f9431b27bf2c0a17336ba0c78637"
+                "reference": "feedfb8123e3438169138cafbdefb98b4483ab68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/dc309cef3c44f9431b27bf2c0a17336ba0c78637",
-                "reference": "dc309cef3c44f9431b27bf2c0a17336ba0c78637",
+                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/feedfb8123e3438169138cafbdefb98b4483ab68",
+                "reference": "feedfb8123e3438169138cafbdefb98b4483ab68",
                 "shasum": ""
             },
             "require": {
+                "grottopress/mobile-detector": "^0.2",
                 "grottopress/wordpress-breadcrumbs": "^0.8",
                 "grottopress/wordpress-meta-box": "^0.4",
-                "grottopress/wordpress-posts": "^0.15",
+                "grottopress/wordpress-posts": "^0.16",
                 "grottopress/wordpress-suv": "^0.7",
                 "php": ">=7.0"
             },
             "require-dev": {
                 "codeception/module-asserts": "^1.3",
                 "lucatume/function-mocker": "^1.3",
-                "lucatume/wp-browser": "^3.1"
+                "lucatume/wp-browser": "^3.1",
+                "wp-cli/wp-cli-bundle": "^2.7"
             },
             "type": "library",
             "autoload": {
@@ -180,7 +182,7 @@
                 "source": "https://github.com/GrottoPress/jentil",
                 "wiki": "https://github.com/GrottoPress/jentil/wiki"
             },
-            "time": "2023-04-19T12:04:21+00:00"
+            "time": "2023-04-21T17:32:40+00:00"
         },
         {
             "name": "grottopress/mobile-detector",
@@ -467,21 +469,20 @@
         },
         {
             "name": "grottopress/wordpress-posts",
-            "version": "v0.15.1",
+            "version": "v0.16.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrottoPress/wordpress-posts.git",
-                "reference": "e2cd8d7fa6db0cfa232834eaac994a12c6c9b510"
+                "reference": "3182612671ab340a00707b1ffb0a75262a66894e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrottoPress/wordpress-posts/zipball/e2cd8d7fa6db0cfa232834eaac994a12c6c9b510",
-                "reference": "e2cd8d7fa6db0cfa232834eaac994a12c6c9b510",
+                "url": "https://api.github.com/repos/GrottoPress/wordpress-posts/zipball/3182612671ab340a00707b1ffb0a75262a66894e",
+                "reference": "3182612671ab340a00707b1ffb0a75262a66894e",
                 "shasum": ""
             },
             "require": {
                 "grottopress/getter": "^0.4",
-                "grottopress/mobile-detector": "^0.2",
                 "php": ">=7.0"
             },
             "require-dev": {
@@ -521,7 +522,7 @@
                 "source": "https://github.com/GrottoPress/wordpress-posts/",
                 "wiki": "https://github.com/GrottoPress/wordpress-posts/wiki"
             },
-            "time": "2023-04-12T22:42:25+00:00"
+            "time": "2023-04-21T17:48:53+00:00"
         },
         {
             "name": "grottopress/wordpress-suv",
