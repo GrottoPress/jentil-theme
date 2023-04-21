@@ -45,9 +45,6 @@
     ],
     "test": [
       "./vendor/bin/codecept run unit"
-    ],
-    "release": [
-      "./bin/release"
     ]
   },
   "autoload": {
