@@ -21,7 +21,7 @@ RUN composer dump-autoload \
         --no-scripts \
         --optimize
 
-FROM grottopress/wordpress:${WORDPRESS_VERSION}-php${PHP_VERSION}-apache
+FROM wordpress:${WORDPRESS_VERSION}-php${PHP_VERSION}-apache
 
 ARG THEME_NAME=jentil-theme
 
