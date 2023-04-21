@@ -1,5 +1,0 @@
-# Our security address
-Contact: mailto:myemail@provider.tld
-
-# Our PGP key
-Encryption: https://www.mywebsite.tld/pgp-key.txt

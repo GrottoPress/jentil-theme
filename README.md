@@ -9,5 +9,4 @@ A starter for building WordPress themes with [Jentil](https://www.grottopress.co
 - [Installation](https://github.com/grottopress/jentil#installation)
 - [Developing your theme](https://github.com/grottopress/jentil#developing-your-theme)
 - [Architecture](https://github.com/grottopress/jentil#architecture)
-- [Security](https://github.com/grottopress/jentil#security)
 - [Showcase](https://github.com/grottopress/jentil#showcase)
