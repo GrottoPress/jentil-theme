@@ -120,16 +120,16 @@
         },
         {
             "name": "grottopress/jentil",
-            "version": "v0.12.0",
+            "version": "v0.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrottoPress/jentil.git",
-                "reference": "feedfb8123e3438169138cafbdefb98b4483ab68"
+                "reference": "42d5f9249de5e6bea8b62d4dba1000283ad58581"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/feedfb8123e3438169138cafbdefb98b4483ab68",
-                "reference": "feedfb8123e3438169138cafbdefb98b4483ab68",
+                "url": "https://api.github.com/repos/GrottoPress/jentil/zipball/42d5f9249de5e6bea8b62d4dba1000283ad58581",
+                "reference": "42d5f9249de5e6bea8b62d4dba1000283ad58581",
                 "shasum": ""
             },
             "require": {
@@ -182,7 +182,7 @@
                 "source": "https://github.com/GrottoPress/jentil",
                 "wiki": "https://github.com/GrottoPress/jentil/wiki"
             },
-            "time": "2023-04-21T17:32:40+00:00"
+            "time": "2023-04-21T18:03:37+00:00"
         },
         {
             "name": "grottopress/mobile-detector",
