@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add missing `tailwind.config.js`
 - Fix wrong typescript module paths
 - Fix wrong PostCSS config file name
+- Remove `tailwindcss/base` import (already imported by *Jentil*)
 
 ## [0.6.0] - 2023-04-21
 
