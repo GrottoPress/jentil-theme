@@ -23,8 +23,8 @@ final class Footer extends AbstractSetup
 {
     public function run()
     {
-        \add_action('jentil_footer_mod_id', [$this, 'addLogoId'], 10, 2);
-        \add_action(
+        \add_filter('jentil_footer_mod_id', [$this, 'addLogoId'], 10, 2);
+        \add_filter(
             'jentil_footer_mod_default',
             [$this, 'addLogoDefault'],
             10,
