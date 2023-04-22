@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Add missing `tailwind.config.js`
 - Fix wrong typescript module paths
+- Fix wrong PostCSS config file name
 
 ## [0.6.0] - 2023-04-21
 
