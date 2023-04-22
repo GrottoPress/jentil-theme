@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### [Unreleased] - 
 
 ### Fixed
+- Add missing `tailwind.config.js`
 - Fix wrong typescript module paths
 
 ## [0.6.0] - 2023-04-21
