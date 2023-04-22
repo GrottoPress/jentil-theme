@@ -1,4 +1,4 @@
-/// <reference path='../../../vendor/grottopress/jentil/assets/scripts/core/module.d.ts' />
+/// <reference path='../../../vendor/grottopress/jentil/assets/js/core/module.d.ts' />
 
 /*
 |--------------------------------------------------------------------------
