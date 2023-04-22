@@ -14,7 +14,7 @@ use GrottoPress\Jentil\Setups\AbstractSetup;
 |
 */
 
-final class Thumbnail extends AbstractSetup
+final class FeaturedImage extends AbstractSetup
 {
     public function run()
     {
