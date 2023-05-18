@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### [Unreleased] - 
 
+### Changed
+- Upgrade *Jentil* to v0.13
+
 ### Fixed
 - Add missing `tailwind.config.js`
 - Fix wrong typescript module paths
