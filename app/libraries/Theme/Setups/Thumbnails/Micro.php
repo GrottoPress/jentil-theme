@@ -18,7 +18,7 @@ final class Micro extends AbstractSetup
 {
     public function run()
     {
-        \add_action('after_setup_theme', [$this, 'removeSize']);
+        \add_action('after_setup_theme', [$this, 'removeSize'], 8);
     }
 
     /**
@@ -30,8 +30,5 @@ final class Micro extends AbstractSetup
             'after_setup_theme',
             [$this->app->parent->setups['Thumbnails\Micro'], 'addSize']
         );
-
-        // OR
-        // \remove_image_size($this->app->parent->setups['Thumbnails\Micro']->id);
     }
 }
