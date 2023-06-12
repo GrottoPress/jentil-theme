@@ -28,7 +28,7 @@
   "require": {
     "php": ">=7.0",
     "composer/installers": "^1.12",
-    "grottopress/jentil": "^0.14"
+    "grottopress/jentil": "^1.0"
   },
   "require-dev": {
     "lucatume/wp-browser": "^3.1",
@@ -43,7 +43,7 @@
   },
   "autoload": {
     "psr-4": {
-      "My\\": "app/libraries/"
+      "My\\": "app/"
     },
     "files": [
       "app/helpers.php"
@@ -51,7 +51,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "My\\": "tests/unit/libraries/"
+      "My\\": "tests/unit/app/"
     }
   },
   "config": {

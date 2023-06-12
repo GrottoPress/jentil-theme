@@ -3,9 +3,9 @@ module.exports = {
     files: [
         './dist/css/**/*',
         './dist/js/**/*',
-        './app/partials/**/*',
-        './app/templates/**/*',
-        './app/libraries/Theme/Setups/Views/**/*'
+        './partials/**/*',
+        './templates/**/*',
+        './app/Theme/Setups/Views/**/*'
     ],
     minify: false,
     // notify: true,

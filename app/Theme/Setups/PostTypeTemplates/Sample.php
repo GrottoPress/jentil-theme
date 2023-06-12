@@ -12,9 +12,9 @@ use WP_Theme;
 | Sample Post Type Template Setup
 |-------------------------------------------------------------------------
 |
-| Template slug/filename should be relative to the `app/templates` directory.
+| Template slug/filename should be relative to the `templates/` directory.
 |
-| REMEMBER to add the template file in `app/templates` directory
+| REMEMBER to add the template file in `templates/` directory
 |
 | @see GrottoPress\Jentil\Setups\PostTypeTemplates\
 |
