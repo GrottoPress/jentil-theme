@@ -100,7 +100,7 @@ class Utilities
     }
 
     /**
-     * @param mixed[string] $args
+     * @param array<string, mixed> $args
      */
     public function metaBox(array $args): MetaBox
     {

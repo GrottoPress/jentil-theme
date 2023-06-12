@@ -103,7 +103,7 @@ class AwesomePosts
     }
 
     /**
-     * @return string[string]
+     * @return array<string, string>
      */
     public function postTypes(): array
     {

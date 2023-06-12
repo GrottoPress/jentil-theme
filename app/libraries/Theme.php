@@ -28,7 +28,7 @@ final class Theme extends AbstractChildTheme
     private $utilities;
 
     /**
-     * @var string[string]
+     * @var array<string, string>
      */
     private $meta;
 
@@ -52,7 +52,7 @@ final class Theme extends AbstractChildTheme
     }
 
     /**
-     * @return string[string]
+     * @return array<string, string>
      */
     protected function getMeta(): array
     {

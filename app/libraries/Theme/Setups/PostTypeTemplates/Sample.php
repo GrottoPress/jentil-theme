@@ -48,11 +48,11 @@ final class Sample extends AbstractTemplate
 
      /**
      * @param \WP_Post $post
-     * @param string[int] $templates
+     * @param string[] $templates
      *
      * @filter theme_{$post_type}_templates
      *
-     * @return string[int]
+     * @return string[]
      */
     public function add(
         array $templates,

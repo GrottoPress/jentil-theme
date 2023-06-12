@@ -47,7 +47,7 @@ class Sample
     }
 
     /**
-     * @return string[string]
+     * @return array<string, string>
      */
     public function dropdown(): array
     {

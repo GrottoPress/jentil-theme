@@ -34,7 +34,7 @@ final class Sample extends AbstractMetaBox
     }
 
     /**
-     * @return mixed[string]
+     * @return array<string, mixed>
      */
     protected function box(WP_Post $post): array
     {

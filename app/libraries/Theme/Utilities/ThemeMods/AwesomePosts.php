@@ -28,7 +28,7 @@ class AwesomePosts extends AbstractThemeMod
     }
 
     /**
-     * @return mixed[string]
+     * @return array<string, mixed>
      */
     private function defaults(): array
     {
