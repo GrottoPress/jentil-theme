@@ -1,4 +1,8 @@
 {
+  "name": "@grottopress/jentil-theme",
+  "version": "0.1.0",
+  "description": "A starter for building WordPress themes with Jentil",
+  "license": "MIT",
   "private": true,
   "devDependencies": {
     "@types/jquery": "^3.3.34",
