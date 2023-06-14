@@ -2,9 +2,9 @@
 # with Jentil in `wp-content/themes/` directory
 # rather than inside this theme's `vendor/` directory
 
-ARG JENTIL_VERSION=0.11.1
+ARG JENTIL_VERSION=1.0
 ARG PHP_VERSION=7.4
-ARG WORDPRESS_VERSION=5.3
+ARG WORDPRESS_VERSION=6.1
 
 FROM prooph/composer:${PHP_VERSION} AS vendor
 
