@@ -8,7 +8,7 @@ export class BackgroundColor extends Base {
     }
 
     protected update(): void {
-        this._wp.customize(this._mod_ids[0], (from: () => void): void => {
+        this._wp.customize(this._mod_ids[0], (from): void => {
             from.bind((to: string): void => {
                 if (-1 === ['#fff', '#ffffff'].indexOf(to)) {
                     this._j('body').removeClass('no-background-color')

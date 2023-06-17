@@ -8,7 +8,7 @@ export class AwesomePostsHeading extends Base {
     }
 
     protected update(): void {
-        this._wp.customize(this._mod_ids[0], (from: () => void): void => {
+        this._wp.customize(this._mod_ids[0], (from): void => {
             from.bind((to: string): void => {
                 this._j('#awesome-posts .heading').html(to)
             })
