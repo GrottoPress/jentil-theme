@@ -39,6 +39,9 @@
   "scripts": {
     "test": [
       "./vendor/bin/codecept run unit"
+    ],
+    "wp": [
+      "./vendor/bin/wp"
     ]
   },
   "autoload": {
